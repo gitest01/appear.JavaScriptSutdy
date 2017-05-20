@@ -1,11 +1,10 @@
 # Javascript 교육자료 By.@appear
 > 작업시  
 ```text
-본인 브랜치 안에 result폴더를 생성하여 새로 작업 
-(Ex. master-> test_branch -> result폴더 
+본인 브랜치 안에 result폴더를 생성하여 새로 작업 (Ex. master -> user_branch(new Branch) -> user 개인폴더 
 이때 기본적으로 master의 폴더안에는 작업을 하지않는다)
 ```
-> Node.js : [https://nodejs.org/ko/]
+> Node.js 설치 : [https://nodejs.org/ko/] 버젼은 아무것이나 받아도 무방함.
 ## 목차 
 #### 1. Javscript란
 - Javascript 이론 
