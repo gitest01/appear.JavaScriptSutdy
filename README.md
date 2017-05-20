@@ -1,4 +1,4 @@
-# Javascript 교육자료
+# Javascript 교육자료 By.@appear
 > 작업시  
 ```text
 본인 브랜치 안에 result폴더를 생성하여 새로 작업 
