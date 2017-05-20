@@ -1,23 +1,23 @@
 var assert = require('../util/assert.js');
 
-// 인스턴스 타입과 생성자
-function Animal(){}
+//상속
+function Person(){}
+Person.prototype.walk = function(){};
 
-var dog = new Animal();
+function Firefighter(){}
+Firefighter.prototype = { walk : Person.prototype.walk}; // Person의 걷기 메서드를 복사하여 덧붙인다. 이는 상속이아니다.
 
-assert(typeof dog == "object", "인스턴스의 타입은 object다");
-assert(dog instanceof Animal, "dog는 Animal로 부터 생성되었다.");
-console.log('dog.constructor은 뭐가찍힐까?', dog.constructor);
-// function Animal(){}
-assert(dog.constructor == Animal, "Animal을 통하여 dog객체를 생성하였다.");
 
-console.log("================================================================");
+var firePerson = new Firefighter();
 
-// 테스트
-var dog2 = new dog.constructor();
+assert(firePerson instanceof Firefighter, "firePerson은 Firefighter의 기능을 물려받았다.");
+assert(firePerson instanceof Person, "firePerson은 Person의 프로토타입 기능을 물려받았다.");
+assert(firePerson instanceof Object, "firePerson은 Object의 프로토타입 기능을 물려받았다.");
+/*
+     pass : firePerson은 Firefighter의 기능을 물려받았다.
+     false : firePerson은 Person의 프로토타입 기능을 물려받았다.
+     pass : firePerson은 Object의 프로토타입 기능을 물려받았다.
+ */
+// false : firePerson은 Person의 프로토타입 기능을 물려받았다. 어떻게 하면 성공시킬 수 있을까?
+// Ex06으로 ~~
 
-assert(typeof dog2 == "object", "인스턴스의 타입은 object다");
-assert(dog2 instanceof Animal, "dog는 Animal로 부터 생성되었다.");
-console.log('dog.constructor은 뭐가찍힐까?', dog2.constructor);
-// function Animal(){}
-assert(dog2.constructor == Animal, "Animal을 통하여 dog2객체를 생성하였다.");

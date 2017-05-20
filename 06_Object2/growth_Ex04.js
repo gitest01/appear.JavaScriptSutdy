@@ -1,29 +1,23 @@
 var assert = require('../util/assert.js');
 
-// 의문? Ex02에서 보면 new를 통해 새 객체를 생성할때 기존객체의 프로토타입이 새로 복사가 되는걸까?
-// 만약 프로토타입값이 단순히 객체로 복사된다고 가정하면 객체가 생성된후 프로토타입에 어떤 변경이 생기더라도 이는 객체에 영향을 주지 않아야한다.
+// 인스턴스 타입과 생성자
+function Animal(){}
 
-// 테스트
-function Animal(){
-    this.flag = true;
-}
-// 프로토타입이 생성되기전에 생성자 생성
 var dog = new Animal();
 
-// 생성자 생성후에 프로토타입 정의
-Animal.prototype.walk = function(){
-    return this.flag;
-};
+assert(typeof dog == "object", "인스턴스의 타입은 object다");
+assert(dog instanceof Animal, "dog는 Animal로 부터 생성되었다.");
+console.log('dog.constructor은 뭐가찍힐까?', dog.constructor);
+// function Animal(){}
+assert(dog.constructor == Animal, "Animal을 통하여 dog객체를 생성하였다.");
 
-assert(dog.walk(), "순서는 맞지않지만 객체 인스턴스에 메서드가 존재한다.");
-// pass : 순서는 맞지않지만 객체 인스턴스에 메서드가 존재한다.
-// 값이 단순 복사된다면 이는 성립되지않는다.
-// 결론 : 프로토타입의 프로퍼티들은 복사되는것이 아니다.
-//       생성된 객체에 프로토타입이 덧붙을 뿐이다. 객체의 프로퍼티를 참조할때 해당 객체가 그 프로퍼티를 직접 소융한게 아니라면
-//       프로토타입에서 그 프로퍼티를 찾아간다.
+console.log("================================================================");
 
-// 과정
-// 1. 객체의 프로퍼티 참조 , 자신에게 프로퍼티가 존재하는지 검사
-// 2. 없다면 객체와 관련된 프로토타입에 해당 프로퍼티가 있는지 검사
-// 3. 두곳 모두에없다면 undifined가 떨어진다.
-// 결론 : 프로토타입은 객체에 연결되어있고 객체의 프로퍼티를 참조할 떄 필요하다면 프로토타입에 정의된 프로퍼티를 사용하도록 참조에 대한 조정이 일어난다.
+// 테스트
+var dog2 = new dog.constructor();
+
+assert(typeof dog2 == "object", "인스턴스의 타입은 object다");
+assert(dog2 instanceof Animal, "dog는 Animal로 부터 생성되었다.");
+console.log('dog.constructor은 뭐가찍힐까?', dog2.constructor);
+// function Animal(){}
+assert(dog2.constructor == Animal, "Animal을 통하여 dog2객체를 생성하였다.");

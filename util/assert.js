@@ -1,3 +1,3 @@
-/**
- * Created by gilbert on 2017. 5. 20..
- */
+module.exports = function(value , desc){
+   value ? console.log("pass :", desc) : console.log("false :", desc);
+};
