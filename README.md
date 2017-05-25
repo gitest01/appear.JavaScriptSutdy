@@ -4,7 +4,12 @@
 본인 브랜치 안에 result폴더를 생성하여 새로 작업 (Ex. master -> user_branch(new Branch) -> user 개인폴더 
 이때 기본적으로 master의 폴더안에는 작업을 하지않는다)
 ```
-> Node.js 설치 : [https://nodejs.org/ko/] 버젼은 아무것이나 받아도 무방함.
+### 기본설치
+1. Home-brew 설치 : /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" -> brew update
+2. Node.js & npm 설치 : brew install node
+3. Json-server : npm i -g json-server
+4. Browser-sync : npm install -g browser-sync
+
 ## 목차 
 #### 1. Javscript란
 - Javascript 이론 
