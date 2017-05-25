@@ -1,4 +1,4 @@
-var assert = require('../util/assert.js');
+var assert = require('.././assert.js');
 
 // 프로토타입 생성과정에서의 우선순위
 function Animal(){

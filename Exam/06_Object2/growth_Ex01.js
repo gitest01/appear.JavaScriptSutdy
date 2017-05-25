@@ -1,4 +1,4 @@
-var assert = require('../util/assert.js');
+var assert = require('.././assert.js');
 
 //1. 객체 인스턴스 생성
 var person = {};

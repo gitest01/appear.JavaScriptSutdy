@@ -1,4 +1,4 @@
-var assert = require('../util/assert.js');
+var assert = require('.././assert.js');
 
 //상속
 function Person(){}
