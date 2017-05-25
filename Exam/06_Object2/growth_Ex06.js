@@ -1,4 +1,4 @@
-var assert = require('../util/assert.js');
+var assert = require('.././assert.js');
 
 //상속
 // 단순 객체 복사가 아닌 프로토타입 체인이 필요하다.

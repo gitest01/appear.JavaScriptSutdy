@@ -1,4 +1,4 @@
-var assert = require('../util/assert.js');
+var assert = require('.././assert.js');
 
 // 인스턴스 타입과 생성자
 function Animal(){}
