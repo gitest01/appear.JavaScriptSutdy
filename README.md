@@ -11,7 +11,7 @@
 3. Json-server : npm i -g json-server
 4. Browser-sync : npm install -g browser-sync
 
-## 목차 참조(http://poiemaweb.com/)
+## 목차 참조 (http://poiemaweb.com/)
 #### 1. Javscript introdution
 #### 2. Javascript Control Flow
 #### 3. Javascript Object
