@@ -20,7 +20,7 @@ HTML 파서는 script 태그를 만나면 DOM생성 프로세스를 중지하고
 - WebKit 구동원리 : http://rtcc.hanyang.ac.kr/sitedata/2015_2_ISP/howbrowserswork_20150915.pdf
 
 ### 기초문법
-#### 자료형
+#### 1.자료형
 #### 기본 자료형 (Primitive values)
 오브젝트를 제외한 변경 불가능한값 (immutable value)
 - Boolean : true 와 false 의 두 가지 값을 가질 수 있다.
@@ -29,7 +29,22 @@ HTML 파서는 script 태그를 만나면 DOM생성 프로세스를 중지하고
 - Number
 - String
 - Symbol (ECMAScript 6에 추가) : Symbol은 유일하고 변경 불가능한 (immutable) 기본값 (primitive value) 이다
-
+```js
+typeof true; //"boolean"
+typeof Boolean(true); //"boolean"
+typeof new Boolean(true); //"object"
+typeof (new Boolean(true)).valueOf(); //"boolean"
+ 
+typeof "abc"; //"string"
+typeof String("abc"); //"string"
+typeof new String("abc"); //"object"
+typeof (new String("abc")).valueOf(); //"string"
+ 
+typeof 123; //"number"
+typeof Number(123); //"number"
+typeof new Number(123); //"object"
+typeof (new Number(123)).valueOf(); //"number"
+```
 
 Javascript는 변수의 타입을 미리 선언할 필요가 없다. 타입은 프로그램이 처리되는 과정에서 자동으로 파악될 것이다
 ```js
@@ -41,5 +56,27 @@ ex) Java
 public string name = "go";
 private int age = 25;
 ```
+#### Object (객체형, 참조형)
+객체는 데이터와 그 데이터에 관련되는 동작(절차,방법,기능)을 모두 포함할 수 있는 개념적 존재이다.
+- 기본자료형(Primitives)을 제외한 나머지 값들(배열, 함수, 정규표현식 등)은 모두 객체이다.
+- 함수 (Function), 배열 (Array), 날짜 (Date), 정규식 (RegExp)
 
-#### 변수(Variable)
+#### 2.변수(Variable)
+변수는 위치(주소)를 기억하는 저장소이다. 위치란 메모리 상의 주소(address)를 의미한다  
+- 변수란 메모리 주소(Memory address)에 접근하기 위해 사람이 이해할 수 있는 언어로 지정한 식별자(identifier)이다.
+- 변수를 선언하자마자 값을 대입하는 것을 초기화한다고 표현
+- camelCase를 사용
+```js
+var a = ''; // 문자열
+var b = 0; // 숫자
+var c = false; // 불린
+var d = null; // 널
+var e = undefined; // 언디파인드
+var f = []; // 배열
+var g = {}; // 객체
+var h = function() {}; // 함수
+```
+#### 3.연산자 (Operator)
+참고 : https://msdn.microsoft.com/ko-kr/library/ce57k8d5(v=vs.94).aspx 
+
+
