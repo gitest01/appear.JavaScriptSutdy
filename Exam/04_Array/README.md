@@ -277,5 +277,24 @@ var odd = nums.filter(isOdd);
 console.log(odd); // [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
 ```
 
+## TIP
+깊은복사와 얕은복사
+```js
+var arr = [1,2,3,4,5];
+var  copyArr = arr; // 얕은복사 배열 
+
+copyArr.push(6);
+// 같은 주소를 참조하고 있기때문에 원본배열에 손상을줌 
+console.log('arr', arr); // [1, 2, 3, 4, 5, 6]
+console.log('copyArr', copyArr); // [1, 2, 3, 4, 5, 6]
+
+// 깊은 복사에는 정말많은 방법이있습니다. 간단히 slice를 이용해서 만들어보겠습니다. slice는 잘라낸 문자들을 토대로 원본과는 무관한 배열을 만들어줍니다. 
+// 참고  https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/slice
+var deepCopyArr = arr.slice();
+console.log('deepCopyArr', deepCopyArr); //  [1, 2, 3, 4, 5, 6]
+deepCopyArr.push(7);
+console.log('arr', arr); // [1, 2, 3, 4, 5, 6]
+console.log('deepCopyArr', deepCopyArr); //  [1, 2, 3, 4, 5, 7]
+```
 
 
