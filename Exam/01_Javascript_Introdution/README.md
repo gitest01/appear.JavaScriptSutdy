@@ -78,5 +78,35 @@ var h = function() {}; // 함수
 ```
 #### 3.연산자 (Operator)
 참고 : https://msdn.microsoft.com/ko-kr/library/ce57k8d5(v=vs.94).aspx 
+```js
+// += -= 연산자 num = num + 5 와같다.
+var num = 5;
+console.log('+=연산자 num+=5', num+=5); // +=연산자 num+=5 10
+console.log('-=연산자 num-=5', num-=5); // -=연산자 num-=5 5
+// && and연산자 모두 참이어야한다.
+var tmp = true;
+var tmp2 = false;
+// || or연산자 하나라도 참이면 실행
+tmp || tmp2 ? console.log('or 하나라도 참') :console.log('or 모두 거짓이다.'); // or 하나라도 참
+// 삼항연산자 (조건 ? 참 : 거짓)
+tmp && tmp2 ? console.log('and 모두참') : console.log('and 거짓이 섞여있다.'); // and 거짓이 섞여있다.
+// -- 감소연산자 나중에 반복문에서 다시살펴보겠습니다.
+var tmp3 = 5;
+--tmp3 // a를 감소하고 시작 
+tmp3++ // 연산후 a를 증가
+// > , < , >= , <= 대소 비교
+console.log('3 > 5', 3 > 5); // 3 > 5 false
+console.log('3 < 5', 3 < 5); // 3 < 5 true
+console.log('3 >= 5', 3 >= 5); // 3 >= 5 false
+console.log('3 <= 5', 3 <= 5); // 3 >= 5 false
 
+// 비교  == , === , != , !== 
+console.log('5' == 5); // true 값만 비교
+console.log('5' === 5); // false 타입까지 체크를해서 비교 되도록이면 === 을 사용하자
+console.log('5' != 3); // true
+console.log('5' !== 3); // true
+// typeof 타입체크
+console.log(typeof 5); // number
+console.log(typeof 5 === 'number'); // true
+```
 
