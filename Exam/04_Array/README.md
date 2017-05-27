@@ -5,7 +5,7 @@
 ## 선언법
 기본 선언법 
 ```js
-var number = []; 
+var number = [];
 console.log(number.length); // length 0
 ```
 [] 요소집합을 이용한 선언법
