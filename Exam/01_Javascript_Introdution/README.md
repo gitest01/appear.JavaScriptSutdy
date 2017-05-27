@@ -51,8 +51,8 @@ Javascript는 변수의 타입을 미리 선언할 필요가 없다. 타입은 �
 var foo = 42;    // foo 는 이제 Number 
 var foo = "bar"; // foo 는 이제 String 
 var foo = true;  // foo 는 이제 Boolean 
-
-ex) Java
+    
+ex) Java          
 public string name = "go";
 private int age = 25;
 ```
