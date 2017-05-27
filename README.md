@@ -1,3 +1,7 @@
+# 규칙
+장소 : 명학역    
+방법 :       
+
 # Javascript 교육자료
 > 작업시  
 ```text
@@ -21,7 +25,6 @@
 #### 7. Built-in Object (Number, Math, Date, String, RegExp)
 #### 8. Javscript DOM
 #### 9. Javscript Event
-
-
+ 
 
 
