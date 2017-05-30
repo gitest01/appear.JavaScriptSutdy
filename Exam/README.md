@@ -74,3 +74,84 @@ switch(조건) {
     // 디폴트 실행
 }
 ```
+### break 
+조건에 부합한 로직을 실행후 탈출하는 역할을 수행     
+Ex) while, switch 문에서 break문이 없다면 로직 실행후에도 끝까지 실행
+```js
+switch(조건) {
+  case 조건1:
+    // 조건1 실행
+    break;
+  case 조건2:
+    // 조건2 실행  
+    break;
+  case 조건3:
+    // 조건3 실행
+    break;
+  default: // 조건에 부합하는게 없다면  
+    // 디폴트 실행
+    break;
+}
+```
+### 반복문
+반복문은 주어진 조건식(conditional expression)이 참인 경우 코드 블록을 반복적으로 실행한다.
+#### for
+가장 일반적으로 사용되는 반복문이다. 일정 횟수만큼 반복 실행하여야 할 때 사용한다.
+```js
+// 기본적인 구조
+for (var i = 0; i < 3; i++) {
+  console.log(i);
+}
+```
+#### while
+반복 횟수를 정확히 알지 못할 때 사용한다.
+```js
+while (true) { // 무한루프조심
+  console.log(i);
+  i++;
+}
+```
+#### do_while
+While문과 매우 유사하나 코드블록은 최소 1회 이상 실행된다.
+```js
+var i = 0;
+do {
+  console.log(i);
+  i++;
+} while (i < 3);
+```
+#### continue
+continue문 이후의 구문은 실행 생략하고 반복문의 조건검사 위치로 이동한다.
+```js
+for (var i = 0; i < 5; i++) {
+  if (i % 2 == 0) continue;
+  console.log("The number is " + i );
+}
+```
+### Evaluating
+피연산자와 이항연산자로 구성된 일반적 표현식뿐만 아니라 문자열이나 숫자와 같은 리터럴 값, 변수, 내장값들(true, false, null, undefined, Nan, Infinity…)등 또한 조건식으로 사용될 수 있다.
+```js
+if(1) // true 
+if('str') // true
+if(x) // false
+if(true) // true
+if(null) // false
+if(!x) // true
+```
+
+### TIP
+#### Data type conversion
+```js
+var val = '123';
+console.log(typeof val + ':' + val); // string
+
+//number -> number
+var a = 1 + 'asd';
+console.log(typeof a);
+
+// number -> sting 
+val += '';
+// val = String(val);
+console.log(typeof val + ':' + val); // string
+```
+
