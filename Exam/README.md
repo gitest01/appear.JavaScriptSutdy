@@ -145,13 +145,44 @@ if(!x) // true
 var val = '123';
 console.log(typeof val + ':' + val); // string
 
-//number -> number
-var a = 1 + 'asd';
-console.log(typeof a);
+//number -> string
+var val = 1;
+console.log(typeof val); // number;
+val += 'string';
+console.log(typeof val); // string;
 
 // number -> sting 
 val += '';
 // val = String(val);
 console.log(typeof val + ':' + val); // string
+```
+#### Truthy & Falsy values
+Boolean context에서 false로 평가된다.    
+false    
+undefined    
+null    
+0    
+NaN (Not a Number)    
+"" (빈문자열)   
+#### Checking equality
+두 값을 비교할 때에 동등연산자(==, !=)보다 일치연산자(===, !==)를 사용하여야 한다.
+```js
+var num1 = 5;
+var num2 = '5';
+
+console.log(typeof num1); // number
+console.log(typeof num2); // string
+
+console.log('==', num1 == num2); // true
+console.log('===', num1 === num2); // false
+```
+#### Checking existence
+객체나 배열(배열도 객체이다)이 값을 가지고 있으면 truthy value로 취급된다
+```js
+if (obj) {
+  // 요소가 존재함 : 필요한 작업을 수행
+} else {
+  // 요소가 존재하지 않음 : 필요한 작업을 수행
+}
 ```
 
