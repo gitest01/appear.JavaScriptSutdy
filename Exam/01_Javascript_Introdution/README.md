@@ -109,4 +109,76 @@ console.log('5' !== 3); // true
 console.log(typeof 5); // number
 console.log(typeof 5 === 'number'); // true
 ```
+### 4.Javascript 환경
+#### Javascript Engine 종류
+크게 2 가지 종류 : Rendering, Javascript 엔진
+Rendering Engine     
+HTML CSS로 작성된 마크업을 rendering해주는 역할 
+Javascript Engine     
+Javascript를 해석하고 실행하는 인터프리터. 주로 웹브라우저에서 이용되지만 최근 Node.js가 등장하면서 server side에선 V8 Engine을 이용
+
+#### 자바스크립트 엔진의영역
+Call Stack, Task Queue(Event queue), Heap, EventLoop (Task queue에 들어가는 task관리)
+![Javascrt Engine](./img1.jpg)
+
+#### Call Stack
+자바스크립트는 단 하나의 호출 스택을 사용한다.      
+하나의 함수가 실행되면 이 함수의 실행이 끝날때까지 어떤 task도 수행될수없다 (Run to Completion)        
+요청이 들어올때마다 요청을 순차적으로 호출 스택에 담아서 처리한다.    
+메서드가 실행될때 Call Stack에 새로운 프레임이 push되고 실행이 끝나면 해당프레임이 pop되는 원리    
+
+```js
+function first(x){
+    var num = x;
+    var num2 = second(num);
+    return num + num2;
+}
+function second(y){
+    var num = y;
+    return num;
+}
+first(3);
+```
+`first`라는 함수를 호출 `first`에 해당하는 스택 프레임 형성, `first`안에는 `num`과 같은 local variable과 arguments가 함께 형성.     
+`first`에서 `second`를 호출하고있다. `first`가 아직 종료되지않았으니 pop하지않고 `second`를 호출스택에 push한다.      
+`second`함수가 역할을 마치면 호출스택에서 pop하고 `first`를 pop한다.     
+`stack`이라는 자료구조의 특성을 사용하여 task들을 수행하는 원리
+![Javascrt Engine](./img2.jpg)
+
+#### Heap
+동적으로 생성된 객체(인스턴스)는 힙(Heap)에 할당된다. 대부분 구조화되지 않는 ‘더미’같은 메모리 영역을 `heap`라고 부른다.
+
+#### Task Queue (Event Queue)
+자바스크립트의 런타임환경에서는 처리해야 하는 Task들을 임시 저장하는 대기 큐가 존재한다.     
+그 대기 큐를 Task Queue or Event Queue라고 한다.       
+Call Stack이 비어졌을 떄 먼저 대기열에 들어온 순서대로 수행       
+```js
+setTimeout(function(){
+    console.log(‘라이언’);
+},0);
+console.log(‘어피치’);
+//누가 먼저 실행될까?
+```
+자바스크립트에서 비동기로 호출되는 함수들은 Call Stack에 쌓이지않고 Task Queue에 더해진다.       
+자바스크립트에서는 이벤트에 의해 실행되는 함수들이 비동기로 실행된다.       
+자바스크립트 엔진이 아닌 Web API영역에 따로 정의되어 있는 함수들은 비동기로 실행된다.      
+```js
+function first(){
+    console.log(‘first’);
+    second();
+}
+function second(){
+    setTimeout(function(){
+        console.log(‘second’);
+    },0);
+    third();
+}
+function third(){
+    console.log(‘third’);
+}
+```
+일단 ‘first’는 실행될것이다. ‘First’에서 ‘Second’를 호출하면 ‘setTimeout’함수가 실행되면서 Call Stack에 들어가자 마자 바로 빠져나온다.      
+내부에 걸려있던 핸들러(익명함수)는 콜스택에 들어가서 바로 실행되지않는다. 이 핸들러는 call stack이 아니라 event queue영역으로 들어간다.       
+그후 ‘third’함수가 call stack으로 들어간다.       
+Stack -> ‘first’,’Second’,’third’ 동작이 다 끝나면 event queue -> ‘setTimeout’ 가 Call stack에 들어가서 실행된다. 이벤트에 걸려있는 핸들러는 절대 먼저 실행될 수 없다.   
 
