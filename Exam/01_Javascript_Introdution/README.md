@@ -177,8 +177,9 @@ function third(){
     console.log(‘third’);
 }
 ```
-일단 ‘first’는 실행될것이다. ‘First’에서 ‘Second’를 호출하면 ‘setTimeout’함수가 실행되면서 Call Stack에 들어가자 마자 바로 빠져나온다.      
-내부에 걸려있던 핸들러(익명함수)는 콜스택에 들어가서 바로 실행되지않는다. 이 핸들러는 call stack이 아니라 event queue영역으로 들어간다.       
-그후 ‘third’함수가 call stack으로 들어간다.       
-Stack -> ‘first’,’Second’,’third’ 동작이 다 끝나면 event queue -> ‘setTimeout’ 가 Call stack에 들어가서 실행된다. 이벤트에 걸려있는 핸들러는 절대 먼저 실행될 수 없다.   
+1.일단 ‘first’는 실행될것이다.       
+2.‘First’에서 ‘Second’를 호출하면 ‘setTimeout’함수가 실행되면서 Call Stack에 들어가자 마자 바로 빠져나온다.       
+3.내부에 걸려있던 핸들러(익명함수)는 콜스택에 들어가서 바로 실행되지않는다. 이 핸들러는 call stack이 아니라 event queue영역으로 들어간다.       
+4.그후 ‘third’함수가 call stack으로 들어간다.      
+5.Stack -> ‘first’,’Second’,’third’ 동작이 다 끝나면 event queue -> ‘setTimeout’ 가 Call stack에 들어가서 실행된다. 이벤트에 걸려있는 핸들러는 절대 먼저 실행될 수 없다.   
 
