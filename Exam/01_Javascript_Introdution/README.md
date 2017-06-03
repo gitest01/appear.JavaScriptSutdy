@@ -183,3 +183,10 @@ function third(){
 4.그후 ‘third’함수가 call stack으로 들어간다.      
 5.Stack -> ‘first’,’Second’,’third’ 동작이 다 끝나면 event queue -> ‘setTimeout’ 가 Call stack에 들어가서 실행된다. 이벤트에 걸려있는 핸들러는 절대 먼저 실행될 수 없다.   
 
+### 변수
+변수(Variable)는 (문자나 숫자 같은) 값을 담는 컨테이너로 값을 유지할 필요가 있을 때 사용한다.
+```js
+var first = "coding";
+alert(first+" everybody");
+```
+
