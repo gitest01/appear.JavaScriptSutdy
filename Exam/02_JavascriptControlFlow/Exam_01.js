@@ -14,7 +14,9 @@ var result = [90,70,100,50];
 
 // 점수계산해주는 함수
 function calc(score){
-  var s = Math.floor(score/10); // ex. 100점이면 나누기 10 --> 10 A학점
+  console.log(score); // 점수	
+  // Math.floor 9.6 => 9 버림 
+  // 변수 선언해서 case를 만드세요
 	
   switch(s) {
     case 조건:
