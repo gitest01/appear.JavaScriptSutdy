@@ -10,7 +10,7 @@
  */
 
 // 점수 국 수 사 과
-var result = [90,70,100,50];
+var result = []; // [90,70,100,50]
 
 // 점수계산해주는 함수
 function calc(score){
