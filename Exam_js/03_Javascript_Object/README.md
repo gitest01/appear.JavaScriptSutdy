@@ -112,10 +112,8 @@ var person = {
   gender: 'male',
 };
 
-var prop;
-
-for(prop in person)  {
-  console.log(prop + ': ' + person[prop]);
+for(key in person)  {
+  console.log(key + ': ' + person[key]);
 }
 /*
 first-name: gilbert
