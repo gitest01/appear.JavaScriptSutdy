@@ -9,7 +9,8 @@
 1. Home-brew 설치 : /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" -> brew update
 2. Node.js & npm 설치 : brew install node
 3. Json-server : npm i -g json-server
-4. Browser-sync : npm install -g browser-sync
+4. Browser-sync : npm install -g browser-sync    
+5. esLint : npm install -g eslint eslint-config-airbnb-base eslint-plugin-import / 실행법 : eslint 파일명
 
 ## 목차 참조 (http://poiemaweb.com/)
 #### 1. Javscript introdution

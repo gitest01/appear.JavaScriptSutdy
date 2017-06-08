@@ -1,0 +1,20 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 5,
+    "sourceType": "module"
+  },
+  "extends": "airbnb-base",
+  "env": {
+    "browser": true,
+    "node": true,
+    "mocha": true
+  },
+  "rules": { // http://eslint.org/docs/rules/
+    "max-length": 1 // 0으로 설정하면 에러 검출 X , 1 = 경고 , 2 = 에러
+  },
+  "plugins": ['import'],
+  "globals": { // 전역 변수 처리
+    "jQuery": true,
+    "$": true
+  }
+}
