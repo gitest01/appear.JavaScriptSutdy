@@ -1,0 +1,7 @@
+{
+  "person": [
+    { "id": 1, "name": "edward", "job": "frontEnd" },
+    { "id": 2, "name": "brad", "author": "frontEnd" },
+    { "id": 3, "name": "gilbert", "author": "frontEnd" }
+  ]
+}
