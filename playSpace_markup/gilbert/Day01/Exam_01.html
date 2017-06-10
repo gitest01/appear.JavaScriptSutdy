@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Day layout</title>
+    <style>
+        body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,button{margin:0;padding:0}
+        fieldset,img{border:0 none}
+        dl,ul,ol,menu,li{list-style:none}
+        blockquote, q{quotes: none}
+        blockquote:before, blockquote:after,q:before, q:after{content:'';content:none}
+        input,select,textarea,button{vertical-align:middle}
+        input::-ms-clear{display:none}
+        button{border:0 none;background-color:transparent;cursor:pointer}
+        body{background:#fff}
+        body,th,td,input,select,textarea,button{font-size:12px;line-height:1.5;font-family:'돋움',dotum,sans-serif;color:#333} /* color값은 디자인가이드에 맞게사용 */
+        a{color:#333;text-decoration:none}
+        a:active, a:hover{text-decoration:underline}
+        a:active{background-color:transparent}
+        address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal}
+
+        .naver_header{
+            background-color: #fee;
+        }
+        .naver_content{
+            background-color: pink;
+        }
+        .naver_footer{
+            height: 100px;
+            background-color: tan;
+        }
+        .naver_content .cont {
+            width: 800px;
+            margin: 0 auto ;
+            overflow: hidden;
+        }
+       /* .naver_content .cont:after{
+            display: block;
+            width: 0;
+            height: 0;
+            clear: both;
+            content: '';
+        }*/
+      /*  .empty_float{
+            clear: both;
+        }*/
+        .naver_content .left_cont{
+            width: 600px;
+            float: left;
+        }
+        .naver_content .right_cont{
+            width: 180px;
+            float: right;
+        }
+        .naver_content .left_cont .list_cont li{
+            height: 100px;
+            background-color: coral;
+            margin-top: 15px;
+        }
+        .naver_content .right_cont .list_cont li{
+            height: 150px;
+            background-color: aquamarine;
+            margin: 15px 0;
+        }
+        .naver_header .header_cont{
+            width: 800px;
+            margin: 0 auto;
+        }
+        .naver_header .header_cont .header_nav{
+            height: 40px;
+            overflow: hidden;
+        }
+        .naver_header .header_cont .header_nav .nav_right{
+            width: 200px;
+            height: 40px;
+            float: right;
+            background-color: #666666;
+        }
+        .naver_header .header_cont .header_searchBar{
+            height: 100px;
+            background-color: chocolate;
+        }
+        .naver_header .header_cont .heaer_contNav{
+            height: 40px;
+            background-color: tomato;
+        }
+    </style>
+</head>
+<body>
+    <div class="naver_wrap">
+        <div class="naver_header">
+            <div class="header_cont">
+                <div class="header_nav">
+                    <div class="nav_right"></div>
+                </div>
+                <div class="header_searchBar"></div>
+                <div class="heaer_contNav"></div>
+            </div>
+        </div>
+        <div class="naver_content">
+            <div class="cont">
+                <div class="left_cont">
+                    <ul class="list_cont">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="right_cont">
+                    <ul class="list_cont">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <!--float 해제  <div class="empty_float"></div>-->
+            </div>
+        </div>
+        <div class="naver_footer">
+            Footer
+        </div>
+    </div>
+</body>
+</html>
