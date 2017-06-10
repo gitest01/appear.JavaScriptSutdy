@@ -44,7 +44,7 @@ console.log(person);
 person.getName();
 person.setName = function(aa){
     person.name = aa;
-}
+};
 person.setName('fjhfjh');
 console.log(person);
 
