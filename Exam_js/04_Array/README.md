@@ -31,7 +31,7 @@ console.log(number.length); // length 10
 다른 언어들과 달리 자바스크립트 Array는 다양한 종류의 요소를 포함할 수 있다.
 ```js
 var test = 10;
-var obj = [1,'appear', test, null];
+var obj = [1,'gilbert', test, null];
 console.log(obj.length); // length 4
 ```
 isArray() 를 통한 배열 타입 체크
@@ -60,12 +60,12 @@ console.log(sum); //6
 ```
 문자열로 배열 만들기 
 ```js
-var introduce = "안녕하세요 appear입니다. 신입 프론트로 일하고 있습니다.";
+var introduce = "안녕하세요 gilbert입니다. 일하고 있습니다.";
 var word = introduce.split(" "); //공백으로 자르기
 for(var i = 0 ; i < word.length; i++){
     console.log("word"+i+":"+word[i]);
 }
-// word0 : 안녕하세요 , word1 : appear입니다. , word2 : 신입 , word3 : 프론트로 , word4 : 일하고 , word5 : 있습니다.
+// word0 : 안녕하세요 , word1 : gilbert입니다. , word2 : 일하고 , word3 : 있습니다.
 ```
 배열을 다른 배열로 할당 
 ```js
@@ -111,9 +111,9 @@ var position = eng.lastIndexOf("a"); // 4
 ```
 join , toString 을 이용하여 배열을 문자열로 표현하기
 ```js
-var intro = ["안녕","하세요","appear","입니다"];
-var introStr = intro.join(); // 안녕,하세요,appear,입니다
-var introStr2 = intro.toString(); // 안녕,하세요,appear,입니다
+var intro = ["안녕","하세요","gilbert","입니다"];
+var introStr = intro.join(); // 안녕,하세요,gilbert,입니다
+var introStr2 = intro.toString(); // 안녕,하세요,gilbert,입니다
 ``` 
 concat , splice 를 이용하여 기존의 배열을 이용해 새로운 배열 만들기
 - concat : 2개 이상의 배열을 `합쳐` 새로운 배열을 만듬
@@ -254,7 +254,7 @@ console.log(newGrades); // [82, 70, 103, 16, 28]
 function firstStr(word){
     return word[0];
 }
-var words = ["Hello","My","Name","is","appear"];
+var words = ["Hello","My","Name","is","gilbert"];
 var newWord = words.map(firstStr);
 console.log(newWord.join("")); // HMNia
 ```
