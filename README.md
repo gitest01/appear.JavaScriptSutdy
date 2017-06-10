@@ -16,8 +16,8 @@
 #### 1. Javscript introdution
 #### 2. Javascript Control Flow
 #### 3. Javascript Object
-#### 5. Array 
 #### 4. Function / Prototype / scope / Immutabillty 
+#### 5. Array 
 #### 6. Execution Context / this / Closure
 #### 7. Built-in Object (Number, Math, Date, String, RegExp)
 #### 8. Javscript DOM
