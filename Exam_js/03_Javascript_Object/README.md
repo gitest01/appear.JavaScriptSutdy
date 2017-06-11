@@ -160,7 +160,25 @@ for(key in person)  {
 }
 ```
 
+### 안티 패턴 
+```
+// delete를 이용하여 암묵적 전역변수를 삭제할 수 있을까?
+const global = 'global';
+global2 = 'global2'; // 안티패턴
 
+(function(){
+  global3 = 'global3';
+})();
+
+delete global;
+delete global2;
+delete global3;
+
+console.log(typeof global); // string
+console.log(typeof global2); // undefined
+console.log(typeof global3); // undefined
+// 암묵적 전역변수는 전역객체의 프로퍼티임을 알 수 있다.
+```
 
 
 
