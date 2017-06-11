@@ -144,6 +144,20 @@ console.log("method1" in child);// true
 console.log("method2" in child);// true
 console.log(child.hasOwnProperty("method1") );// false
 console.log(child.hasOwnProperty("method2") );//true
+
+
+hasOwnProperty를 이용한 탐색 
+var person = {
+  'first-name': 'gilbert',
+  'last-name': 'go',
+  gender: 'male',
+};
+
+for(key in person)  {
+ if(person.hasOwnProperty(key)){
+ 	console.log('key : ' + key, 'value :' + person[key]);
+ }
+}
 ```
 
 
