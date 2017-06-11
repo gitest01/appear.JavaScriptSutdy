@@ -121,9 +121,30 @@ last-name: go
 gender: male
 */
 ```
+### Object.prototype.hasOwnProperty()
+모든 객체는 hasOwnProperty 를 상속하는 Object의 자식이다.      
+이 메소드는 객체가 특정 프로퍼티를 자기만의 직접적인 프로퍼티로서 소유하고 있는지를 판단하는데 사용된다.      
+in 연산과는 다르게, 이 메소드는 객체의 프로토타입 체인을 확인하지는 않는다.
+```js
+var parent = {
+   method1 : function() {
+   }
+};
 
+var child = (function(parentObj) {
+    var F = function(){
+        this.method2 = function() {
+        };
+    };
+    F.prototype = parentObj;
+    return (new F());
+})(parent);
 
-
+console.log("method1" in child);// true
+console.log("method2" in child);// true
+console.log(child.hasOwnProperty("method1") );// false
+console.log(child.hasOwnProperty("method2") );//true
+```
 
 
 
