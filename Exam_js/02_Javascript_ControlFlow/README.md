@@ -31,6 +31,28 @@ function funcScope2(){
 funcScope();
 funcScope2();
 ```
+
+#### 안티패턴
+```js
+// 모든 곳에서 공유되는 전역변수 --> 해결 : 네임스페이스 패턴 , 즉시실행
+const myGlobal = 'Hello';
+console.log(myGlobal); // Hello
+console.log(window.myGlobal);
+console.log(window['myGlobal']);
+console.log(this.myGlobal);
+
+// 암묵적 전역변수
+function sum(num1, num2){
+  result = num1 + num2; // 전역변수 .. 나도 모르는사이에 선언되어 계속 남아있을 수 도 있다...
+  return result
+}
+
+// 연속 할당
+function foo(){
+  const a = b = 0; // a는 지역변수 일테지만 b는 전역변수로 빠져버린다..  왜 ?? 평가가 오른쪽에서 왼쪽으로 이루어지기 떄문에 b = 0 -> const a = 0;
+}
+```
+
 ### 조건문
 #### Boolean
 비교 연산의 결과로 참(true)이나 거짓(false)을 얻을 수 있다. 숫자와 문자처럼 언어에서 제공하는 데이터 형이다. 이를 Boolean(불린)이라고한다.
@@ -199,7 +221,6 @@ if (obj) {
 예제2)
 라이언은 1~100 사이의 숫자중 짝수들의 숫자만 더하는 프로그램을 만들고싶다.
 1 ~ 100 사이의 수들중 짝수만 골라내어 합산하는 프로그램을 만들어보자.
-
 
 
 
