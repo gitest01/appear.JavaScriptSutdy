@@ -220,6 +220,9 @@ for(i = 0, maxCount = arr.length; i < maxCount ; i++){
    // length를 캐시해놓고 사용 , ++,-- 보단 i += 1 을 선호
 }
 ```
+```js
+if(a==b) || for(var i=0;i<10;i++) ==> if(a == b) || for(var i = 0; i < 10; i++)
+```
 
 #### 예제
 예제1)
