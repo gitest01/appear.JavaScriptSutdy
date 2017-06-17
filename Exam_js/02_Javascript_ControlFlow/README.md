@@ -31,6 +31,28 @@ function funcScope2(){
 funcScope();
 funcScope2();
 ```
+
+#### 안티패턴
+```js
+// 모든 곳에서 공유되는 전역변수 --> 해결 : 네임스페이스 패턴 , 즉시실행
+const myGlobal = 'Hello';
+console.log(myGlobal); // Hello
+console.log(window.myGlobal);
+console.log(window['myGlobal']);
+console.log(this.myGlobal);
+
+// 암묵적 전역변수
+function sum(num1, num2){
+  result = num1 + num2; // 전역변수 .. 나도 모르는사이에 선언되어 계속 남아있을 수 도 있다...
+  return result
+}
+
+// 연속 할당
+function foo(){
+  const a = b = 0; // a는 지역변수 일테지만 b는 전역변수로 빠져버린다..  왜 ?? 평가가 오른쪽에서 왼쪽으로 이루어지기 떄문에 b = 0 -> const a = 0;
+}
+```
+
 ### 조건문
 #### Boolean
 비교 연산의 결과로 참(true)이나 거짓(false)을 얻을 수 있다. 숫자와 문자처럼 언어에서 제공하는 데이터 형이다. 이를 Boolean(불린)이라고한다.
@@ -187,6 +209,21 @@ if (obj) {
   // 요소가 존재하지 않음 : 필요한 작업을 수행
 }
 ```
+#### 안티패턴 
+```js
+// for 루프
+for(let i = 0; i < arr.length; i++){ 
+   // 루프순회시 마다 배열의 length 에 접근한다. 이경우 만약 arr가 아닌 HTML Collection이라면 이때문에 코드가 느려질 수 있다.
+}
+// -> 해결 length 캐싱
+for(i = 0, maxCount = arr.length; i < maxCount ; i++){ 
+   // length를 캐시해놓고 사용 , ++,-- 보단 i += 1 을 선호
+}
+```
+```js
+if(a==b) || for(var i=0;i<10;i++) ==> if(a == b) || for(var i = 0; i < 10; i++)
+```
+
 #### 예제
 예제1)
 라이언은 카카오중학교 학생이다.    
