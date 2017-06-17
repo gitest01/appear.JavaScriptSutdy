@@ -7,10 +7,16 @@
  */
 var star = '';
 var num = 5;
-for(var i = 0; i <= num; i++){
-    star += '*'+' '+' '
-    console.log(
-        star
-    );
+// for(var i = 0; i <= num; i++){
+//     star += '*'+' '+' '
+//     console.log(star);
+//
+// }
 
+for(var i = 0; i <= num; i++){
+    for(var j = 5; j > i; j--){
+        star += '*'
+
+    }
+    console.log(star);
 }

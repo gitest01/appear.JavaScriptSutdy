@@ -9,7 +9,7 @@
 
 
 
-    <title>마진병합</title>
+    <title>position</title>
 
     <style>
         @charset "utf-8";
@@ -34,27 +34,24 @@
         .show{display:block}
         .hide{display:none}
 
-        .test_01{width:600px;margin-bottom:50px}
-        .test_0101{height:300px}
-        .test_02{width:600px;margin-top:100px}
-        .test_0201{height:300px}
-        .test_wrap{overflow:hidden;width:600px}
+
+        .test_wrap{overflow:hidden;width:600px;margin:0 auto}
+        .test_wrap .box_01{width:100%;height:300px;background-color:#B7477D}
+        .test_wrap .box_02{width:100%;height:300px;margin-top:100px;background-color:#3cb0fd}
+        .test_wrap .box_inner{width:200px;height:200px;background-color:#f78a09}
 
     </style>
 </head>
 <body>
     <div class="test_wrap">
-        <span class="inline inline_01">asda<span style="color:red">dasd</span>s</span>
-        <span class="inline inline_02">asd</span>
+        <div class="box_01">
+
+        </div>
+        <div class="box_02">
+            <div class="box_inner"></div>
+            <span>aaaaa</span><span>bbb</span>
+        </div>
     </div>
-
-    <div>
-
-    </div>
-    <div>
-    </div>
-
-
 
 
 

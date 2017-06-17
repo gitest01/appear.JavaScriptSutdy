@@ -15,3 +15,4 @@ var naver = new phone('navy',2016,360);
 var daum = new phone('kakao',2016,375);
 
 console.log(daum);
+
