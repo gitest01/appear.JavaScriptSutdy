@@ -3,15 +3,17 @@
     "ecmaVersion": 5,
     "sourceType": "module"
   },
-  "extends": "airbnb-base",
+  "extends": "",
   "env": { // 테스팅
     "browser": true,
     "node": true,
   },
   "rules": { // http://eslint.org/docs/rules/
+    "semi": ["error", "always"],
+    "quotes": ["error", "double"],
     "max-length": 1 // 0으로 설정하면 에러 검출 X , 1 = 경고 , 2 = 에러
   },
-  "plugins": ['import'], // 플러그인
+  "plugins": ["import"], // 플러그인
   "globals": { // 전역 변수 처리
     "jQuery": true,
     "$": true

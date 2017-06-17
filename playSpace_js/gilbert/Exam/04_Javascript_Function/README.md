@@ -214,7 +214,7 @@ console.log(square.__proto__ === square.prototype);   // false
 console.log(square.prototype.constructor === square); // true ②
 console.log(square.__proto__.constructor === square.prototype.constructor); // false
 ```
-![Javascrt Prototype](./image.jpg)
+![Javascrt Prototype](image.jpg)
 
 
 
