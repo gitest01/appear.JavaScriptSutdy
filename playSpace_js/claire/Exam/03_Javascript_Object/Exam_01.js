@@ -36,7 +36,7 @@ person.getName();
 delete person.name;
 console.log(person.name);
 
-if (person.name == undefined){ // if문 실행하기 위해서는 항상 true, 그러므로 false 앞에 ! 를 붙여 true 로 만들어 준다. '!person.name'
+if (person.name == undefined){
     person.name = 'space';
 }
 console.log(person);
