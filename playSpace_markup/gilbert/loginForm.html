@@ -21,9 +21,10 @@
         address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal}
         .screen_out{overflow:hidden;position:absolute;width:0;height:0;line-height:0;text-indent:-9999px}
 
+        /*메인 버튼*/
         .main_wrap .login_box{ width: 80%; height: 100px; overflow: hidden; margin: 40% auto 10%; padding: 5%;}
         .main_wrap .login_box .input_box { width: 70%; float: left;}
-        .main_wrap .login_box .input_box .input_area{ width: 100%; height: 50px; background-color: #ff8900;}
+        .main_wrap .login_box .input_box .input_area{ width: 100%; height: 50px;}
         .main_wrap .login_box .input_box .input_area:first-child{ margin-bottom: 3%}
         .main_wrap .login_box .input_box input {width: 100%; height: 100%; border: 1px solid #ffdddd}
         .main_wrap .login_box .login_btn { width: 27%; float: right; background-color: #ffcc3d; line-height: 107px;}
@@ -38,18 +39,21 @@
 <body>
 <div class="main_wrap">
     <div class="login_box">
-        <form>
+        <form method="post" action="">
+        <fieldset>
+        <legend>로그인</legend>
         <div class="input_box">
             <div class="input_area id">
-                <label for="id" class="screen_out"></label>
+                <label for="id" class="screen_out">아이디</label>
                 <input type="text" id="id">
             </div>
             <div class="input_area pw">
-                <label for="pw" class="screen_out"></label>
+                <label for="pw" class="screen_out">비밀번호</label>
                 <input type="text" id="pw">
             </div>
         </div>
-        <button class="login_btn">로그인</button>
+        <button class="login_btn" type="submit">로그인</button>
+        </fieldset>
         </form>
     </div>
     <div class="socal_login_box">
@@ -57,8 +61,6 @@
         <a href="javascript:;" class="socal_btn facebook"> 페이스북 로그인 </a>
         <a href="javascript:;" class="socal_btn naver"> 네이버 로그인 </a>
     </div>
-
-
 </div>
 </body>
 </html>
