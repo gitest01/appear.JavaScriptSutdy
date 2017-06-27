@@ -2,8 +2,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>마진병합</title>
-
+    <title>Title</title>
     <style>
         @charset "utf-8";
         body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,button{margin:0;padding:0}
@@ -26,9 +25,112 @@
         .screen_out{overflow:hidden;position:absolute;width:0;height:0;line-height:0;text-indent:-9999px}
         .show{display:block}
         .hide{display:none}
+
+        .chat_wrap{
+            width: 300px;
+            border : 1px solid black;
+        }
+        .chat_wrap .chat_head{
+            width: 100%;
+            background-color: #118eff;
+            overflow: hidden;
+        }
+        .chat_wrap .chat_head .chat_head_img{
+            width: 40px;
+            height: 40px; /* 높이 값을 줘야되나 .. */
+            margin: 5px;
+            float: left;
+        }
+        .chat_wrap .chat_head .chat_head_img img{
+            width: 100%;
+            height: 100%;
+            border-radius : 20px;
+        }
+        .chat_wrap .chat_head .chat_head_name{
+            margin-top: 5px;
+            font-size: 25px;
+            color : white;
+            font-weight: bold;
+        }
+        .chat_wrap .chat_cont{
+
+            overflow-y: scroll;
+            width: 100%;
+            height: 200px;
+            background-color: deeppink;
+        }
+        .chat_wrap .chat_cont .chat_cont_left{
+            margin: 10px 0 0 10px;
+            width: 70%;
+            background-color: #f4fdfd;
+        }
+        .chat_wrap .chat_cont .chat_cont_right{
+            margin: 10px 0 0 75px;
+            width: 70%;
+            background-color: #f4fdfd;
+        }
+        .chat_wrap .chat_cont .chat_cont_head {
+            height: 20px;
+            padding-left: 5px;
+            font-size: 15px;
+        }
+        .chat_wrap .chat_cont .chat_cont_cont {
+            height: auto;
+            padding-left: 5px;
+        }
+        .chat_wrap .chat_cont .chat_cont_footer{
+            text-align: right;
+            padding-right: 7px;
+            font-size: 13px;
+            height: 20px;
+        }
+        .chat_wrap .chat_footer{
+            position: relative;
+            width: 100%;
+            height: 25px;
+            background-color: lightcoral;
+        }
+     
+
     </style>
 </head>
 <body>
-
+    <div class="chat_wrap">
+        <div class="chat_head">
+            <div class="chat_head_img">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcd_e_iwDysTobHrtNYUIiWeGi-2BzfQcM6RhIpmDtmk4V62weIQe9i8c" alt="">
+            </div>
+            <div class="chat_head_name">고석진</div>
+        </div>
+        <div class="chat_cont">
+            <div class="chat_cont_left">
+                <div class="chat_cont_head">고석진</div>
+                <div class="chat_cont_cont">
+                    안녕하세요 날씨가 참 좋군요
+                    안녕하세요 날씨가 참 좋군요
+                    안녕하세요 날씨가 참 좋군요
+                    안녕하세요 날씨가 참 좋군요
+                </div>
+                <div class="chat_cont_footer">
+                    2017-06-18 21:18 PM
+                </div>
+            </div>
+            <div class="chat_cont_right">
+                <div class="chat_cont_head">고석진</div>
+                <div class="chat_cont_cont">
+                    안녕하세요 날씨가 참 좋군요
+                    안녕하세요 날씨가 참 좋군요
+                    안녕하세요 날씨가 참 좋군요
+                    안녕하세요 날씨가 참 좋군요
+                </div>
+                <div class="chat_cont_footer">
+                    2017-06-18 21:18 PM
+                </div>
+            </div>
+        </div>
+        <div class="chat_footer">
+           <input type="text"><button>전송</button>
+        </div>
+    </div>
 </body>
 </html>

@@ -1,4 +1,4 @@
-# Javascript 교육자료
+# Javascript Study
 > 작업시  
 ```text
 본인 브랜치 안에 폴더를 생성하여 새로 작업 (Ex. master -> user_branch(new Branch) 

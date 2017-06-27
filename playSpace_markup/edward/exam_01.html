@@ -9,7 +9,7 @@
 
 
 
-    <title>마진병합</title>
+    <title>position</title>
 
     <style>
         @charset "utf-8";
@@ -33,28 +33,70 @@
         .screen_out{overflow:hidden;position:absolute;width:0;height:0;line-height:0;text-indent:-9999px}
         .show{display:block}
         .hide{display:none}
+        /*input[type="checkbox"]{-webkit-appearance:none}*/
 
-        .test_01{width:600px;margin-bottom:50px}
-        .test_0101{height:300px}
-        .test_02{width:600px;margin-top:100px}
-        .test_0201{height:300px}
-        .test_wrap{overflow:hidden;width:600px}
 
+        .test_wrap{overflow:hidden;width:600px;margin:0 auto}
+        .test_wrap .box_01{width:100%;height:300px;background-color:#B7477D}
+        .test_wrap .box_02{width:100%;height:300px;margin-top:100px;background-color:#3cb0fd}
+        .test_wrap .box_inner{width:200px;height:200px;background-color:#f78a09}
+
+
+        .login_box{width:300px;height:200px;padding:20px 20px 0;border:1px solid #666;background-color:#fff}
+        .login_top{overflow:hidden}
+        .login_box .login_left{float:left;width:200px}
+        .login_box .login_right{float:right;width:180px;}
+        .login_box .login_inputbox{float:left;width:150px}
+        .login_box .login_inputbtn{float:left;width:50px}
+        .login_box .login_btn{width:100%;height:70px;background-color:green;color:#fff}
+        .login_box .input_style{width:138px;height:33px;padding-left:10px;border:1px solid #eee}
+        .login_box .input_style:first-child{height:34px;border-bottom:none}
     </style>
 </head>
 <body>
     <div class="test_wrap">
-        <span class="inline inline_01">asda<span style="color:red">dasd</span>s</span>
-        <span class="inline inline_02">asd</span>
+        <div class="login_box">
+            <div class="login_top">
+                <div class="login_left">
+                    <div class="login_inputbox">
+                        <form>
+                            <fieldset>
+                                <legend class="screen_out">로그인창</legend>
+                                <input type="text" title="아이디" placeholder="아이디" class="input_style">
+                                <label for="inputPass" class="screen_out">비밀번호</label>
+                                <input type="password" id="inputPass" placeholder="비밀번호" class="input_style">
+
+                            </fieldset>
+
+                            <fieldset>
+
+                            </fieldset>
+
+                            <fieldset>
+
+                            </fieldset>
+                        </form>
+                        <input type="radio" id="aaa1" name="aa">
+                        <input type="radio" id="aaa2" name="aa">
+                        <input type="radio" id="aaa3" name="aa">
+
+
+                    </div>
+                    <div class="login_inputbtn">
+                        <button class="login_btn">로그인</button>
+                    </div>
+
+                </div>
+                <div class="login_right">
+
+                </div>
+            </div>
+            <div class="login_bottom">
+                <input type="checkbox" id="che" class="login_check">
+                <label for="che" class="txt_state">로그인 상태 유지</label>
+            </div>
+        </div>
     </div>
-
-    <div>
-
-    </div>
-    <div>
-    </div>
-
-
 
 
 
