@@ -14,6 +14,7 @@
 
 ### Plugins
 1. git Tree : https://chrome.google.com/webstore/detail/octotree/bkhaagjahfmjljalopjnoealnfndnagc?hl=ko
+2. postman : https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop
 
 ## 목차 참조 (http://poiemaweb.com/)
 #### 1. Javscript introdution
