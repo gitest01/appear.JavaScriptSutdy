@@ -16,6 +16,9 @@
 1. git Tree : https://chrome.google.com/webstore/detail/octotree/bkhaagjahfmjljalopjnoealnfndnagc?hl=ko
 2. postman : https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop
 
+### TIP
+1. Intellij Live Template : https://uncle-bae.blogspot.kr/2015/09/intellij-live-template.html
+
 ## 목차 참조 (http://poiemaweb.com/)
 #### 1. Javscript introdution
 #### 2. Javascript Control Flow
