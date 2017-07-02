@@ -9,7 +9,6 @@
 // 고양이 삭제 (해당 번째의 고양이를 삭제)
 // 고양이 이름 수정
 
-
 var catShop = [];
 var cat = {name:'mimi'};
 var cat2 = {name:'dodo'};
@@ -25,7 +24,7 @@ catShop.forEach(function(value,index){
 
 catShop[0].name = 'sisi';
 console.log(catShop);
-//
+
 // catShop.splice(0,);
 // console.log(catShop);
 
