@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>Hello HTML</title>
+    <style>
+        body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,button{margin:0;padding:0}
+        fieldset,img{border:0 none}
+        dl,ul,ol,menu,li{list-style:none}
+        blockquote, q{quotes: none}
+        blockquote:before, blockquote:after,q:before, q:after{content:'';content:none}
+        input,select,textarea,button{vertical-align:middle}
+        input::-ms-clear{display:none}
+        button{border:0 none;background-color:transparent;cursor:pointer}
+        body{background:#fff}
+        body,th,td,input,select,textarea,button{font-size:12px;line-height:1.5;font-family:'돋움',dotum,sans-serif;color:#333} /* color값은 디자인가이드에 맞게사용 */
+        a{color:#333;text-decoration:none}
+        a:active, a:hover{text-decoration:underline}
+        a:active{background-color:transparent}
+        address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal}
+        .screen_out{overflow:hidden;position:absolute;width:0;height:0;line-height:0;text-indent:-9999px;}
+        .main_wrap {background-color: #60bdff;}
+        .main_wrap .header_wrap{overflow: hidden; padding:6%; background-color: #ffcc3d;}
+        .main_wrap .header_wrap .header_inputbox{width: 32%; height: 60px; float:left; margin-left: 1%; background-color:#ffcc3d;}
+        .main_wrap .header_wrap .header_inputbox .input_box{width: 95%; height: 97%; text-align: center; font-size: 16px; font-family: '돋움', dotum, sans-serif;}
+        .main_wrap .body_wrap {overflow: hidden; padding: 4%;}
+        .main_wrap .body_wrap .body_left{ width: 48%; height: 300px; overflow-y: scroll; float: left; background-color: #f8b706;}
+        .main_wrap .body_wrap .body_left .item_name{ width: 100%; font-size: 15px; padding: 2px 0 2px 0; text-align: center;}
+        .main_wrap .body_wrap .body_right{ width: 48%; height: 300px; float: right; background-color: #ffc0e3}
+        .main_wrap .body_wrap .body_right .intorduce_item{ padding: 6px; text-align: center;}
+        .main_wrap .body_wrap .body_right .intorduce_item .item_title{ font-size: 20px; font-weight: bold}
+        .main_wrap .body_wrap .body_right .intorduce_item .item_desc{ font-size: 16px;}
+    </style>
+</head>
+<body>
+<div class="main_wrap">
+    <div class="header_wrap">
+      <form action="" method="post">
+          <fieldset>
+              <legend class="screen_out">입력창</legend>
+              <div class="header_inputbox">
+                  <label class="screen_out">NAME</label>
+                  <input type="text" class="input_box" placeholder="NAME" title="name">
+              </div>
+              <div class="header_inputbox">
+                  <label class="screen_out">AGE</label>
+                  <input type="text" class="input_box" placeholder="AGE" title="age">
+              </div>
+              <div class="header_inputbox">
+                  <label class="screen_out">ETC</label>
+                  <input type="text" class="input_box" placeholder="ETC" title="etc">
+              </div>
+          </fieldset>
+      </form>
+    </div>
+    <div class="body_wrap">
+        <div class="body_left body_item"></div>
+        <div class="body_right body_item">
+            <div class="intorduce_item">
+                <dl>
+                    <dt class="item_title">이름</dt>
+                    <dd class="item_desc">쿄쿄</dd>
+                    <dt class="item_title">나이</dt>
+                    <dd class="item_desc">9999</dd>
+                    <dt class="item_title">특징</dt>
+                    <dd class="item_desc">안녕안녕안녕</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+  (function(){
+    var init = function(){
+      var windowHeight = window.innerHeight;
+      var windowWidth = window.innerWidth;
+
+      var mainWrap = document.getElementsByClassName('main_wrap');
+      mainWrap[0].style.width = windowWidth+'px';
+      mainWrap[0].style.height = windowHeight+'px';
+      var bodyItem = document.querySelectorAll('.body_item');
+      [].forEach.call(bodyItem, function(item){
+        item.style.height = (windowHeight - 130) +'px';
+      });
+    };
+
+    var Cat = (function(){
+      var Cat = function(name, age, etc){
+        this.name = name;
+        this.age = age;
+        this.etc = etc;
+      };
+      Cat.prototype.getName = function(){
+        return this.name;
+      };
+      return Cat;
+    })();
+
+    var CatShop = (function(){
+      var CatShop = function(){
+        this.catList = [];
+        this.context = document.getElementsByClassName('body_left');
+      };
+      CatShop.prototype.addCat = function(cat){
+        this.catList.push(cat);
+      };
+      CatShop.prototype.render = function(){
+        var that = this;
+        this.catList.forEach(function(item, i){
+          var div = document.createElement('div');
+          var fragment = document.createDocumentFragment();
+          var textNode = text = document.createTextNode(item.getName());
+          div.appendChild(textNode);
+          div.className = 'item_name';
+          fragment.appendChild(div);
+          that.context[0].appendChild(fragment);
+        });
+      };
+      return CatShop;
+    })();
+    var Shop = new CatShop();
+    Shop.addCat(new Cat('Hello', 25, 'bulbulbulb'));
+    Shop.addCat(new Cat('Hello', 25, 'bulbulbulb'));
+    Shop.addCat(new Cat('Hello', 25, 'bulbulbulb'));
+    Shop.addCat(new Cat('Hello', 25, 'bulbulbulb'));
+    Shop.render();
+
+    init();
+  })(window);
+</script>
+</body>
+</html>
+
