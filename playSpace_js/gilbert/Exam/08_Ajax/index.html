@@ -42,16 +42,16 @@
 <script>
   //json-server --watch db.json
   var ctx  = $('.content_wrap');
-  var maxHeight, ctxScrollTop, ctxScrollHeight ,color;
+  var $maxHeight, $ctxScrollTop, ctxScrollHeight ,color;
   var spiner = $('.spiner');
 
   ctx.on('scroll', function(e){
-    maxHeight= $(this).height();
-    ctxScrollTop = $(this).scrollTop();
-    ctxScrollHeight = this.scrollHeight;
-    color = Math.floor((Math.random() * 999999) + 1);
+    $maxHeight= $(this).height();
+    $ctxScrollTop = $(this).scrollTop();
+    ctxScrollHeight = this.scrollHeight; 
+    color = Math.floor((Math.random() * 999999) + 1); // 랜덤 color
 
-    if(ctxScrollHeight - ctxScrollTop === maxHeight){
+    if(ctxScrollHeight - $ctxScrollTop === $maxHeight){
       $.ajax({
         type : 'GET',
         dataType : 'json',
@@ -66,8 +66,8 @@
             console.error(err);
           }
           data.forEach(function(value){
-            console.log(value);
-            ctx.append("<div class='item' style='background-color: #"+color+"'>"+value.name+"</div>");
+            var div = "<div class='item' style='background-color: #"+color+"'>"+value.name+"</div>";
+            ctx.append(div);
           });
           spiner.hide();
         }, 1000);
