@@ -151,8 +151,11 @@ first(3);
 
 #### Heap
 동적으로 생성된 객체(인스턴스)는 힙(Heap)에 할당된다. 대부분 구조화되지 않는 ‘더미’같은 메모리 영역을 `heap`라고 부른다.
+#### Event Loop
+Call Stack내에서 현재 실행중인 task가 있는지 그리고 Event Queue에 task가 있는지 반복하여 확인한다.     
 
 #### Task Queue (Event Queue)
+비동기 처리 함수의 콜백 함수, 비동기식 이벤트 핸들러, Timer 함수(setTimeout(), setInterval())가 보관되는 영역으로 이벤트 루프(Event Loop)에 의해 특정 시점(Call Stack이 비어졌을 때)에 순차적으로 Call Stack으로 이동되어 실행된다.    
 자바스크립트의 런타임환경에서는 처리해야 하는 Task들을 임시 저장하는 대기 큐가 존재한다.     
 그 대기 큐를 Task Queue or Event Queue라고 한다.       
 Call Stack이 비어졌을 떄 먼저 대기열에 들어온 순서대로 수행       

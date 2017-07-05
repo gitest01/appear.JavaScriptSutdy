@@ -8,9 +8,9 @@
 #### 5. Javascript Array 
 #### 6. Javscript DOM
 #### 7. Javscript Event
-#### 8. Jqeury / AJax
+#### 8. Jqeury / AJax     
  
-> 작업시  
+### 작업시  
 ```text
 본인 브랜치 안에 폴더를 생성하여 새로 작업 (Ex. master -> user_branch(new Branch) 
 -> playSpace 개인폴더생성 (util은 공통으로 사용하니 개인폴더로 복사 X
@@ -26,14 +26,15 @@
 ### Plugins
 1. git Tree : https://chrome.google.com/webstore/detail/octotree/bkhaagjahfmjljalopjnoealnfndnagc?hl=ko
 2. postman : https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop
+3. Allow-Control-Allow-Origin : https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=ko
 
 ### TIP
 1. Intellij Live Template : https://uncle-bae.blogspot.kr/2015/09/intellij-live-template.html
 
 ## 참고사이트 
-1. http://poiemaweb.com
-2. https://www.zerocho.com/category/Javascript
-3. https://developer.mozilla.org/ko
-4. http://api.jquery.com
+1. [poiemaweb](http://poiemaweb.com)
+2. [zerocho](https://www.zerocho.com/category/Javascript)
+3. [mozilla](https://developer.mozilla.org/ko)
+4. [jquery API](http://api.jquery.com)
 
 
