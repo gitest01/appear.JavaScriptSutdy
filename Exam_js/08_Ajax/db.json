@@ -4,6 +4,6 @@
     { "id": 2, "name": "brad", "author": "frontEnd" },
     { "id": 3, "name": "kitty", "author": "frontEnd" },
     { "id": 4, "name": "claire", "author": "frontEnd" },
-    { "id": 5, "name": "gilbert", "author": "frontEnd" },
+    { "id": 5, "name": "gilbert", "author": "frontEnd" }
   ]
 }

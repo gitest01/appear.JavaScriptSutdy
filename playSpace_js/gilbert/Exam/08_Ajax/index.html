@@ -48,7 +48,7 @@
   ctx.on('scroll', function(e){
     $maxHeight= $(this).height();
     $ctxScrollTop = $(this).scrollTop();
-    ctxScrollHeight = this.scrollHeight; 
+    ctxScrollHeight = this.scrollHeight;
     color = Math.floor((Math.random() * 999999) + 1); // 랜덤 color
 
     if(ctxScrollHeight - $ctxScrollTop === $maxHeight){

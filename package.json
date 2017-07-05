@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/appear/appear.JavaScriptSutdy/issues"
   },
-  "homepage": "https://github.com/appear/appear.JavaScriptSutdy#readme"
+  "homepage": "https://github.com/appear/appear.JavaScriptSutdy#readme",
+  "devDependencies": {
+    "jquery": "^3.2.1"
+  }
 }

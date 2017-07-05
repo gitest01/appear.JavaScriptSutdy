@@ -1,4 +1,15 @@
 # Javascript Study
+
+## 목차
+#### 1. Javscript introdution
+#### 2. Javascript Control Flow
+#### 3. Javascript Object
+#### 4. Javascript Function / Prototype / scope / Execution Context / this / Closure
+#### 5. Javascript Array 
+#### 6. Javscript DOM
+#### 7. Javscript Event
+#### 8. Jqeury / AJax
+ 
 > 작업시  
 ```text
 본인 브랜치 안에 폴더를 생성하여 새로 작업 (Ex. master -> user_branch(new Branch) 
@@ -19,16 +30,10 @@
 ### TIP
 1. Intellij Live Template : https://uncle-bae.blogspot.kr/2015/09/intellij-live-template.html
 
-## 목차 참조 (http://poiemaweb.com/)
-#### 1. Javscript introdution
-#### 2. Javascript Control Flow
-#### 3. Javascript Object
-#### 4. Function / Prototype / scope / Immutabillty 
-#### 5. Array 
-#### 6. Execution Context / this / Closure
-#### 7. Built-in Object (Number, Math, Date, String, RegExp)
-#### 8. Javscript DOM
-#### 9. Javscript Event
- 
+## 참고사이트 
+1. http://poiemaweb.com
+2. https://www.zerocho.com/category/Javascript
+3. https://developer.mozilla.org/ko
+4. http://api.jquery.com
 
 
