@@ -1,4 +1,6 @@
 ## Ajax (Asynchronous JavaScript and XML)
+Ajax(Asynchronous JavaScript and XML)는 자바스크립트를 이용해서 비동기적(Asynchronous)으로 서버와 브라우저가 데이터를 교환할 수 있는 통신 방식을 의미한다.    
+브라우저에서 웹페이지를 요청하거나 링크를 클릭하면 화면 전환이 발생한다. 이것은 브라우저와 서버와의 통신에 의한 것이다.
 
 ### XMLHttpRequest
 클라이언트에서 서버 방향으로의 비동기 통신은 XHR(XMLHttpRequest)의 등장으로 실현됐습니다.   
@@ -37,7 +39,8 @@ HTTP 헤더에 추가적으로 정보를 추가하여 브라우저와 서버가 
 
 ### 2. Jsonp
 script 태그의 원본 주소에 대한 제약이 존재하지 않는데 이것을 이용하여 다른 도메인의 서버에서 데이터를 수집하는 방법이다. 자신의 서버에 함수를 정의하고 다른 도메인의 서버에 얻고자 하는 데이터를 인수로 하는 함수 호출문을 로드하는 것이다.
-![Ajax02]('./Ajax02.png)
+
+![Javascrt Ajax02](./Ajax02.png)
 ```js
    <script>
     function showTours(data) { // callback으로 data를 받아오겠다고 등록
