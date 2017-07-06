@@ -1,13 +1,33 @@
 ## Event
 이벤트(event)는 어떤 사건을 의미한다. 브라우저는 이벤트를 감지할 수 있으며 이벤트 발생 시에는 통지해 준다
-
-### Basic
+      
 이벤트가 발생하면 그에 맞는 반응을 하여야 한다. 이를 위해 이벤트는 일반적으로 함수에 연결되며 그 함수는 이벤트가 발생하기 전에는 실행되지 않다가 이벤트가 발생되면 실행된다. 이 함수를 이벤트 핸들러라 하며 이벤트에 대응하는 처리를 기술한다.
 ```js
 var elem = document.getElementById('myButton');
 elem.addEventListener('click', function() {
   console.log('Clicked!');
 });
+```
+
+### 이벤트전파
+계층적 구조의 포함되어 있는 특정 엘리먼트에 이벤트가 발생할 경우, 연쇄적인 반응이 일어나는데 이를 이벤트 전파라고 한다.
+![이벤트 전파]('./image.png')
+#### 이벤트 버블링
+최상위 엘리먼트에서 대상 엘리먼트까지 이벤트가 전파되는 것을 버블링(Bubbling)
+
+#### 이벤트 캡쳐링
+이벤트 대상 엘리먼트를 시작으로 최하위 엘리먼트까지 이벤트가 전파가 되는 것을 캡쳐링(Capturing)
+
+### Event.preventDefault
+폼을 submit하거나 링크를 클릭하면 다른 페이지로 이동하게 된다. 이러한 요소가 가지고 있는 기본 동작을 중단시키기 위한 메서드가 preventDefault()이다.
+
+### Event.stopPropagation()
+어느 한 요소를 이용하여 이벤트를 처리한 후 이벤트가 부모 요소로 버블링되는 것을 중단시키기 위한 메서드이다.
+
+### Event Listener
+addEventListener 함수를 이용하여 대상 요소에 이벤트를 바인딩하고 해당 이벤트가 발생했을 때 실행될 콜백 함수를 지정한다.
+```js
+element.addEventListener('evt', callback, bool);
 ```
 
 ### UI Event 

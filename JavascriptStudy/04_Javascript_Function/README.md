@@ -214,7 +214,6 @@ console.log(square.__proto__ === square.prototype);   // false
 console.log(square.prototype.constructor === square); // true ②
 console.log(square.__proto__.constructor === square.prototype.constructor); // false
 ```
-![Javascrt Prototype](./image.jpg)
 
 #### Prototype chain
 자바스크립트는 특정 객체의 프로퍼티나 메서드에 접근하려고 할 때 해당 객체에 접근하려는 프로퍼티 또는 메서드가 없다면 [[Prototype]] 프로퍼티가 가리키는 링크를 따라 자신의 부모 역할을 하는 프로토타입 객체의 프로퍼티나 메서드를 차례대로 검색한다

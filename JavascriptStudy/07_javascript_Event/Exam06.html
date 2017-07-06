@@ -23,27 +23,24 @@
     </style>
 </head>
 <body>
-
-<h2>이 방식은 더 이상 사용되지 않으며 사용해서도 않된다. 오래된 코드에서 간혹 이 방식을 사용한 것이 있기 때문에 알아둘 필요는 있다. HTML과 Javascript는 분리되어야 한다 </h2>
-
-<div class="foo" id="foo" style="width: 100px; height: 100px; background-color: #f78a09" onclick="onClick()"></div>
-<div class="foo2" id="foo2" style="width: 100px; height: 100px; background-color: #f78a09" onclick="onClick()"></div>
-
-
-<script>
-    function onClick(){
-      alert('HEllO');
-    }
-
-    // 아래방법을 선호
-    var btn = document.getElementById('foo2');
-    btn.onclick = function() {
-      alert('foo2 clicked!');
-    }
-
-    // 더 선호
-    btn.addEventListener('click', function(){} , true);
-</script>
+<ul id="parent-list">
+    <li id="post-1">Item 1</li>
+    <li id="post-2">Item 2</li>
+    <li id="post-3">Item 3</li>
+    <li id="post-4">Item 4</li>
+    <li id="post-5">Item 5</li>
+    <li id="post-6">Item 6</li>
+</ul>
+<div id="msg">
+    <script>
+      document.getElementById("parent-list").addEventListener("click", function(e) {
+        console.log(e.target, e.target.nodeName);
+        if(e.target && e.target.nodeName == "LI") {
+          console.log("li#" + e.target.id + " was clicked!");
+          document.getElementById("msg").innerHTML = "li#" + e.target.id + " was clicked!";
+        }
+      });
+    </script>
 </body>
 </html>
 
