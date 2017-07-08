@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>Hello HTML</title>
+    <style>
+        body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,button{margin:0;padding:0}
+        fieldset,img{border:0 none}
+        dl,ul,ol,menu,li{list-style:none}
+        blockquote, q{quotes: none}
+        blockquote:before, blockquote:after,q:before, q:after{content:'';content:none}
+        input,select,textarea,button{vertical-align:middle}
+        input::-ms-clear{display:none}
+        button{border:0 none;background-color:transparent;cursor:pointer}
+        body{background:#fff}
+        body,th,td,input,select,textarea,button{font-size:12px;line-height:1.5;font-family:'돋움',dotum,sans-serif;color:#333} /* color값은 디자인가이드에 맞게사용 */
+        a{color:#333;text-decoration:none}
+        a:active, a:hover{text-decoration:underline}
+        a:active{background-color:transparent}
+        address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal}
+        .screen_out{overflow:hidden;position:absolute;width:0;height:0;line-height:0;text-indent:-9999px}
+
+        .test_wrap {  position: relative;left: 50%;top:0;width: 600px;height: 300px;margin-left: -300px;}
+        .tbl_rank caption{font-size: 30px;font-weight: 500;background-color: #ffcc3d;color:#fff}
+        .tbl_rank { width: 100%; border-collapse: collapse; border-bottom: 1px solid #dddddd; text-align: center}
+        .tbl_rank th{padding:10px;border: 1px solid #dddddd;border-top-color: #f78a09;background-color: #f78a09;color: #fff;}
+        .tbl_rank td{padding:10px; border: 1px solid #dddddd; background-color: #ffcc3d;font-weight: 300}
+        .tbl_rank tbody tr td:first-child {background-color: #f78a09; color:#fff;}
+    </style>
+</head>
+<body>
+    <div class="test_wrap">
+        <table class="tbl_rank">
+            <caption>인기 순위표</caption>
+            <colgroup>
+                <col width="10%">
+                <col width="20%">
+                <col width="10%">
+                <col width="10%">
+                <col width="20%">
+                <col width="30%">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th scope="row">순위</th>
+                    <th scope="row">나이</th>
+                    <th scope="row">공격력</th>
+                    <th scope="row">인내심</th>
+                    <th scope="row">방어력</th>
+                    <th scope="row">인기도</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td colspan="2">25</td>
+                    <td>30</td>
+                    <td>28</td>
+                    <td>89</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td rowspan="2">25</td>
+                    <td>50</td>
+                    <td>30</td>
+                    <td colspan="2">28</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td rowspan="3">50</td>
+                    <td>30</td>
+                    <td>28</td>
+                    <td>89</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>25</td>
+                    <td colspan="3">50</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>50</td>
+                    <td>28</td>
+                    <td>89</td>
+                    <td>89</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+
