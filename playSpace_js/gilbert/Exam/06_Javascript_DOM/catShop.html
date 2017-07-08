@@ -25,9 +25,9 @@
         .main_wrap .header_wrap .header_inputbox{width: 32%; height: 60px; float:left; margin-left: 1%; background-color:#ffcc3d;}
         .main_wrap .header_wrap .header_inputbox .input_box{width: 95%; height: 97%; text-align: center; font-size: 16px; font-family: '돋움', dotum, sans-serif;}
         .main_wrap .body_wrap {overflow: hidden; padding: 4%;}
-        .main_wrap .body_wrap .body_left{ width: 48%; height: 300px; overflow-y: scroll; float: left; background-color: #ffcc3d;}
+        .main_wrap .body_wrap .body_left{ width: 48%; height: 300px; overflow-y: scroll; float: left; background-color: #f8b706;}
         .main_wrap .body_wrap .body_left .item_name{ width: 100%; font-size: 15px; padding: 2px 0 2px 0; text-align: center;}
-        .main_wrap .body_wrap .body_right{ width: 48%; height: 300px; float: right; background-color: #ffcc3d}
+        .main_wrap .body_wrap .body_right{ width: 48%; height: 300px; float: right; background-color: #ffc0e3}
         .main_wrap .body_wrap .body_right .intorduce_item{ padding: 6px; text-align: center;}
         .main_wrap .body_wrap .body_right .intorduce_item .item_title{ font-size: 20px; font-weight: bold}
         .main_wrap .body_wrap .body_right .intorduce_item .item_desc{ font-size: 16px;}
@@ -36,23 +36,23 @@
 <body>
 <div class="main_wrap">
     <div class="header_wrap">
-      <form action="" method="post">
-          <fieldset>
-              <legend class="screen_out">입력창</legend>
-              <div class="header_inputbox">
-                  <label class="screen_out">NAME</label>
-                  <input type="text" class="input_box" placeholder="NAME" title="name">
-              </div>
-              <div class="header_inputbox">
-                  <label class="screen_out">AGE</label>
-                  <input type="text" class="input_box" placeholder="AGE" title="age">
-              </div>
-              <div class="header_inputbox">
-                  <label class="screen_out">ETC</label>
-                  <input type="text" class="input_box" placeholder="ETC" title="etc">
-              </div>
-          </fieldset>
-      </form>
+        <form action="" method="post">
+            <fieldset>
+                <legend class="screen_out">입력창</legend>
+                <div class="header_inputbox">
+                    <label class="screen_out">NAME</label>
+                    <input type="text" class="input_box" placeholder="NAME" title="name">
+                </div>
+                <div class="header_inputbox">
+                    <label class="screen_out">AGE</label>
+                    <input type="text" class="input_box" placeholder="AGE" title="age">
+                </div>
+                <div class="header_inputbox">
+                    <label class="screen_out">ETC</label>
+                    <input type="text" class="input_box" placeholder="ETC" title="etc">
+                </div>
+            </fieldset>
+        </form>
     </div>
     <div class="body_wrap">
         <div class="body_left body_item"></div>
@@ -60,17 +60,18 @@
             <div class="intorduce_item">
                 <dl>
                     <dt class="item_title">이름</dt>
-                    <dd class="item_desc">친칠라</dd>
+                    <dd class="item_desc">쿄쿄</dd>
                     <dt class="item_title">나이</dt>
                     <dd class="item_desc">9999</dd>
                     <dt class="item_title">특징</dt>
-                    <dd class="item_desc">키티를좋아함</dd>
+                    <dd class="item_desc">안녕안녕안녕</dd>
                 </dl>
             </div>
         </div>
     </div>
 </div>
 <script>
+  // 즉시실행
   (function(){
     var init = function(){
       var windowHeight = window.innerHeight;
@@ -84,49 +85,91 @@
         item.style.height = (windowHeight - 130) +'px';
       });
     };
-
-    var Cat = (function(){
-      var Cat = function(name, age, etc){
+    // Cat 1마리가 아닐수도있어요 100개
+    var Cat = (function(){ // 모듈패턴
+       var Cat = function(name, age, etc){
         this.name = name;
         this.age = age;
         this.etc = etc;
-      };
-      Cat.prototype.getName = function(){
-        return this.name;
-      };
-      return Cat;
+       };
+       Cat.prototype.getName = function(){
+         return this.name;
+       };
+       Cat.prototype.setName = function(name){
+         this.name = name;
+       };
+       return Cat;
     })();
 
+    // 고양이등록 ,고양이 검색, 고양이 삭제, render
     var CatShop = (function(){
-      var CatShop = function(){
-        this.catList = [];
-        this.context = document.getElementsByClassName('body_left');
+      var catList = []; // 이놈을 감추기위한 행위
+
+      var addCat = function(cat){
+        catList.push(cat);
       };
-      CatShop.prototype.addCat = function(cat){
-        this.catList.push(cat);
+      var getCatList = function(){
+        console.log(catList);
       };
-      CatShop.prototype.render = function(){
-        var that = this;
-        this.catList.forEach(function(item, i){
-          var div = document.createElement('div');
-          var fragment = document.createDocumentFragment();
-          var textNode = text = document.createTextNode(item.getName());
-          div.appendChild(textNode);
-          div.className = 'item_name';
-          fragment.appendChild(div);
-          that.context[0].appendChild(fragment);
+      var removeCat = function(name){
+        var index = searchCat(name);
+        index > -1 ? catList.splice(index, 1) : console.log('검색된 애가 없어요');
+      };
+      var searchCat = function(name){
+        var index = -1;
+
+        catList.forEach(function(value, i){
+          if(value.getName() === name){
+            index = i;
+          }
         });
+        return index;
       };
-      return CatShop;
+      var render = function(){
+        var context = document.querySelector('.body_left');
+        var fragment = document.createDocumentFragment();
+
+        if(!catList.length){ // 배열이 비었을때
+          var div = '<div class="item_name">고양이를 등록해주세요</div>';
+          context.innerHTML = div;
+          return false;
+        }
+        catList.forEach(function(cat, i){ // 1번째
+           var div = document.createElement('div');
+           var text = document.createTextNode(cat.getName());
+           div.className = 'item_name';
+           div.appendChild(text);
+           fragment.appendChild(div);
+        });
+        context.appendChild(fragment);
+      };
+
+      return {
+        add : addCat,
+        remove : removeCat,
+        search : searchCat,
+        getList : getCatList,
+        render : render
+      }
     })();
 
-    var Shop = new CatShop();
-    Shop.addCat(new Cat('Hello', 25, 'bulbulbulb'));
-    Shop.addCat(new Cat('Hello', 25, 'bulbulbulb'));
-    Shop.addCat(new Cat('Hello', 25, 'bulbulbulb'));
-    Shop.render();
+    var a = new Cat('캣1',1,'1');
+    var b = new Cat('캣2',1,'1');
+    var c = new Cat('캣3',1,'1');
+    var d = new Cat('캣4',1,'1');
+    var e = new Cat('캣5',1,'1');
+
+    CatShop.add(a);
+    CatShop.add(b);
+    CatShop.add(c);
+    CatShop.add(d);
+    CatShop.add(d);
+    CatShop.add(d);
+    CatShop.render();
+
     init();
-  })(window);
+  })();
+
 </script>
 </body>
 </html>
