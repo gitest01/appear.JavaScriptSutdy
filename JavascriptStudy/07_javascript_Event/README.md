@@ -12,7 +12,7 @@ elem.addEventListener('click', function() {
 ### 이벤트전파
 계층적 구조의 포함되어 있는 특정 엘리먼트에 이벤트가 발생할 경우, 연쇄적인 반응이 일어나는데 이를 이벤트 전파라고 한다.
  
-![event]('./image.png')
+![](image.png)
 
 #### 이벤트 버블링
 최상위 엘리먼트에서 대상 엘리먼트까지 이벤트가 전파되는 것을 버블링(Bubbling)
