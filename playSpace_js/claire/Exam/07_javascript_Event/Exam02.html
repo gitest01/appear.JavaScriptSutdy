@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>Hello HTML</title>
+    <style>
+        body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,button{margin:0;padding:0}
+        fieldset,img{border:0 none}
+        dl,ul,ol,menu,li{list-style:none}
+        blockquote, q{quotes: none}
+        blockquote:before, blockquote:after,q:before, q:after{content:'';content:none}
+        input,select,textarea,button{vertical-align:middle}
+        input::-ms-clear{display:none}
+        button{border:0 none;background-color:transparent;cursor:pointer}
+        body{background:#fff}
+        body,th,td,input,select,textarea,button{font-size:12px;line-height:1.5;font-family:'돋움',dotum,sans-serif;color:#333} /* color값은 디자인가이드에 맞게사용 */
+        a{color:#333;text-decoration:none}
+        a:active, a:hover{text-decoration:underline}
+        a:active{background-color:transparent}
+        address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal}
+        .screen_out{overflow:hidden;position:absolute;width:0;height:0;line-height:0;text-indent:-9999px}
+    </style>
+</head>
+<body>
+
+<h2>이 방식은 더 이상 사용되지 않으며 사용해서도 않된다. 오래된 코드에서 간혹 이 방식을 사용한 것이 있기 때문에 알아둘 필요는 있다. HTML과 Javascript는 분리되어야 한다 </h2>
+
+<div class="foo" id="foo" style="width: 100px; height: 100px; background-color: #f78a09"></div>
+<div class="foo2" id="foo2" style="width: 100px; height: 100px; background-color: #579df7"></div>
+
+
+<script>
+    var div = document.getElementById('foo');
+    div.addEventListener('click', function (e) {
+        console.log(e);
+        console.log('클릭됨');
+    });
+    function  print() {
+        console.log(this);
+    }
+    function  setColor() {
+        this.style.backgroundColor = '#000';
+    }
+
+    var  div2 = document.getElementById('foo2');
+    div2.addEventListener('click', function (e) {
+        print();
+    });
+
+</script>
+</body>
+</html>
+
