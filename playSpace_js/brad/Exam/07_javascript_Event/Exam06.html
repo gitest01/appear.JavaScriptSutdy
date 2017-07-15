@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>Hello HTML</title>
+    <style>
+        body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,button{margin:0;padding:0}
+        fieldset,img{border:0 none}
+        dl,ul,ol,menu,li{list-style:none}
+        blockquote, q{quotes: none}
+        blockquote:before, blockquote:after,q:before, q:after{content:'';content:none}
+        input,select,textarea,button{vertical-align:middle}
+        input::-ms-clear{display:none}
+        button{border:0 none;background-color:transparent;cursor:pointer}
+        body{background:#fff}
+        body,th,td,input,select,textarea,button{font-size:12px;line-height:1.5;font-family:'돋움',dotum,sans-serif;color:#333} /* color값은 디자인가이드에 맞게사용 */
+        a{color:#333;text-decoration:none}
+        a:active, a:hover{text-decoration:underline}
+        a:active{background-color:transparent}
+        address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal}
+        .screen_out{overflow:hidden;position:absolute;width:0;height:0;line-height:0;text-indent:-9999px}
+    </style>
+</head>
+<body>
+<div class="clickEvt">
+    <h2>Click</h2>
+    <div class="image_box" style="width: 100px;">
+        <h3>이미지영역</h3>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqq8VL4b8HQ_-eeAH5jmsIqGjX94Ei1Atlm970Pqc8SK1cE_1PjHidoA"
+             style="width: 100%;" class="thumb_img">
+    </div>
+    <div>
+        <h3>클릭영역</h3>
+        <div style="background-color: deeppink; width: 200px; height: 200px;" id="clickArea">
+
+        </div>
+        <div>
+            X좌표 : <span class="showX"></span>
+            Y좌표 : <span class="showY"></span>
+        </div>
+    </div>
+</div>
+<div class="select">
+    <h2>Select</h2>
+    <select>
+        <option value="클레어">클레어</option>
+        <option value="키티">키티</option>
+        <option vlaue="에드워드">에드워드</option>
+        <option value="빵야">빵야</option>
+    </select>
+    <div>
+        검색된 사람 : <span class="seletedView"></span>
+    </div>
+</div>
+<div class="keyBoard">
+    <h2>KeyBoard</h2>
+    <div>
+        <h3>회원가입 4글자이상 입력해주세요</h3>
+        <span><input type="text" title="ID" id="idInput"></span>
+        <span style="color: red" id="validateCheck"></span>
+    </div>
+    <div>
+        <h3>Focus</h3>
+        <span><input type="text" id="focus1"></span>
+        <span><input type="text" id="focus2"></span>
+    </div>
+</div>
+<div class="mouse">
+    <h2>Mouse</h2>
+    <div id="mouseArea" style="width: 200px;height: 200px;background-color: darkorange;text-align: center;line-height: 200px;font-size: 30px;color: #fff">
+
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script>
+
+    //모듈화 -> 객체 util 생성
+    (function($){
+        var eventModules = eventModules || {};
+
+        eventModules.options = {
+            $imageBox : $('.image_box'),
+            $clickArea : $('#clickArea'),
+            $selectBox : $('.select'),
+            $selectView : $('.seletedView'),
+            $idInput : $('#idInput'),
+            $validateCheck : $('#validateCheck'),
+            $focus1 : $('#focus1'),
+            $focus2 : $('#focus2'),
+            $mouseArea : $('#mouseArea')
+        };
+
+        eventModules.click = {
+            imageChange : function(){
+                eventModules.options.$imageBox.on('click',function(e){
+                   var $findImage = $(this).find('.thumb_img');
+                   $findImage.attr('src','http://2runzzal.com/uploads/zpicture/thum/a16c52c56441e0bb75b18f9a5d5ef63a0a95c8626469a865e37ae30f4225c194.JPG');
+                   setTimeout(function () {
+                       $findImage.attr('src','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqq8VL4b8HQ_-eeAH5jmsIqGjX94Ei1Atlm970Pqc8SK1cE_1PjHidoA');
+                   },2000);
+
+                });
+            },
+            clickLocation : function(){
+                var showX = $('.showX');
+                var showY = $('.showY');
+                eventModules.options.$clickArea.on('click', function(e){
+                  showX.text(e.clientX);
+                  showY.text(e.clientY);
+                });
+            }
+        };
+
+        eventModules.select = {
+            showSelected : function(){
+                eventModules.options.$selectBox.on('change',function(e){
+                    var selectedValue = $(this).find('option:selected').val();
+                eventModules.options.$selectView.text(selectedValue);
+
+                });
+            }
+        };
+
+        eventModules.keyBoard = {
+            focusInputBox : function(){
+                eventModules.options.$focus2.on('keyup', function(e){
+                    if(e.keyCode === 13){
+                        console.log(eventModules.options.$focus1.val());
+                        console.log(eventModules.options.$focus2.val());
+                        eventModules.options.$focus1.val('');
+                        eventModules.options.$focus2.val('');
+                        eventModules.options.$focus1.focus();
+                    }
+                });
+            }
+        };
+
+        eventModules.mouse = {
+             mouseEvent : function(){
+                 eventModules.options.$mouseArea.on('mouseover', function(e){
+                     console.log('마우스 올라감');
+                 });
+                 eventModules.options.$mouseArea.on('mouseout', function(e){
+                    console.log('마우스 나감');
+                 });
+             }
+        };
+
+        eventModules.click.imageChange();
+        eventModules.click.clickLocation();
+
+        eventModules.select.showSelected();
+
+        eventModules.keyBoard.focusInputBox();
+
+        eventModules.mouse.mouseEvent();
+    })(jQuery);
+
+</script>
+</body>
+</html>
