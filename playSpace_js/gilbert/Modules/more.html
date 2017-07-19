@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>Hello HTML</title>
+    <style>
+        body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,button{margin:0;padding:0}
+        fieldset,img{border:0 none}
+        dl,ul,ol,menu,li{list-style:none}
+        blockquote, q{quotes: none}
+        blockquote:before, blockquote:after,q:before, q:after{content:'';content:none}
+        input,select,textarea,button{vertical-align:middle}
+        input::-ms-clear{display:none}
+        button{border:0 none;background-color:transparent;cursor:pointer}
+        body{background:#fff}
+        body,th,td,input,select,textarea,button{font-size:12px;line-height:1.5;font-family:'돋움',dotum,sans-serif;color:#333} /* color값은 디자인가이드에 맞게사용 */
+        a{color:#333;text-decoration:none}
+        a:active, a:hover{text-decoration:underline}
+        a:active{background-color:transparent}
+        address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal}
+        .screen_out{overflow:hidden;position:absolute;width:0;height:0;line-height:0;text-indent:-9999px}
+    </style>
+</head>
+<body>
+
+
+<div class="main_wrap">
+   <ul class="txt_wrap"></ul>
+   <button class="open" id="more_btn">더보기</button>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jsrender/0.9.87/jsrender.js"></script>
+<!-- 템플릿 -->
+<script id="tmpl" type="text/x-jsrender">
+    <li>{{:text}}</li>
+</script>
+<script src="more.js"></script>
+<script>
+  (function($){
+    var data = ['hi','hi','hi','hi','hi','hi','hi'];
+    var options = {
+      context : $('.main_wrap'),
+      elem : '.txt_wrap',
+      count : 1,
+      button : '#more_btn'
+    };
+    var moreModule = new More(options);
+    moreModule.run(data);
+
+    var btn = $('#more_btn');
+    btn.on('click', function(e){
+      moreModule.moreData();
+    });
+  })(jQuery);
+</script>
+</body>
+</html>
+
