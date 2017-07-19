@@ -41,8 +41,17 @@ var More = (function(){
       _this.switchButton();
     });
   };
+  // 처음 보여줄 데이터 보다 옵션 카운트 수가 많을때 버튼을 가려야한다.
+  More.prototype.showButton = function(){
+    this._button.show();
+  };
+
+  More.prototype.hideButton = function(){
+    this._button.hide();
+  };
 
   More.prototype.switchButton = function(){
+    // 추후 고려 ... 랜더로 갈아끼는게 좋을지 ..
     if(this._button.hasClass('close')){
       this._button.attr('class', 'open');
       this._button.text('더보기');
@@ -70,19 +79,20 @@ var More = (function(){
       resultHtml += $.templates('#tmpl').render({'text' : value});
     });
     this._$elem.append(resultHtml);
-    // current limit
   };
 
   More.prototype.next = function(){
     this._current  < this._limit ? this._current += this._options.count : this._current = this._limit;
     this._nextCount < this._limit ? this._nextCount += this._options.count :  this._nextCount = this._limit;
-    if(this._current === this._nextCount) this._$context.trigger('switch:button');
+    // 현재 포인트가 최고점을 넘었을때 버튼을 변경해준다.
+    if(this._current >= this._limit) this._$context.trigger('switch:button');
   };
 
   More.prototype.reset = function(){
     this._nextCount = this._options.count;
     this._current = 0;
   };
+
   return More;
 })();
 

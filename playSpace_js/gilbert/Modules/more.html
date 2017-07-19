@@ -20,15 +20,30 @@
         a:active{background-color:transparent}
         address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal}
         .screen_out{overflow:hidden;position:absolute;width:0;height:0;line-height:0;text-indent:-9999px}
+
+        .main_wrap{margin: 0 auto;}
+        .main_wrap .txt_wrap{  width: 300px;background-color: #118eff;font-size: 30px;color:#fff;font-weight: bold;text-align: center;}
+        .open {width: 300px;height: 50px;background-color: #ffcc3d}
+        .close {width: 300px;height: 50px;background-color: #f78a09}
+        .page_box{ width: 300px;height: 30px;background-color:#ffcc3d; text-align: right; display: block; margin-right: 20px;}
+        .page_box .page_count{ padding: 6px; font-size: 15px;}
+
     </style>
 </head>
 <body>
 
-
 <div class="main_wrap">
+   <div class="page_box">
+       <div class="page_count">
+            현재 총
+           <span class="page">1</span> /
+           <span class="total">4</span>
+       </div>
+   </div>
    <ul class="txt_wrap"></ul>
    <button class="open" id="more_btn">더보기</button>
 </div>
+
 <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jsrender/0.9.87/jsrender.js"></script>
 <!-- 템플릿 -->
@@ -38,11 +53,11 @@
 <script src="more.js"></script>
 <script>
   (function($){
-    var data = ['hi','hi','hi','hi','hi','hi','hi'];
+    var data = ['1','2','3','4','5','6','7'];
     var options = {
       context : $('.main_wrap'),
       elem : '.txt_wrap',
-      count : 1,
+      count : 3,
       button : '#more_btn'
     };
     var moreModule = new More(options);
