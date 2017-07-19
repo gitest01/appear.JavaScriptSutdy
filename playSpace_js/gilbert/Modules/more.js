@@ -19,6 +19,7 @@ var More = (function(){
     this._limit = this._dataList.length;
     this._nextCount = this._options.count;
     this._current = 0;
+    this._isLimit = false;
     this.bindEvt();
     this._$context.trigger('more:data');
   };
@@ -51,11 +52,9 @@ var More = (function(){
   };
 
   More.prototype.switchButton = function(){
-    // 추후 고려 ... 랜더로 갈아끼는게 좋을지 ..
     if(this._button.hasClass('close')){
       this._button.attr('class', 'open');
       this._button.text('더보기');
-      this._$elem.empty();
       this._$context.trigger('data:reset');
       this._$context.trigger('more:data');
     }else{
@@ -89,6 +88,7 @@ var More = (function(){
   };
 
   More.prototype.reset = function(){
+    this._$elem.empty();
     this._nextCount = this._options.count;
     this._current = 0;
   };
