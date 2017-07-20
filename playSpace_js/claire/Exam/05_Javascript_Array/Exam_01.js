@@ -28,7 +28,3 @@ console.log(catShop);
 
 // catShop.splice(0,);
 // console.log(catShop);
-
-
-
-
