@@ -48,7 +48,9 @@
   ctx.on('scroll', function(e){
     $maxHeight= $(this).height();
     $ctxScrollTop = $(this).scrollTop();
+    console.log($ctxScrollTop);
     ctxScrollHeight = this.scrollHeight;
+    console.log(ctxScrollHeight);
     color = Math.floor((Math.random() * 999999) + 1); // 랜덤 color
 
     if(ctxScrollHeight - $ctxScrollTop === $maxHeight){
@@ -60,18 +62,18 @@
         beforeSend : function(){
           spiner.show();
         }
-      }).then(function(data,  err){
+      }).done(function(data){
         setTimeout(function(){
-          if(err != 'success'){
-            console.error(err);
-          }
           data.forEach(function(value){
             var div = "<div class='item' style='background-color: #"+color+"'>"+value.name+"</div>";
             ctx.append(div);
           });
           spiner.hide();
         }, 1000);
-      })
+      }).fail(function(err){spiner.hide();
+          spiner.show();
+          console.error('데이터 불러오기 실패');
+      });
     }
   });
 </script>
