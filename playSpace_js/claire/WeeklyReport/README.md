@@ -29,12 +29,12 @@ boolean, number, string, null, undefined 를 제외한 모든 것
 
 ### 06. 자바스크립트의 단점
 자바스크립트는 유연한 언어이고 뛰어난 표현력을 가지고 있지만 이런 특성 때문에 디버깅의 어려움을 겪기도 한다. 느슨한 타입체크는 개발자에게 타입 체크에 대한 자유를 주지만, 컴파일 타임에서 잡지 못하는 오류는 런타임 오류로 발견된다. 전역 객체의 존재는 최상위 레벨의 객체들은 모두 전역 객체 안에 위치하는데, 이는 이름 충돌의 위험성이 있다.
-```
-[jQuery] : https://jquery.com/ <br>
-[Node.js] : https://nodejs.org/en/ <br>
-[Knockout.js] : http://knockoutjs.com/ <br>
-[Backbone.js] : http://backbonejs.org/ <br>
-```
+
+[jQuery](https://jquery.com/) /
+[Node.js](https://nodejs.org/en) /
+[Knockout.js](http://knockoutjs.com/) /
+[Backbone.js](http://backbonejs.org/)
+
 ---
 
 
