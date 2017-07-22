@@ -23,26 +23,22 @@
     </style>
 </head>
 <body>
-
-<h2>이 방식은 더 이상 사용되지 않으며 사용해서도 않된다. 오래된 코드에서 간혹 이 방식을 사용한 것이 있기 때문에 알아둘 필요는 있다. HTML과 Javascript는 분리되어야 한다 </h2>
-
-<div class="foo" id="foo" style="width: 100px; height: 100px; background-color: #f78a09" onclick="onClick()"></div>
-<div class="foo2" id="foo2" style="width: 100px; height: 100px; background-color: #f78a09" onclick="onClick()"></div>
-
-
+<label for="username">User name </label>
+<input type='text' id='username'>
+<em id='message'></em>
 <script>
-    function onClick(){
-      alert('HEllO');
+  var elem = document.getElementById('username');
+  var msg  = document.getElementById('message');
+
+  elem.addEventListener('blur', function() {
+    console.log('blur event occurred!');
+
+    if(elem.value.length < 2) {
+      msg.innerHTML = '이름은 2자 이상이어야 합니다';
+    } else {
+      msg.innerHTML = '';
     }
-
-    // 아래방법을 선호
-    var btn = document.getElementById('foo2');
-    btn.onclick = function() {
-      alert('foo2 clicked!');
-    };
-
-    // 더 선호
-    btn.addEventListener('click', function(){} , true);
+  });
 </script>
 </body>
 </html>
