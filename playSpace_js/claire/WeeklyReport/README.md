@@ -76,7 +76,7 @@ typeof 연산자 결과가 string으로 나온다. <br>
 ```js
 // str 문자열 생성 
 var str = 'test';
-console.log(str[0], str[1], str[2], str[3]); // (출력값) test
+console.log(str[0], str[1], str[2], str[3]); // test
 
 // 문자열의 첫 글자를 대문자로 변경?
 str[0] = 'T';
@@ -154,25 +154,25 @@ var foo = {
 };
 
 // 객체 프로퍼티 읽기
-console.log(foo.name); // foo
-console.log(foo['name']); // foo
-console.log(foo.nickname); // undefined
+console.log(foo.name);      // foo
+console.log(foo['name']);   // foo
+console.log(foo.nickname);  // undefined
 
 // 객체 프로퍼티 갱신
 foo.major = 'electronics engineering';
-console.log(foo.major); //electronics engineering
-console.log(foo['major']); //electronics engineering
+console.log(foo.major);     //electronics engineering
+console.log(foo['major']);  //electronics engineering
 
 // 객체 프로퍼티 동적 생성
 foo.age = 30;
-console.log(foo.age); // 30
+console.log(foo.age);       // 30
 
 // 대괄호 표기법만을 사용해야 할 경우
 foo['full-name'] = 'foo bar';
-console.log(foo['full-name']); // foo bar
-console.log(foo.full-name); // NaN
-console.log(foo.full); // undefined
-console.log(name); // undefined
+console.log(foo['full-name']);  // foo bar
+console.log(foo.full-name);     // NaN
+console.log(foo.full);          // undefined
+console.log(name);              // undefined
 ```
 ### 03. for in 문과 객체 프로퍼티 출력
 for in 문을 사용하면, 객체에 포함된 모든 프로퍼티에 대해 루프를 수행할 수 있다.
