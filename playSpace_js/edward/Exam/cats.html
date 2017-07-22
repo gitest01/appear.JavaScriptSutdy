@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<title>Hello HTML</title>
+	<style>
+		body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, textarea, p, blockquote, th, td, input, select, button {
+			margin: 0;
+			padding: 0
+		}
+
+		fieldset, img {
+			border: 0 none
+		}
+
+		dl, ul, ol, menu, li {
+			list-style: none
+		}
+
+		blockquote, q {
+			quotes: none
+		}
+
+		blockquote:before, blockquote:after, q:before, q:after {
+			content: '';
+			content: none
+		}
+
+		input, select, textarea, button {
+			vertical-align: middle
+		}
+
+		input::-ms-clear {
+			display: none
+		}
+
+		button {
+			border: 0 none;
+			background-color: transparent;
+			cursor: pointer
+		}
+
+		body {
+			background: #fff
+		}
+
+		body, th, td, input, select, textarea, button {
+			font-size: 12px;
+			line-height: 1.5;
+			font-family: '돋움', dotum, sans-serif;
+			color: #333
+		}
+
+		/* color값은 디자인가이드에 맞게사용 */
+		a {
+			color: #333;
+			text-decoration: none
+		}
+
+		a:active, a:hover {
+			text-decoration: underline
+		}
+
+		a:active {
+			background-color: transparent
+		}
+
+		address, caption, cite, code, dfn, em, var {
+			font-style: normal;
+			font-weight: normal
+		}
+
+		.screen_out {
+			overflow: hidden;
+			position: absolute;
+			width: 0;
+			height: 0;
+			line-height: 0;
+			text-indent: -9999px;
+		}
+
+		.main_wrap {
+			background-color: #60bdff;
+		}
+
+		.main_wrap .header_wrap {
+			overflow: hidden;
+			padding: 6%;
+			background-color: #ffcc3d;
+		}
+
+		.main_wrap .header_wrap .header_inputbox {
+			width: 32%;
+			height: 60px;
+			float: left;
+			margin-left: 1%;
+			background-color: #ffcc3d;
+		}
+
+		.main_wrap .header_wrap .header_inputbox .input_box {
+			width: 95%;
+			height: 97%;
+			text-align: center;
+			font-size: 16px;
+			font-family: '돋움', dotum, sans-serif;
+		}
+
+		.main_wrap .body_wrap {
+			overflow: hidden;
+			padding: 4%;
+		}
+
+		.main_wrap .body_wrap .body_left {
+			width: 48%;
+			height: 300px;
+			overflow-y: scroll;
+			float: left;
+			background-color: #f8b706;
+		}
+
+		.main_wrap .body_wrap .body_left .item_name {
+			width: 100%;
+			font-size: 15px;
+			padding: 2px 0 2px 0;
+			text-align: center;
+		}
+
+		.main_wrap .body_wrap .body_right {
+			width: 48%;
+			height: 300px;
+			float: right;
+			background-color: #ffc0e3
+		}
+
+		.main_wrap .body_wrap .body_right .intorduce_item {
+			padding: 6px;
+			text-align: center;
+		}
+
+		.main_wrap .body_wrap .body_right .intorduce_item .item_title {
+			font-size: 20px;
+			font-weight: bold
+		}
+
+		.main_wrap .body_wrap .body_right .intorduce_item .item_desc {
+			font-size: 16px;
+		}
+	</style>
+</head>
+<body>
+<div class="main_wrap">
+	<div class="header_wrap">
+		<form action="" method="post">
+			<fieldset>
+				<legend class="screen_out">입력창</legend>
+				<div class="header_inputbox">
+					<label class="screen_out">NAME</label>
+					<input type="text" class="input_box" id="input_name" placeholder="NAME" title="name">
+				</div>
+				<div class="header_inputbox">
+					<label class="screen_out">AGE</label>
+					<input type="text" class="input_box" id="input_age" placeholder="AGE" title="age">
+				</div>
+				<div class="header_inputbox">
+					<label class="screen_out">ETC</label>
+					<input type="text" class="input_box" id="input_etc" placeholder="ETC" title="etc">
+				</div>
+			</fieldset>
+		</form>
+	</div>
+	<div class="body_wrap">
+		<div class="body_left body_item"></div>
+		<div class="body_right body_item">
+			<div class="intorduce_item">
+				<dl>
+					<dt class="item_title">이름</dt>
+					<dd class="item_desc">쿄쿄</dd>
+					<dt class="item_title">나이</dt>
+					<dd class="item_desc">9999</dd>
+					<dt class="item_title">특징</dt>
+					<dd class="item_desc">안녕안녕안녕</dd>
+				</dl>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+  // 즉시실행
+  (function () {
+    var resetBoxSize = function () {
+      var windowHeight = window.innerHeight;
+
+      var mainWrap = document.getElementsByClassName('main_wrap');
+      mainWrap[0].style.height = windowHeight + 'px';
+      var bodyItem = document.querySelectorAll('.body_item');
+      [].forEach.call(bodyItem, function (item) {
+        item.style.height = (windowHeight - 130) + 'px';
+      });
+    };
+    var options = {
+      $context: $('.main_wrap'),
+      input_name: '#input_name',
+      input_age: '#input_age',
+      input_etc: '#input_etc'
+    };
+
+    // Cat 1마리가 아닐수도있어요 100개
+    var Cat = (function () { // 모듈패턴
+      var Cat = function (name, age, etc) {
+        this.name = name;
+        this.age = age;
+        this.etc = etc;
+      };
+      Cat.prototype.getName = function () {
+        return this.name;
+      };
+      Cat.prototype.setName = function (name) {
+        this.name = name;
+      };
+      return Cat;
+    })();
+
+    // 고양이등록 ,고양이 검색, 고양이 삭제, render
+    var CatShop = (function () {
+      var CatShop = function () {
+        this.catList = [];
+
+      };
+
+      CatShop.prototype.addCat = function (cat) {
+        this.catList.push(cat);
+      };
+      CatShop.prototype.getCatList = function () {
+        console.log(this.catList);
+      };
+      CatShop.prototype.removeCat = function (name) {
+        var index = this.searchCat(name);
+        index > -1 ? this.catList.splice(index, 1) : console.log('검색된 애가 없어요');
+      };
+      CatShop.prototype.searchCat = function (name) {
+        var index = -1;
+
+        this.catList.forEach(function (value, i) {
+          if (value.getName() === name) {
+            index = i;
+          }
+        });
+        return index;
+      };
+      CatShop.prototype.bindEvent = function () {
+
+      };
+      CatShop.prototype.render = function () {
+        var context = document.querySelector('.body_left');
+        var fragment = document.createDocumentFragment();
+
+        if (!this.catList.length) { // 배열이 비었을때
+          var div = '<div class="item_name">고양이를 등록해주세요</div>';
+          context.innerHTML = div;
+          return false;
+        }
+        this.catList.forEach(function (cat, i) { // 1번째
+          var div = document.createElement('div');
+          var text = document.createTextNode(cat.getName());
+          div.className = 'item_name';
+          div.appendChild(text);
+          fragment.appendChild(div);
+        });
+        context.appendChild(fragment);
+      };
+      return CatShop;
+    })();
+
+    resetBoxSize();
+  })();
+
+</script>
+</body>
+</html>
