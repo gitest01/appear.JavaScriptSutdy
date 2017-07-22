@@ -1,9 +1,9 @@
 {
   "person": [
     { "id": 1, "name": "edward", "job": "frontEnd" },
-    { "id": 2, "name": "brad", "author": "frontEnd" },
-    { "id": 3, "name": "kitty", "author": "frontEnd" },
-    { "id": 4, "name": "claire", "author": "frontEnd" },
-    { "id": 5, "name": "gilbert", "author": "frontEnd" }
+    { "id": 2, "name": "brad", "job": "frontEnd" },
+    { "id": 3, "name": "kitty", "job": "frontEnd" },
+    { "id": 4, "name": "claire", "job": "frontEnd" },
+    { "id": 5, "name": "gilbert", "job": "frontEnd" }
   ]
 }
