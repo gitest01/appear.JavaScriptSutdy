@@ -43,7 +43,7 @@ boolean, number, string, null, undefined 를 제외한 모든 것
 ### 자바스크립트 기본 타입
 - 기본 데이터 타입 (숫자, 문자열, 불린값, null, undefind)
 - 참조 데이터 타입 (객체, 배열)
-- 느슴한 타입 체크 언어 : 변수를 선언할 때타입을 미리 정하지 않고, var라는 한 가지 키워드로만 변수 선언
+- 느슨한 타입 체크 언어 : 변수를 선언할 때 타입을 미리 정하지 않고, var라는 한 가지 키워드로만 변수 선언
 - 주의해야 할 연산자
 
 ```js
@@ -70,25 +70,22 @@ var nullVar = Null;
 자바스크립트는 모든 숫자를 64비트 부동 소수점 형태로 저장하기 때문에 int, long, float, double 등과 같이 다양한 숫자 타입이 존재한다. var 키워드로 선언된 자바스크립트 변수에는 정수나 실수 구분 없이 그 값을 바로 저장할 수 있으므로, intNum 과 flaotNum 변수 모두 typeof 연산자의 결과값이 number 타입임을 확인할 수 있다
 
 ### 02. 문자열
-문자열은 ' ' 또는 " " 로 생성한다. <br>
-typeof 연산자 결과가 string으로 나온다. <br>
-한 번 정의된 문자열은 변하지 않는다. 
+문자열은 ' ' 또는 " " 로 생성한다. typeof 연산자 결과가 string으로 나온다. 한 번 정의된 문자열은 변하지 않는다. 
 ```js
 // str 문자열 생성 
 var str = 'test';
-console.log(str[0], str[1], str[2], str[3]); // test
+console.log(str[0], str[1], str[2], str[3]);    // test
 
 // 문자열의 첫 글자를 대문자로 변경?
 str[0] = 'T';
-console.log(str); // test
+console.log(str);   // test
 ```
 
 ### 03. 불린값
 true 와 false 값을 나타낸다.
 
 ### 04. null과 undefined
-두 타입은 모두 '값이 비어있음'을 나타낸다.<br>
-undefined는 타입이자, 값을 나타낸다.
+두 타입은 모두 '값이 비어있음'을 나타낸다. undefined는 타입이자, 값을 나타낸다.
 
 ```js
 // null 타입 변수 생성
@@ -104,7 +101,7 @@ null 타입 변수인 nullVar의 typeof 결과는 null이 아닌 object
 객체는 단순히 '이름(key):값(value)' 형태의 프로퍼티들을 저장하는 컨테이너이다. 객체를 여러 프로퍼티를 포함 할 수 있으며 이러한 프로퍼티를 메서드라고 부른다.
 
 ### 01. 객체 생성
-클래스라는 개녑이 없고, 객체 리터럴이나 생성자 함수 등 별도의 생성 방식이 존재한다.
+클래스라는 개념이 없고, 객체 리터럴이나 생성자 함수 등 별도의 생성 방식이 존재한다.
 
 객체 생성 방법
 - 기본 제공 Object() 객체 생성자 함수를 이용하는 방법
@@ -127,7 +124,7 @@ console.log(foo);           // {name: 'foo', age: 30, gender: 'male'}
 ```        
 
 #### 객체 리터럴 방식 이용
-객체 리터럴은 중괄호를 이용해 객체를 생성한다. {} 안에 아무것도 적지 않은 경우는 빈객체가 생성되며, 
+객체 리터럴은 중괄호를 이용해 객체를 생성한다. {} 안에 아무것도 적지 않은 경우는 빈객체가 생성되며, <br>
 중괄호 안에 '프로퍼티 이름' : '프로퍼티값' 형태로 표기하면, 해당 프로퍼티가 추가된 객체를 생성할 수 있다.  
 ```js
 // 객체 리터럴 방식으로 객체 생성
@@ -192,7 +189,7 @@ for (prop in foo) {
 ```
 
 ### 04. 객체 프로퍼티 삭제
-delete 연사자를 이용해 객체 프로퍼티를 삭제할 수 있다. 객체 자체를 삭제하지는 못한다.
+delete 연사자를 이용해 객체 프로퍼티를 삭제할 수 있다. 객체 자체는 삭제할 수 없다.
 ```js
 // 객체 리터럴을 통한 foo 객체 생성
 var foo = {
@@ -234,9 +231,9 @@ var objA = { value: 100 };
 var objB = { value: 100 };
 var objC = objB;
 
-console.log(a == b);  // true
-console.log(objA == objB); // false
-console.log(objB == objC); // true
+console.log(a == b);        // true
+console.log(objA == objB);  // false
+console.log(objB == objC);  aaaa// true
 ```
 
 ### 02. 참조에 의한 함수 호출 방식
