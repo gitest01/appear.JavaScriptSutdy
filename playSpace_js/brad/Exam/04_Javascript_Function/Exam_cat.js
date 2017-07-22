@@ -28,6 +28,7 @@ cat.prototype.walk = function () {
         console.log(this.name + '산색충');
         this.state = '배고파';
     }else{
+
         console.log('배고파서 산책 못간다 냐옹');
     }
 };
