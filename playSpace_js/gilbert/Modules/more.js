@@ -20,8 +20,10 @@ var More = (function(){
     this._nextCount = this._options.count;
     this._current = 0;
     this._isLimit = false;
+    this._nextCount > this._limit ? this.hideButton() : this.showButton();
     this.bindEvt();
     this._$context.trigger('more:data');
+    this._$context.trigger('setting:limit');
   };
 
   More.prototype.bindEvt = function(){
@@ -32,14 +34,11 @@ var More = (function(){
     this._$context.on('success:data', function(event, data){
       _this.render.call(_this, data);
     });
-    this._$context.on('next:page', function(){
-      _this.next();
+    this._$context.on('setting:page', function(){
+      _this.settingPage();
     });
-    this._$context.on('data:reset', function(){
-      _this.reset();
-    });
-    this._$context.on('switch:button', function(){
-      _this.switchButton();
+    this._$context.on('setting:limit', function(){
+      _this.settingLimit();
     });
   };
   // 처음 보여줄 데이터 보다 옵션 카운트 수가 많을때 버튼을 가려야한다.
@@ -53,14 +52,11 @@ var More = (function(){
 
   More.prototype.switchButton = function(){
     if(this._button.hasClass('close')){
-      this._button.attr('class', 'open');
-      this._button.text('더보기');
-      this._$context.trigger('data:reset');
+      this.reset();
       this._$context.trigger('more:data');
-    }else{
-      this._button.text('닫기');
-      this._button.attr('class', 'close');
     }
+     this._button.text(this._isLimit ? '닫기' : '더보기');
+     this._button.attr('class', this._isLimit ? 'close' : 'open');
   };
 
   More.prototype.moreData = function(){
@@ -69,7 +65,7 @@ var More = (function(){
         return _this._current <= index && _this._nextCount > index;
     });
     this._$context.trigger('success:data', [data]);
-    this._$context.trigger('next:page');
+    this.next();
   };
 
   More.prototype.render = function(data){
@@ -80,17 +76,29 @@ var More = (function(){
     this._$elem.append(resultHtml);
   };
 
+  More.prototype.settingLimit = function(){
+    this._$context.find('.total').text(Math.ceil(this._limit/this._options.count));
+  };
+
+  More.prototype.settingPage = function(){
+    this._$context.find('.page').text(this._current/this._options.count);
+  };
+
   More.prototype.next = function(){
     this._current  < this._limit ? this._current += this._options.count : this._current = this._limit;
     this._nextCount < this._limit ? this._nextCount += this._options.count :  this._nextCount = this._limit;
-    // 현재 포인트가 최고점을 넘었을때 버튼을 변경해준다.
-    if(this._current >= this._limit) this._$context.trigger('switch:button');
+    this._$context.trigger('setting:page');
+    if(this._current >= this._limit){
+      this._isLimit = true;
+      this.switchButton();
+    }
   };
 
   More.prototype.reset = function(){
     this._$elem.empty();
     this._nextCount = this._options.count;
     this._current = 0;
+    this._isLimit = false;
   };
 
   return More;
