@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <meta name='format-detection' content='telephone=no, address=no, email=no'>
+    <style>
+        @charset "utf-8";
+        body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,button{margin:0;padding:0}
+        fieldset,img{border:0 none}
+        dl,ul,ol,menu,li{list-style:none}
+        blockquote, q{quotes: none}
+        blockquote:before, blockquote:after,q:before, q:after{content:'';content:none}
+        input,select,textarea,button{vertical-align:middle}
+        input::-ms-clear{display:none}
+        button{border:0 none;background-color:transparent;cursor:pointer}
+        body{background:#fff;direction:ltr;-webkit-text-size-adjust:none}
+        body,th,td,input,select,textarea,button{font-size:13px;line-height:1.5;font-family:AppleSDGothicNeo-Regular,'Malgun Gothic','맑은 고딕',dotum,'돋움',sans-serif;color:#222;letter-spacing:-1px}
+        .os_mac body,.os_mac th,.os_mac td,.os_mac input,.os_mac select,.os_mac textarea,.os_mac button{letter-spacing:0}
+        a{color:#222;text-decoration:none}
+        a:hover{color:#118eff;text-decoration:underline}
+        a:active{background-color:transparent}
+        address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal}
+        .ir_pm{display:block;overflow:hidden;font-size:1px;line-height:0;text-indent:-9999px}
+        .ir_wa{display:block;overflow:hidden;position:relative;width:100%;height:100%;z-index:-1}
+        .screen_out{overflow:hidden;position:absolute;width:0;height:0;line-height:0;text-indent:-9999px}
+        .show{display:block}
+        .hide{display:none}
+        img{width:100%;vertical-align:top}
+        /*input[type="checkbox"]{-webkit-appearance:none}*/
+
+        /* 헤더 */
+        .wrap_header{position:fixed;top:0;left:0;width:100%;border-bottom:1px solid #ddd;background-color:#fff}
+        .wrap_header .inner_header{position:relative;width:960px;margin:0 auto;padding-right:176px;box-sizing:border-box }
+        .wrap_header .inner_header:after{display:block;width:0;height:0;clear:both;content:''}
+        .wrap_header .logo{float:left;width:104px;height:40px;margin-top:5px;background-color:#49daff}
+
+        /*네비 */
+        .wrap_header .wrap_nav{overflow:hidden;position:relative;height:50px;padding-right:40px;text-align:center}
+        .wrap_header .list_nav{overflow:hidden;display:inline-block}
+        .wrap_header .list_nav li{float:left;margin:10px 10px 0;text-align:left}
+        .wrap_header .link_menu{display:block;padding:5px;font-size:14px;font-weight:600;color:#2e3239}
+
+        /* 검색 */
+        .wrap_header .cont_search{position:absolute;top:0;right:0;width:40px}
+
+        /* 로그인 */
+        .wrap_header .wrap_login{position:absolute;top:0;right:0;width:176px}
+        .wrap_header .list_login{overflow:hidden;position:relative}
+        .wrap_header .list_login:after{display:block;position:absolute;top:15px;left:0;width:1px;height:20px;background-color:#d1d1d1;content:''}
+        .wrap_header .list_login li{float:left;margin:10px 0 0 13px}
+
+        /* 메인비주얼 */
+        .wrap_visual{margin-top:50px;border-bottom:1px solid #d1d1d1;text-align:center}
+        .wrap_visual .list_company{display:inline-block;vertical-align:top}
+        .wrap_visual .list_company:after{display:block;width:0;height:0;clear:both;content:''}
+        .wrap_visual .list_company li{position:relative;float:left;width:170px}
+        .wrap_visual .list_company li:after{position:absolute;top:25px;left:0;width:1px;height:30px;background-color:#d1d1d1;content:''}
+        .wrap_visual .list_company li:first-child:after{display: none}
+        .wrap_visual .list_company .link_company{display:block;;padding:20px 0;color:#333}
+
+        .wrap_visual .list_company .link_company:hover:after{position:absolute;top:-10px;left:50%;margin-left:-8px;border-bottom:10px solid #fff;border-left:8px solid transparent;border-right:8px solid transparent;content:''}
+        .wrap_visual .list_company .on .link_company:after{position:absolute;top:-10px;left:50%;margin-left:-8px;border-bottom:10px solid #fff;border-left:8px solid transparent;border-right:8px solid transparent;content:''}
+        .wrap_visual .link_company .txt_hot{display:block;font-size:12px;font-weight:800;color:#999;letter-spacing:-0.5px}
+        .wrap_visual .list_company .link_company:hover .txt_hot{color: #2e6add}
+        .wrap_visual .list_company .on .txt_hot{color:#2e6add}
+        .wrap_visual .link_company .txt_name{display:block}
+        .wrap_visual .list_company .link_company:hover .txt_name{font-width:800}
+        .wrap_visual .list_company .on .txt_name{font-weight:800}
+
+    </style>
+    <meta charset="UTF-8">
+    <title>원티</title>
+</head>
+<body>
+<header>
+    <div class="wrap_header">
+            <div class="inner_header">
+                <h1 class="logo">로고</h1>
+                <div class="wrap_nav">
+                    <div class="inner_nav">
+                        <nav>
+                            <ul class="list_nav">
+                                <li>
+                                    <a href="javascript:;" class="link_menu">개발</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" class="link_menu">마케팅</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" class="link_menu">비즈니스</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" class="link_menu">더보기</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" class="link_menu">연봉</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" class="link_menu">이력서</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" class="link_menu">뉴스</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="cont_search">
+                        <a href="javascript:;">검색창 열기</a>
+                        <div class="screen_out">
+                            <label></label>
+                            <input type="text">
+                        </div>
+                    </div>
+                </div>
+                <!-- 모바일네비영역-->
+                <div class="screen_out">
+                    <a href="javascript:;"></a>
+                    <div>
+                        <ul>
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="wrap_login">
+                    <ul class="list_login">
+                        <li>
+                            <a href="javascript:;" class="link_menu">회원가입/로그인</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class="link_menu">기업회원</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    </div>
+</header>
+<section>
+    <div class="wrap_visual">
+        <div>
+            <ul class="list_visual">
+                <li>
+                    <img src="https://i.ytimg.com/vi/6PcSSTtkUm0/maxresdefault.jpg"  alt="우주">
+                </li>
+            </ul>
+            <a href="btn_prev"></a>
+            <a href="btn_next"></a>
+            <div>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+            <ul class="list_company">
+                <li class="on">
+                    <a href="javascript:;" class="link_company">
+                        <span class="txt_hot">HOT<span class="screen_out">인기있는 회사</span></span>
+                        <em class="txt_name">카카오</em>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;" class="link_company">
+                        <span class="txt_hot">HOT<span class="screen_out">인기있는 회사</span></span>
+                        <em class="txt_name">네이버</em>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;" class="link_company">
+                        <span class="txt_hot">HOT<span class="screen_out">인기있는 회사</span></span>
+                        <em class="txt_name">구글</em>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;" class="link_company">
+                        <span class="txt_hot">HOT<span class="screen_out">인기있는 회사</span></span>
+                        <em class="txt_name">블리자드</em>
+                    </a>
+                </li>
+            </ul>
+    </div>
+</section>
+<section>
+    <div class="wrap_cont ">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</section>
+<section>
+    <div class="wrap_cont2">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</section>
+<footer>
+    <div class="wrap_footer"></div>
+</footer>
+</body>
+</html>
