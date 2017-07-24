@@ -18,5 +18,7 @@
   "homepage": "https://github.com/appear/appear.JavaScriptSutdy#readme",
   "devDependencies": {
     "jquery": "^3.2.1"
+  },
+  "dependencies": {
   }
 }

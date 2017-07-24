@@ -1,0 +1,14 @@
+{
+  "cat": [
+    { "id": 1, "name": "lulu", "etc": "귀엽다" },
+    { "id": 2, "name": "rara", "etc": "무섭다" },
+    { "id": 3, "name": "kitty", "etc": "귀엽다" },
+    { "id": 4, "name": "mimi", "etc": "시끄럽다" },
+    { "id": 5, "name": "somi", "etc": "귀엽다" },
+    { "id": 6, "name": "kiki", "etc": "시끄럽다" },
+    { "id": 7, "name": "baba", "etc": "무섭다" },
+    { "id": 8, "name": "bubu", "etc": "시끄럽다" },
+    { "id": 9, "name": "oioi", "etc": "귀엽다" },
+    { "id": 10, "name": "nini", "etc": "무섭다" },
+  ]
+}

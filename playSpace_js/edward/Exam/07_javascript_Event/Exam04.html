@@ -20,33 +20,19 @@
         a:active{background-color:transparent}
         address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal}
         .screen_out{overflow:hidden;position:absolute;width:0;height:0;line-height:0;text-indent:-9999px}
-        .a{width: 400px; height: 400px; border: 1px solid #000000}
-        .b{width: 300px; height: 300px; border: 1px solid #000000}
-        .c{width: 200px; height: 200px; border: 1px solid #000000}
     </style>
 </head>
 <body>
-<div class="a">
-    A
-    <div class="b">
-        B
-        <div class="c">
-            C
-        </div>
-    </div>
-</div>
+<p>클릭하세요. 클릭한 곳의 좌표가 표시됩니다.</p>
+<div id="root" style="width:300px;height:300px;border:1px solid #666"></div>
+<em id='message'></em>
 <script>
-  document.querySelector('.a').addEventListener('click', function(e){
-    console.log('a');
-  }, false);
+  var root = document.getElementById('root');
+  var message = document.getElementById('message');
 
-  document.querySelector('.b').addEventListener('click', function(e){
-    console.log('b');
-  }, false);
-
-  document.querySelector('.c').addEventListener('click', function(e){
-    console.log('c');
-  }, false);
+  root.addEventListener('click',function(e){
+    message.innerText = 'X 값' + e.clientX + 'Y 값' + e.clientY;
+  });
 </script>
 </body>
 </html>

@@ -30,7 +30,7 @@
 
 ### TIP
 1. Intellij Live Template : https://uncle-bae.blogspot.kr/2015/09/intellij-live-template.html
-
+2. SSH Key 등록 : https://xho95.github.io/macos/security/openssh/ssh/gitlab/2017/02/21/Using-SSH-on-Mac.html
 ## 참고사이트 
 1. [poiemaweb](http://poiemaweb.com)
 2. [zerocho](https://www.zerocho.com/category/Javascript)

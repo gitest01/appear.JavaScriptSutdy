@@ -27,26 +27,22 @@
 </head>
 <body>
 <div class="a">
-    A
     <div class="b">
-        B
-        <div class="c">
-            C
-        </div>
+        <div class="c"></div>
     </div>
 </div>
 <script>
-  document.querySelector('.a').addEventListener('click', function(e){
+  document.querySelector('.a').addEventListener('click', function(){
     console.log('a');
-  }, false);
+  }, true);
 
-  document.querySelector('.b').addEventListener('click', function(e){
+  document.querySelector('.b').addEventListener('click', function(){
     console.log('b');
-  }, false);
+  }, true);
 
-  document.querySelector('.c').addEventListener('click', function(e){
+  document.querySelector('.c').addEventListener('click', function(){
     console.log('c');
-  }, false);
+  }, true);
 </script>
 </body>
 </html>
