@@ -28,6 +28,7 @@
 2. postman : https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop
 3. Allow-Control-Allow-Origin : https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=ko
 4. library-detector : https://chrome.google.com/webstore/detail/library-detector/cgaocdmhkmfnkdkbnckgmpopcbpaaejo
+5. JsonParser : https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc?hl=ko
 
 ### TIP
 1. Intellij Live Template : https://uncle-bae.blogspot.kr/2015/09/intellij-live-template.html
