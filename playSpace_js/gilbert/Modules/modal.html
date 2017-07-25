@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>Hello HTML</title>
+    <style>
+        body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,button{margin:0;padding:0}
+        fieldset,img{border:0 none}
+        dl,ul,ol,menu,li{list-style:none}
+        blockquote, q{quotes: none}
+        blockquote:before, blockquote:after,q:before, q:after{content:'';content:none}
+        input,select,textarea,button{vertical-align:middle}
+        input::-ms-clear{display:none}
+        button{border:0 none;background-color:transparent;cursor:pointer}
+        body{background:#fff}
+        body,th,td,input,select,textarea,button{font-size:12px;line-height:1.5;font-family:'돋움',dotum,sans-serif;color:#333} /* color값은 디자인가이드에 맞게사용 */
+        a{color:#333;text-decoration:none}
+        a:active, a:hover{text-decoration:underline}
+        a:active{background-color:transparent}
+        address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal}
+        .screen_out{overflow:hidden;position:absolute;width:0;height:0;line-height:0;text-indent:-9999px}
+    </style>
+</head>
+<body>
+<button class="btn" id="model_default">테스트 값 셋팅</button>
+<div class="modal_option">
+    <form>
+        <fieldset>
+            <legend class="screen_out">모달옵션</legend>
+            <div class="input_box">
+                <div class="input_area width">
+                    <label for="width" class="label_title">Width</label>
+                    <input type="text" id="width">
+                </div>
+                <div class="input_area height">
+                    <label for="height" class="label_title">Height</label>
+                    <input type="text" id="height">
+                </div>
+                <div class="input_area text">
+                    <label for="width" class="label_title">Text</label>
+                    <input type="text" id="text">
+                </div>
+                <div class="input_area top">
+                    <label for="top" class="label_title">Top</label>
+                    <input type="text" id="top">
+                </div>
+                <div class="input_area left">
+                    <label for="left" class="label_title">Left</label>
+                    <input type="text" id="left">
+                </div>
+                <div class="input_area modal_btn">
+                   <button type="button" id="modal_btn">Make Modal</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
+<div class="view_html">
+    <h2>Html</h2>
+</div>
+<div class="view_css">
+    <h2>Css</h2>
+    <div class="text"></div>
+</div>
+
+<div class="modal">
+    <div class="text_area"></div>
+</div>
+<button class="btn" id="modal_open" style="display: none">데모모달 열기</button>
+
+<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jsrender/0.9.87/jsrender.js"></script>
+
+<script>
+  (function ($) {
+
+    /* 옵저버 */
+    var Observer = (function () {
+      var Observer = function () {
+        this.subscribers = [];
+      };
+      Observer.prototype.on = function (type, fn, context) {
+        if (!this.subscribers[type]) {
+          this.subscribers[type] = [];
+        }
+        this.subscribers[type].push({fn: fn, context: context});
+      };
+      Observer.prototype.remove = function (fn, type) {
+        this.handler('remove', fn, type);
+      };
+      Observer.prototype.fire = function (type, data) {
+        this.handler('fire', type, data);
+      };
+      Observer.prototype.handler = function (action, type,  data) {
+        var subscribers = this.subscribers[type];
+
+        subscribers.forEach(function (value, index) {
+          if (action === 'fire') {
+            value.fn.call(value.context, data);
+          }
+          if (action == 'remove') {
+            if (value.fn === data) {
+              subscribers.splice(index, 1);
+            }
+          }
+        });
+      };
+      return Observer;
+    })();
+
+    /* 팩토리 옵저버 상속 */
+    var Factory = (function () {
+      function Factory() {
+        Observer.call(this); // super
+        this.bindEvt();
+      }
+      Factory.prototype = Object.create(Observer.prototype);
+      Factory.prototype.constructor = Factory;
+
+      Factory.prototype.bindEvt = function(){
+        var $this = this;
+        $('#modal_btn').on('click', function(e){
+          var options = {
+            width : $('#width').val() + 'px',
+            height : $('#height').val() + 'px',
+            text : $('#text').val(),
+            top : $('#top').val() + 'px',
+            left : $('#left').val() + 'px'
+          };
+          $this.makeModal(options, modal);
+        });
+      };
+
+      Factory.prototype.makeModal = function(options){
+        this.fire('makeModal', options);
+      };
+      Factory.prototype.afterModal = function(options){
+        this.fire('renderCss', options);
+      };
+      Factory.prototype.renderHtml = function(data){
+        this.fire('renderHtml', data);
+      };
+      Factory.prototype.showModal = function(){
+        this.fire('renderCss');
+      };
+      Factory.prototype.hideModal = function(){
+        this.fire('renderCss');
+      };
+      return Factory;
+    })();
+
+    var factory = new Factory();
+
+    var Modal = (function () {
+      function Modal() {
+        this.options = {
+          display: 'block',
+          backgroundColor : '#FFFFFF',
+          position: 'absolute',
+          padding: 10 + 'px',
+          border: 2 + 'px' + ' solid' + ' #fa0ffa',
+          zIndex : 9999
+        };
+        this.template = $('.modal');
+        this.bindEvt();
+      }
+
+      Modal.prototype.bindEvt = function(){
+        factory.on('makeModal', this.makeModal, this);
+        factory.on('afterModal', this.makeModal, this);
+        factory.on('showModal', this.showModal, this);
+        factory.on('hideModal', this.hideModal, this);
+      };
+
+      Modal.prototype.makeModal = function(options){
+        var options = $.extend({}, options, this.options);
+        this.template.css(options);
+        this.template.find('.text_area').text(options.text);
+        factory.afterModal(options); // 완성시 option을 던져준다.
+      };
+      Modal.prototype.showModal = function(){
+        this.template.show();
+      };
+      Modal.prototype.hideModal = function(){
+        this.template.hide();
+      };
+      return Modal;
+    })();
+
+
+    var Printer = (function () {
+      function Printer() {
+        this.htmlView = $('.view_html');
+        this.cssView = $('.view_css');
+        this.demoBtn = $('#demo');
+        this.textArea = this.cssView.find('.text');
+        this.bindEvt();
+      }
+
+      Printer.prototype.bindEvt = function(){
+        factory.on('renderHtml', this.renderHtml, this);
+        factory.on('renderCss', this.renderCss, this);
+        this.demoBtn.on('click', function(){
+          factory.showModal();
+        });
+      };
+      Printer.prototype.renderHtml = function (text) {
+        this.htmlView.append(text);
+      };
+      Printer.prototype.renderCss = function (options) {
+        this.textArea.empty();
+        for( key in options){
+          if(options.hasOwnProperty(key) && key !== 'text'){
+            this.textArea.append(key + ':' + options[key] + ';');
+          }
+        }
+      };
+      Printer.prototype.buttonShow = function () {
+        this.demoBtn.show();
+      };
+      return Printer;
+    })();
+
+    /* 디폴트값 테스트 */
+    $('#model_default').on('click', function(e){
+        $('#width').val(200);
+        $('#height').val(200 );
+        $('#text').val('테스트 모달');
+        $('#top').val(200);
+        $('#left').val(200);
+    });
+
+      /* 모듈 등록 */
+    var modal = new Modal();
+    var printer = new Printer();
+  })(jQuery);
+</script>
+</body>
+</html>
+

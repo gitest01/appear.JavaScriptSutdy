@@ -5,83 +5,222 @@
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <title>Hello HTML</title>
     <style>
-        body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,button{margin:0;padding:0}
-        fieldset,img{border:0 none}
-        dl,ul,ol,menu,li{list-style:none}
-        blockquote, q{quotes: none}
-        blockquote:before, blockquote:after,q:before, q:after{content:'';content:none}
-        input,select,textarea,button{vertical-align:middle}
-        input::-ms-clear{display:none}
-        button{border:0 none;background-color:transparent;cursor:pointer}
-        body{background:#fff}
-        body,th,td,input,select,textarea,button{font-size:12px;line-height:1.5;font-family:'돋움',dotum,sans-serif;color:#333} /* color값은 디자인가이드에 맞게사용 */
-        a{color:#333;text-decoration:none}
-        a:active, a:hover{text-decoration:underline}
-        a:active{background-color:transparent}
-        address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal}
-        .screen_out{overflow:hidden;position:absolute;width:0;height:0;line-height:0;text-indent:-9999px}
+        body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, textarea, p, blockquote, th, td, input, select, button {
+            margin: 0;
+            padding: 0
+        }
 
-        .slide_box > div{width: 100%;height: 500px;font-size: 40px;text-align: center;line-height: 18;color: #fff}
-        .slide_box .a{background-color: #ffcc3d}
-        .slide_box .b{background-color: #ff6284}
-        .slide_box .c{background-color: #51b218}
-        .slide_box .d{background-color: #60bdff}
+        fieldset, img {
+            border: 0 none
+        }
 
-        .side{position: fixed;top:20%;right:0;background-color: #ff8900;width: 50px;height: 200px;font-size:30px;}
-        .side li{color:#fff; text-align: center;}
+        dl, ul, ol, menu, li {
+            list-style: none
+        }
+
+        blockquote, q {
+            quotes: none
+        }
+
+        blockquote:before, blockquote:after, q:before, q:after {
+            content: '';
+            content: none
+        }
+
+        input, select, textarea, button {
+            vertical-align: middle
+        }
+
+        input::-ms-clear {
+            display: none
+        }
+
+        button {
+            border: 0 none;
+            background-color: transparent;
+            cursor: pointer
+        }
+
+        body {
+            background: #fff
+        }
+
+        body, th, td, input, select, textarea, button {
+            font-size: 12px;
+            line-height: 1.5;
+            font-family: '돋움', dotum, sans-serif;
+            color: #333
+        }
+
+        /* color값은 디자인가이드에 맞게사용 */
+        a {
+            color: #333;
+            text-decoration: none
+        }
+
+        a:active, a:hover {
+            text-decoration: underline
+        }
+
+        a:active {
+            background-color: transparent
+        }
+
+        address, caption, cite, code, dfn, em, var {
+            font-style: normal;
+            font-weight: normal
+        }
+
+        .screen_out {
+            overflow: hidden;
+            position: absolute;
+            width: 0;
+            height: 0;
+            line-height: 0;
+            text-indent: -9999px
+        }
+
+        .slide_box > div {
+            width: 100%;
+            font-size: 40px;
+            text-align: center;
+            line-height: 18;
+            color: #fff
+        }
+
+        .slide_box .a {
+            background-color: #ffcc3d
+        }
+
+        .slide_box .b {
+            background-color: #ff6284
+        }
+
+        .slide_box .c {
+            background-color: #51b218
+        }
+
+        .slide_box .d {
+            background-color: #60bdff
+        }
+
+        .side {
+            position: fixed;
+            top: 20%;
+            right: 0;
+            background-color: #ff8900;
+            width: 50px;
+            height: 200px;
+            font-size: 30px;
+        }
+
+        .side li {
+            color: #fff;
+            text-align: center;
+        }
+        .main_wrap .header_wrap {
+            position: fixed;
+            width: 100%;
+            height: 40px;
+            background-color: #00b200;
+        }
     </style>
 </head>
 <body>
-<div class="slide_box">
-    <div class="a">A</div>
-    <div class="b">B</div>
-    <div class="c">C</div>
-    <div class="d">D</div>
-</div>
-<div class="side">
-    <ul>
-        <li><a href="javascript:;">a</a></li>
-        <li><a href="javascript:;">b</a></li>
-        <li><a href="javascript:;">c</a></li>
-        <li><a href="javascript:;">d</a></li>
-    </ul>
-</div>
+<div class="main_wrap">
+    <div class="header_wrap">
 
-<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    </div>
+    <div class="slide_box">
+        <div class="a">A</div>
+        <div class="b">B</div>
+        <div class="c">C</div>
+        <div class="d">D</div>
+    </div>
+    <div class="side">
+        <ul>
+            <li><a href="javascript:;">a</a></li>
+            <li><a href="javascript:;">b</a></li>
+            <li><a href="javascript:;">c</a></li>
+            <li><a href="javascript:;">d</a></li>
+        </ul>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+        crossorigin="anonymous"></script>
 <script>
-  (function($){
+  (function ($) {
     var options = {
-      $context : $('.slide_box'),
-      $side : $('.side')
+      $context: $('.main_wrap'),
+      $slideBox: ".slide_box",
+      $header : ".header_wrap",
+      $side: ".side"
     };
 
-    var slideAnimate = (function(){
-      function slideAnimate(options){
-        this.currentScroll = 0;
+    var slideAnimate = (function () {
+      function slideAnimate(options) {
         this.options = options;
         this.$window = $(window);
         this.$context = this.options.$context;
-        this.$side = this.options.$side;
+        this.$slideBox = this.$context.find(this.options.$slideBox);
+        this.$side = this.$context.find(this.options.$side);
+        this.$header = this.$context.find(this.options.$header);
+        this.scrollTop = 0;
+        this.headerFlag = false;
+        this.headerHandle = null;
         this.init();
       }
-      slideAnimate.prototype.bindEvt = function(){
-        this.$side.on('click', function(e){
 
-        })
-      };
-      slideAnimate.prototype.menu = function(e){
+      slideAnimate.prototype.menu = function (e) {
 
       };
-      slideAnimate.prototype.init = function(){
-        this.resize();
+
+      slideAnimate.prototype.headerAnimate = function(value){
+        value < 0 ? this.headerFlag = true : this.headerFlag = false;
+          if(!this.headerFlag){
+            console.log('hi');
+            this.$header.css('top', this.$header.css('top')-40 + 'px');
+            console.log(this.$header.css('top'));
+           /* this.headerHandle = window.requestAnimationFrame(slideAnimate.prototype.headerAnimate.bind(this));*/
+           /* if(this.$header.css('top') < -40){
+              console.log('끝');
+              window.cancelAnimationFrame(this.headerHandle);
+            }*/
+          }
       };
 
-      slideAnimate.prototype.resize = function(){
-        var box = this.$context.find('div');
+      slideAnimate.prototype.bindEvt = function () {
+        var $this = this;
+        this.$side.find('li').on('click', function (e) {
+          var index = $this.$side.find('li').index(this);
+          $this.boxScroll(index * $this.$window.height());
+        });
+        this.$window.on('scroll', function (e) {
+          $this.scrollTop = $(this).scrollTop();
+        });
+        this.$window.on('mousewheel', function(e){
+          $this.headerAnimate(e.originalEvent.wheelDelta);
+        });
+      };
+
+      slideAnimate.prototype.boxScroll = function (top) {
+        var handle = window.requestAnimationFrame(slideAnimate.prototype.boxScroll.bind(this, top));
+        this.$window.scrollTop(top);
+        window.cancelAnimationFrame(handle);
+      };
+
+
+      slideAnimate.prototype.resize = function () {
+        var box = this.$slideBox.find('div');
         var _this = this;
-        [].forEach.call(box, function(box){
+        [].forEach.call(box, function (box) {
           $(box).css('height', _this.$window.height());
         });
+      };
+
+      slideAnimate.prototype.init = function () {
+        this.resize();
+        this.bindEvt();
       };
 
       return slideAnimate;
