@@ -72,3 +72,7 @@ element.addEventListener('evt', callback, bool);
 | input   | 	input 또는 textarea 요소의 값이 변경되었을 때                                         |
 | change | select box, checkbox, radio button의 상태가 변경되었을 때              |
 | submit | form을 submit할 때 (버튼 또는 키)                |
+
+
+## 참고 
+이벤트모음 : http://kb.globalsoft.co.kr/web/web_view.php?notice_no=324
