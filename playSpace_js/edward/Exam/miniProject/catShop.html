@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>Hello HTML</title>
+    <style>
+        body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, textarea, p, blockquote, th, td, input, select, button {
+            margin: 0;
+            padding: 0
+        }
+
+        fieldset, img {
+            border: 0 none
+        }
+
+        dl, ul, ol, menu, li {
+            list-style: none
+        }
+
+        blockquote, q {
+            quotes: none
+        }
+
+        blockquote:before, blockquote:after, q:before, q:after {
+            content: '';
+            content: none
+        }
+
+        input, select, textarea, button {
+            vertical-align: middle
+        }
+
+        input::-ms-clear {
+            display: none
+        }
+
+        button {
+            border: 0 none;
+            background-color: transparent;
+            cursor: pointer
+        }
+
+        body {
+            background: #fff
+        }
+
+        body, th, td, input, select, textarea, button {
+            font-size: 12px;
+            line-height: 1.5;
+            font-family: '돋움', dotum, sans-serif;
+            color: #333
+        }
+
+        /* color값은 디자인가이드에 맞게사용 */
+        a {
+            color: #333;
+            text-decoration: none
+        }
+
+        a:active, a:hover {
+            text-decoration: underline
+        }
+
+        a:active {
+            background-color: transparent
+        }
+
+        address, caption, cite, code, dfn, em, var {
+            font-style: normal;
+            font-weight: normal
+        }
+
+        .screen_out {
+            overflow: hidden;
+            position: absolute;
+            width: 0;
+            height: 0;
+            line-height: 0;
+            text-indent: -9999px;
+        }
+
+        .main_wrap {
+            background-color: #60bdff;
+        }
+
+        .main_wrap .header_wrap {
+            overflow: hidden;
+            padding: 6%;
+            background-color: #ffcc3d;
+        }
+
+        .main_wrap .header_wrap .header_inputbox {
+            width: 32%;
+            height: 60px;
+            float: left;
+            margin-left: 1%;
+            background-color: #ffcc3d;
+        }
+
+        .main_wrap .header_wrap .header_inputbox .input_box {
+            width: 95%;
+            height: 97%;
+            text-align: center;
+            font-size: 16px;
+            font-family: '돋움', dotum, sans-serif;
+        }
+
+        .main_wrap .body_wrap {
+            overflow: hidden;
+            padding: 4%;
+        }
+
+        .main_wrap .body_wrap .body_left {
+            width: 48%;
+            height: 300px;
+            overflow-y: scroll;
+            float: left;
+            background-color: #f8b706;
+        }
+
+        .main_wrap .body_wrap .body_left .item_name {
+            width: 100%;
+            font-size: 15px;
+            padding: 2px 0 2px 0;
+            text-align: center;
+        }
+
+        .main_wrap .body_wrap .body_left .item_name a {
+           display:block;
+        }
+
+        .main_wrap .body_wrap .body_right {
+            width: 48%;
+            height: 300px;
+            float: right;
+            background-color: #ffc0e3
+        }
+
+        .main_wrap .body_wrap .body_right .introduce_item {
+            padding: 6px;
+            text-align: center;
+        }
+
+        .main_wrap .body_wrap .body_right .introduce_item .item_title {
+            font-size: 20px;
+            font-weight: bold
+        }
+
+        .main_wrap .body_wrap .body_right .introduce_item .item_desc {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+<div class="main_wrap">
+    <div class="header_wrap">
+        <form action="" method="post">
+            <fieldset>
+                <legend class="screen_out">입력창</legend>
+                <div class="header_inputbox">
+                    <label class="screen_out">NAME</label>
+                    <input type="text" class="input_box" id="input_name" placeholder="NAME" title="name">
+                </div>
+                <div class="header_inputbox">
+                    <label class="screen_out">AGE</label>
+                    <input type="text" class="input_box" id="input_age" placeholder="AGE" title="age">
+                </div>
+                <div class="header_inputbox">
+                    <label class="screen_out">ETC</label>
+                    <input type="text" class="input_box" id="input_etc" placeholder="ETC" title="etc">
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <div class="body_wrap">
+        <ul class="body_left body_item">
+
+        </ul>
+        <div class="body_right body_item">
+
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jsrender/0.9.87/jsrender.js"></script>
+<script id="tmpl" type="text/x-jsrender">
+    <li class="item_name"><a href="javascript:;">{{:text}}</a></li>
+</script>
+<script id="intro" type="text/x-jsrender">
+    <div class="introduce_item">
+        <dl>
+            <dt class="item_title">이름</dt>
+            <dd class="item_desc">{{:name}}</dd>
+            <dt class="item_title">나이</dt>
+            <dd class="item_desc">{{:age}}</dd>
+            <dt class="item_title">특징</dt>
+            <dd class="item_desc">{{:etc}}</dd>
+        </dl>
+    </div>
+</script>
+<script>
+    // 즉시실행
+    (function ($) {
+        var resetBoxSize = function () {
+            var windowHeight = $(window).height();
+            var mainWrap = $('.main_wrap');
+            $(mainWrap.eq(0)).css('height', windowHeight + 'px');
+            var bodyItem = $('.body_item');
+            [].forEach.call(bodyItem, function (item) {
+                $(item).css('height', (windowHeight - 130) + 'px');
+            });
+        };
+        var options = {
+            $context: $('.main_wrap'),
+            input_name: '#input_name',
+            input_age: '#input_age',
+            input_etc: '#input_etc'
+        };
+
+        //고양이 생성자함수
+        var Cat = (function(){
+          var Cat = function(name, age, etc){
+            this.name = name;
+            this.age = age;
+            this.etc = etc;
+          };
+
+          Cat.prototype.getName = function(){
+            return this.name;
+          }
+
+          return Cat;
+        })();
+
+        var CatShop = (function(){
+          var CatShop = function(options){
+            this.options = options;
+            this.list = [];
+            this.$context = this.options.$context;
+            this.$inputName = this.$context.find(this.options.input_name);
+            this.$inputAge = this.$context.find(this.options.input_age);
+            this.$inputEtc = this.$context.find(this.options.input_etc);
+            this.$bodyLeft = this.$context.find(".body_left");
+            this.$bodyRight = this.$context.find(".body_right");
+            this.leftTemp = $.templates('#tmpl');
+            this.rightTemp = $.templates('#intro');
+            this.bindEvt();
+          };
+
+          CatShop.prototype.bindEvt = function(){
+            var _$this = this;
+            this.$inputEtc.on('keyup', function(e){
+              var name = _$this.$inputName.val();
+              if(e.keyCode === 13){
+                _$this.addCat(new Cat(name, _$this.$inputAge.val(), _$this.$inputEtc.val()));
+                _$this.inputSetting();
+                _$this.$inputName.focus();
+                _$this.leftRender(name);
+              }
+            });
+            _$this.$bodyLeft.on('click',function(e){
+              _$this.rightRender(e.target.innerText);
+            });
+          };
+
+          CatShop.prototype.addCat = function(cat){
+            this.list.push(cat);
+          };
+
+          CatShop.prototype.inputSetting =function(){
+            this.$inputName.val("");
+            this.$inputAge.val("");
+            this.$inputEtc.val("");
+          };
+          CatShop.prototype.leftRender = function(name){
+            this.$bodyLeft.append(this.leftTemp.render({"text": name}));
+          };
+          CatShop.prototype.search = function(name){
+            var cat = null;
+            this.list.forEach(function(value, index){
+                if(value.name === name){
+                    cat = value;
+                }
+            });
+            return cat;
+          }
+          CatShop.prototype.rightRender = function(name){
+            var cat = this.search(name);
+            if(cat){
+              this.$bodyRight.empty();
+              this.$bodyRight.append(this.rightTemp.render(cat));
+            }
+          };
+          return CatShop;
+
+        })();
+
+        new CatShop(options);
+
+        resetBoxSize();
+    })(jQuery);
+</script>
+</body>
+</html>
+

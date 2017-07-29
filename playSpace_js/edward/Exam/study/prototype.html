@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<title>Hello HTML</title>
+	<style>
+		body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,button{margin:0;padding:0}
+		fieldset,img{border:0 none}
+		dl,ul,ol,menu,li{list-style:none}
+		blockquote, q{quotes: none}
+		blockquote:before, blockquote:after,q:before, q:after{content:'';content:none}
+		input,select,textarea,button{vertical-align:middle}
+		input::-ms-clear{display:none}
+		button{border:0 none;background-color:transparent;cursor:pointer}
+		body{background:#fff}
+		body,th,td,input,select,textarea,button{font-size:12px;line-height:1.5;font-family:'돋움',dotum,sans-serif;color:#333} /* color값은 디자인가이드에 맞게사용 */
+		a{color:#333;text-decoration:none}
+		a:active, a:hover{text-decoration:underline}
+		a:active{background-color:transparent}
+		address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal}
+		.screen_out{overflow:hidden;position:absolute;width:0;height:0;line-height:0;text-indent:-9999px;}
+
+	</style>
+</head>
+<body>
+
+
+<script>
+  // 즉시실행
+  (function(exports){
+		//생성자 함수
+		'use strict';
+		function Person(name){
+		  if(!(this instanceof Person)){
+		    return new Person(name);
+			}
+		  this.name = name;
+		}
+
+    Person.prototype.getName = function(){
+      return this.name;
+    };
+    Person.prototype.setMoney = function(money){
+      this.money = money;
+      return this;
+    };
+    Person.prototype.getMoney = function(){
+      return this.money;
+    };
+    Person.prototype.useMoney = function(money){
+      var currentMoney = this.money;
+      if(currentMoney && currentMoney >= money){
+        return currentMoney - money;
+      }
+      return this;
+    };
+
+		exports.P = Person;
+
+  })(window);
+  function T(){
+    this.name = 'tester';
+	}
+  T.prototype = P.prototype;
+	T.prototype.test = function (msg) {
+		this.test = msg;
+		return this;
+  };
+
+  var edward = P('edward');
+	var tester = new T();
+
+	console.log(edward);
+	console.log(tester);
+
+</script>
+</body>
+</html>
+
