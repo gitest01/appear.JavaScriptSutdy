@@ -5,32 +5,33 @@
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <title>Hello HTML</title>
     <style>
-        body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,button{margin:0;padding:0}
-        fieldset,img{border:0 none}
-        dl,ul,ol,menu,li{list-style:none}
-        blockquote, q{quotes: none}
-        blockquote:before, blockquote:after,q:before, q:after{content:'';content:none}
-        input,select,textarea,button{vertical-align:middle}
-        input::-ms-clear{display:none}
-        button{border:0 none;background-color:transparent;cursor:pointer}
-        body{background:#fff}
-        body,th,td,input,select,textarea,button{font-size:12px;line-height:1.5;font-family:'돋움',dotum,sans-serif;color:#333} /* color값은 디자인가이드에 맞게사용 */
-        a{color:#333;text-decoration:none}
-        a:active, a:hover{text-decoration:underline}
-        a:active{background-color:transparent}
-        address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal}
-        .screen_out{overflow:hidden;position:absolute;width:0;height:0;line-height:0;text-indent:-9999px;}
-        .main_wrap {background-color: #60bdff;}
-        .main_wrap .header_wrap{overflow: hidden; padding:6%; background-color: #ffcc3d;}
-        .main_wrap .header_wrap .header_inputbox{width: 32%; height: 60px; float:left; margin-left: 1%; background-color:#ffcc3d;}
-        .main_wrap .header_wrap .header_inputbox .input_box{width: 95%; height: 97%; text-align: center; font-size: 16px; font-family: '돋움', dotum, sans-serif;}
-        .main_wrap .body_wrap {overflow: hidden; padding: 4%;}
-        .main_wrap .body_wrap .body_left{ width: 48%; height: 300px; overflow-y: scroll; float: left; background-color: #f8b706;}
-        .main_wrap .body_wrap .body_left .item_name{ width: 100%; font-size: 15px; padding: 2px 0 2px 0; text-align: center;}
-        .main_wrap .body_wrap .body_right{ width: 48%; height: 300px; float: right; background-color: #ffc0e3}
-        .main_wrap .body_wrap .body_right .intorduce_item{ padding: 6px; text-align: center;}
-        .main_wrap .body_wrap .body_right .intorduce_item .item_title{ font-size: 20px; font-weight: bold}
-        .main_wrap .body_wrap .body_right .intorduce_item .item_desc{ font-size: 16px;}
+    body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, textarea, p, blockquote, th, td, input, select, button{margin:0;padding:0}
+    fieldset, img{border:0 none}
+    dl, ul, ol, menu, li{list-style:none}
+    blockquote, q{quotes:none}
+    blockquote:before, blockquote:after, q:before, q:after{content: '';content:none}
+    input, select, textarea, button{vertical-align:middle}
+    input::-ms-clear{display:none}
+    button{border:0 none;background-color:transparent;cursor:pointer}
+    body{background:#fff}
+    body, th, td, input, select, textarea, button{font-size:12px;line-height:1.5;font-family:'돋움', dotum, sans-serif;color:#333}
+    /* color값은 디자인가이드에 맞게사용 */
+    a{color:#333;text-decoration:none}
+    a:active, a:hover{text-decoration:underline}
+    a:active{background-color:transparent}
+    address, caption, cite, code, dfn, em, var{font-style:normal;font-weight:normal}
+    .screen_out{overflow:hidden;position:absolute;width:0;height:0;line-height:0;text-indent:-9999px}
+    .main_wrap{background-color:#eee}
+    .main_wrap .header_wrap{overflow:hidden;padding:6%;background-color:#ddd}
+    .main_wrap .header_wrap .header_inputbox{width:32%;height:60px;float:left;margin-left:1%;background-color:#ffcc3d}
+    .main_wrap .header_wrap .header_inputbox .input_box{width:95%;height:97%;text-align:center;font-size:16px;font-family:'돋움', dotum, sans-serif}
+    .main_wrap .body_wrap{overflow:hidden;padding:4%}
+    .main_wrap .body_wrap .body_left{width:48%;height:300px;overflow-y:scroll;float:left;background-color:#f8b706}
+    .main_wrap .body_wrap .body_left .item_name{width:100%;font-size:15px;padding:2px 0 2px 0;text-align:center}
+    .main_wrap .body_wrap .body_right{width:48%;height:300px;float:right;background-color:#ffc0e3}
+    .main_wrap .body_wrap .body_right .introduce_item{padding:6px;text-align:center}
+    .main_wrap .body_wrap .body_right .introduce_item .item_title{font-size:20px;font-weight:bold}
+    .main_wrap .body_wrap .body_right .introduce_item .item_desc{font-size:16px}
     </style>
 </head>
 <body>
@@ -55,113 +56,126 @@
         </form>
     </div>
     <div class="body_wrap">
-        <div class="body_left body_item"></div>
+        <ul class="body_left body_item"></ul>
         <div class="body_right body_item">
-            <div class="intorduce_item">
-                <dl>
-                    <dt class="item_title">이름</dt>
-                    <dd class="item_desc">쿄쿄</dd>
-                    <dt class="item_title">나이</dt>
-                    <dd class="item_desc">9999</dd>
-                    <dt class="item_title">특징</dt>
-                    <dd class="item_desc">안녕안녕안녕</dd>
-                </dl>
-            </div>
+
         </div>
     </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jsrender/0.9.87/jsrender.js"></script>
+<script id="tmpl" type="text/x-jsrender">
+    <li class="item_name">{{:text}}</li>
+</script>
+<script id="right" type="text/x-jsrender">
+    <div class="introduce_item">
+        <dl>
+            <dt class="item_title">이름</dt>
+            <dd class="item_desc">{{:name}}</dd>
+        <dt class="item_title">나이</dt>
+            <dd class="item_desc">{{:age}}</dd>
+        <dt class="item_title">특징</dt>
+            <dd class="item_desc">{{:etc}}</dd>
+        </dl>
+    </div>
+</script>
 <script>
     // 즉시실행
-    (function(){
-        var resetBoxSize = function(){
-            var windowHeight = window.innerHeight;
-
-            var mainWrap = document.getElementsByClassName('main_wrap');
-            mainWrap[0].style.height = windowHeight+'px';
-            var bodyItem = document.querySelectorAll('.body_item');
-            [].forEach.call(bodyItem, function(item){
-                item.style.height = (windowHeight - 130) +'px';
+    (function ($) {
+        var resetBoxSize = function () {
+            var windowHeight = $(window).height();
+            var mainWrap = $('.main_wrap');
+            $(mainWrap.eq(0)).css('height', windowHeight + 'px');
+            var bodyItem = $('.body_item');
+            [].forEach.call(bodyItem, function (item) {
+                $(item).css('height', (windowHeight - 130) + 'px');
             });
         };
-        var options = {
-            $context : $('.main_wrap'),
-            input_name: '#input_name',
-            input_age : '#input_age',
-            input_etc : '#input_etc'
-        };
 
-        // Cat 1마리가 아닐수도있어요 100개
-        var Cat = (function(){ // 모듈패턴
-            var Cat = function(name, age, etc){
+        var Cat = (function () {
+            var Cat = function (name, age, etc) {
                 this.name = name;
                 this.age = age;
                 this.etc = etc;
             };
-            Cat.prototype.getName = function(){
+            Cat.prototype.getName = function () {
                 return this.name;
-            };
-            Cat.prototype.setName = function(name){
-                this.name = name;
             };
             return Cat;
         })();
+//        var cat = new Cat('dodo', 22, 'blanc');
+//        console.log(cat.getName());
 
-        // 고양이등록 ,고양이 검색, 고양이 삭제, render
-        var CatShop = (function(){
-            var CatShop = function() {
-                this.catList = [];
-            }
-
+        // 고양이 샵
+        var CatShop = (function () {
+            var CatShop = function () {
+                this.$context = $('.main_wrap');//main context 에서 캐싱 > main_wrap 불러 옴
+                this.$inputName = this.$context.find('#input_name');
+                this.$inputAge = this.$context.find('#input_age');
+                this.$inputEtc = this.$context.find('#input_etc');
+                this.$bodyLeft = this.$context.find('.body_left');
+                this.$bodyRight = this.$context.find('.body_right');
+                this.leftTemp = $.templates('#tmpl');
+                this.rightTemp = $.templates('#right');
+                this.list = [];
+                this.bindEvt();
+            };
+            CatShop.prototype.bindEvt = function () {
+                var _$this = this;
+                this.$inputEtc.on('keyup', function (e) {
+//                    console.log(e.keyCode);
+                    if(e.keyCode === 13){
+                        // console.log(_$this.$inputName.val()); 콜백에서 this 는 윈도우
+                        var name = _$this.$inputName.val();
+                        _$this.addCat(new Cat(name, _$this.$inputAge.val(), _$this.$inputEtc.val()));
+                        _$this.resetInput();
+                        _$this.$inputName.focus();
+                        _$this.leftRender(name);
+                    }
+                }); // keyup 눌렀다 뗄 때 발생
+                this.$bodyLeft.on('click', function (e) {
+                   _$this.rightRender(e.target.innerText);
+                });
+            };
             CatShop.prototype.addCat = function (cat) {
-                this.catList.push(cat);
+                this.list.push(cat);
             };
-
-            var addCat = function(cat){
-                catList.push(cat);
+            CatShop.prototype.resetInput = function () {
+                this.$inputName.val("");
+                this.$inputAge.val("");
+                this.$inputEtc.val("");
             };
-            var getCatList = function(){
-                console.log(catList);
+            CatShop.prototype.leftRender = function (name) {
+                this.$bodyLeft.append(this.leftTemp.render({"text": name}));
             };
-            var removeCat = function(name){
-                var index = searchCat(name);
-                index > -1 ? catList.splice(index, 1) : console.log('검색된 애가 없어요');
-            };
-            var searchCat = function(name){
-                var index = -1;
-
-                catList.forEach(function(value, i){
-                    if(value.getName() === name){
-                        index = i;
+            CatShop.prototype.search = function (name) {
+                var cat = null;
+                this.list.forEach(function(value, index){
+                    if(value.name === name){
+                        cat = value;
                     }
                 });
-                return index;
-            };
-            var bindEvent = function(){
+                return cat;
 
             };
-            var render = function(){
-                var context = document.querySelector('.body_left');
-                var fragment = document.createDocumentFragment();
-
-                if(!catList.length){ // 배열이 비었을때
-                    var div = '<div class="item_name">고양이를 등록해주세요</div>';
-                    context.innerHTML = div;
-                    return false;
+            CatShop.prototype.rightRender = function (name) {
+                var cat = this.search(name);
+                if(cat){
+                    this.$bodyRight.append(this.rightTemp.render(cat));
                 }
-                catList.forEach(function(cat, i){ // 1번째
-                    var div = document.createElement('div');
-                    var text = document.createTextNode(cat.getName());
-                    div.className = 'item_name';
-                    div.appendChild(text);
-                    fragment.appendChild(div);
-                });
-                context.appendChild(fragment);
             };
+            return CatShop;
         })();
+        var shop = new CatShop();
+
+
+
+
+
 
         resetBoxSize();
-    })();
-
+    })(jQuery);
 </script>
 </body>
 </html>
+
