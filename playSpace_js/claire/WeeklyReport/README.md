@@ -258,3 +258,178 @@ changeArg(a, objA);
 console.log(a);
 console.log(objA);
 ```
+
+### 프로토타입
+자바스크림트의 `모든 객체는 자신의 부모 역할을 하는 객체와 연결`되어 있다. 이러한 부모 객체를 `프로토타입 객체(프로토타입)`라고 부른다.
+```js
+var dodo = {
+    name: 'dodo',
+    age: 2
+};
+
+console.log(dodo.toString());
+console.dir(dodo);
+```
+
+### 배열
+### 01. 배열 리터럴
+배열 리터럴은 자바스크립트에서 새로운 배열을 만든 ㄴ데 사용하는 표기법이다. 객체 리터럴이 중괄호({})를 이용한 표기법이었다면 배열 리터럴을 대괄호([])를 사용한다.
+```js
+// 배열 리터럴을 통한 5개 원소를 가진 배열 생성
+var colorArr = ['blue','yellow','green','white','red'];
+console.log(colorArr[0]);   // blue
+console.log(colorArr[1]);   // yellow
+console.log(colorArr[4]);   // red
+```
+객체 리터럴에서는 프로퍼티 이름과 프로포티값을 모두 표기해야 하지만 배열 리처럴에서는 `각 요소의 값`만을 포함한다. 객체가 프로퍼티의 이름으로 대괄호나 마침표 표기법을 이용해 해당 프로퍼티에 접근했다면 배열의 경우는 앞 예제처럼 대괄호 내에 접근하고자 하는 원소에 배열 내 위치 인덱스값을 넣어서 접근한다
+
+### 02. 배열의 요소 생성
+객체가 동적으로 프로퍼티를 추가할 수 있듯이, 배열도 동적으로 배열 원소를 추가할 수 있다.
+```js
+// 빈 배열
+var emptyArr = [];
+console.log(emptyArr[0]);   // undefined
+
+// 배열 요소 동적 생성
+emptyArr[0] = 100;
+emptyArr[1] = 'eight'
+emptyArr[4] = true;
+
+console.log(emptyArr);  // [100, undefined x 2, 'eight', undefined x 3, true]
+console.log(emptyArr.length);   // 8
+```
+
+### 03. 배열의 length 프로퍼티
+자바스크립트의 모든 배열은 `length 프로퍼티`가 있다. length 프로퍼티는 `배열 내에 가장 큰 인덱스에 1을 더한 값이다.`
+```js
+var arr = [];
+console.log(arr.length);    // 0
+
+arr[0] = 0;     // arr.length = 1
+arr[1] = 1;     // arr.length = 2
+arr[2] = 2;     // arr.length = 3
+arr[100] = 100;
+console.log(arr.length);    101
+```
+
+배열의 length 프로퍼티는 코드를 통해 명시적으로 값을 변경할 수도 있다.
+```js
+var arr = [0,1,2];
+console.log(arr.length);    // 3
+
+arr.length = 5;
+console.log(arr);           // [0, 1, 2, undefined x 2]
+
+arr.length = 2;
+console.log(arr);           // [0, 1]
+console.log(arr[2]);        //  undefined
+```
+
+#### 배열 표준 메서드와 length 프로퍼티
+자바스크립트는 배열에서 사용 가능한 다양한 표준 메서드를 제공한다. 이러한 배열 메서드는 `length 프로퍼티`를 기반으로 동작하고 있다. 
+```js
+// push() 메서드와 length 프로퍼티
+
+// arr 배열 생성
+var arr = ['zero', 'one', 'two'];
+
+// push() 메서드 호출
+arr.push('three');
+console.log(arr);   // ['zero', 'one', 'two', 'three']
+
+// length 값 변경 후 push() 메서드 호출
+arr.length = 6;
+arr.push('four');
+console.log(arr);   // ['zero', 'one', 'two', undefined x 2, 'four']
+```
+
+### 04. 배열과 객체
+자바스크립트에서는 배열 역시 객체다. 
+```js
+// 배열과 객체의 유사점과 차이점
+
+// colorsArray 배열
+var colorsArray = ['orange', 'yellow', 'green'];
+console.log(colorsArray[0]);     // orange
+console.log(colorsArray[1]);     // yellow
+console.log(colorsArray[2]);     // green
+
+// colorsObj 객체
+var colorsObj = {
+    '0': 'orange',
+    '1': 'yellow',
+    '2': 'green'
+};
+console.log(colorsObj[0]);      // orange
+console.log(colorsObj[1]);      // yellow
+console.log(colorsObj[2]);      // green
+
+```
+- 배열과 겍체 생성 : 객체의 프로퍼티 접근을 설명할 때, 대괄호 안에는 접근하려는 프로퍼티의 속성을 `문자열 형태`로 적어야한다. 하지만  
+
+```js
+console.log(typeof colorsArray);    // object (not array)
+console.log(typeof colorsObj);      // object
+```
+- typeof 연산자 비교 : typeof 연산 결과는 배열과 객체가 모두 `object`다. 즉, 자바스크립트도 배열을 객체라고 생각한다는 것이다.
+
+```js
+// length 프로퍼티
+console.log(colorsArray.length);    // 3
+console.log(colorsObj.length);      // undefined
+```
+- length 프로퍼티 존재 여부 : colorsObj는 객체이므로 length 프로퍼티가 존재하지 않는다. 
+```js
+// 배열 표준 메서드
+colorsArray.push('red');    // ['orange', 'yellow', 'green', 'red']
+colorsObj.push('red');      // Uncaught TypeError : Object #<Object> has no method 'push'
+```
+- 배열 표준 메서드 호출 여부 : 배열과 객체의 또 하나의 차이점은 colorObj는 배열이 아니므로 앞서 설명한 push()와 같은 `표준 배열 메서드`를 사용할 수 없다. 
+객체 리터럴 방식으로 생성한 객체의 경우, 객체 표준 메서드를 저장하고  있는 `Object.prototype 객체`가 프로토타입이다.
+반면에 배열의 경우 `Array.prototype 객체`가 부모 객체인 프로토타입이 된다. 
+
+```js
+// 배열의 프로토타입과 객체의 프로토타입 비교
+
+var emptyArray = [];    // 배열 리터럴을 통한 빈 배열 생성
+var emptyObj = {};      // 객체 리터럴을 통한 빈 객체 생성
+
+console.log(emptyArray.__proto__);      // 배열의 프로토타입(Array.prototype) 출력
+console.log(emptyObj.__proto__);        // 객체의 프로토타입(Object.prototype) 출력
+```
+
+### 05. 배열의 프로퍼티 동적 생성
+배열도 자바스크립트 객체이므로, 인덱스가 숫자인 배열 원소 이외에도 객체처럼 동적으로 프로퍼티를 추가할 수 있다.
+```js
+// 배열 생성
+var arr = ['zero', 'one', 'two'];
+console.log(arr.length);            // 3
+
+// 프로퍼티 동적 추가
+arr.color = 'pink';
+arr.name = 'number_array';
+console.log(arr.length);            // 3
+
+// 배열 원소 추가
+arr[3] = 'red'
+console.log(arr.length);            // 4
+
+// 배열 객체 출력
+console.log(arr);
+```
+- 배열에 동적 프로퍼티가 추가될 경우는 배열의 length 값이 3으로 바뀌지 않는다는 것이다. 다시 arr[3]에 배열 원소를 추가했을 때  length 갓이 4로 바뀌었다.
+즉, `배열의 length 프로퍼티는 배열 원소의 가장 큰 인덱스가 변했을 경우만 변경된다.`
+
+### 06. 배열의 프로퍼티 열거
+배열도 객체이므로  for in 문을 사용해서 배열 내의 모든 프로퍼티를 열거할 수 있지만, 이렇게 되면 불필요한 프로퍼티가 출력될 수 있으므로 되도록 for문을 사용하는 것이 좋다.
+```js
+for (var prop in arr) {
+    console.log(prop, arr[prop]);
+}
+for (var i=0; i<arr.length; i++) {
+    console.log(i, arr[i]);    
+}
+```
+
+### 07. 배열 요소 삭제
+배열도 객체이므로, 배열 요소나
