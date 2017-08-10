@@ -20,5 +20,6 @@
     "jquery": "^3.2.1"
   },
   "dependencies": {
+    "flipsnap": "^0.6.3"
   }
 }
