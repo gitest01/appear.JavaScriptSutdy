@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+
+  //  김 > 김태 > 김태윤 > 최종이름
+
+  var firstName = function (str, callback) {
+      var name = str;
+      setTimeout(function () {
+         console.log('첫번째 이름', name); // 김
+         callback(name + '태');  // 콜백 > 김태
+      }, 2000);
+  };
+  var secondName = function (str, callback) {
+      var name = str;
+      setTimeout(function () {
+          console.log('두번째 이름', name); // 김태
+          callback(name + '윤');  // 콜백 > 김태윤
+      }, 1000);
+  };
+  var printName = function (str) {
+      setTimeout(function () {
+          console.log(' 완성된 이름', str);
+      }, 3000);
+  };
+
+
+  // 콜백의 이해 (비동기를 동기로)
+
+ firstName('김', function (name) { //  name = 김태
+     secondName(name, function (name) {
+         printName(name);
+     })
+ })
+
+
+</script>
+
+
+</body>
+</html>

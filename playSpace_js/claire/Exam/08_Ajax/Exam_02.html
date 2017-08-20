@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>비동기를 동기로</title>
+</head>
+<body>
+<script>
+
+    //  김 > 김태 > 김태윤 > 최종이름
+
+    var firstName = function (str) {
+        var name = str;
+        return new Promise(function (resolve, reject) {
+            if(name === 'undefined') reject();
+            setTimeout(function () {
+                console.log('첫번째', name);
+                resolve(name + '태');
+            }, 2000);
+        })
+        
+    };
+    var secondName = function (str, callback) {
+        var name = str;
+        return new Promise(function (resolve, reject) {
+            if(name === 'undefined') reject();
+            setTimeout(function () {
+                console.log('두번째', name);
+                resolve(name +'윤');
+            }, 1000);
+        })
+       
+    };
+    var printName = function (str) {
+       console.log('최종이름', str);
+    };
+
+    firstName('김')
+        .then(secondName)
+        .then(printName)
+        .catch(function (err) {console.error(err);});
+
+
+</script>
+
+
+</body>
+</html>
