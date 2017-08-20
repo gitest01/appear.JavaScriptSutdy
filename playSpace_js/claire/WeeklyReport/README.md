@@ -258,3 +258,45 @@ changeArg(a, objA);
 console.log(a);
 console.log(objA);
 ```
+
+### 프로토타입
+모든 객체는 자신의 부모 역할을 하는 객체와 연결되어있다. 부모 객체를 `프로토타입객체`(`프로토타입`)라고 한다.
+```js
+var claire = {
+    name : 'claire',
+    age : 12
+}
+console.log(claire.toString());
+console.dir(claire);
+```
+모든 객체의 프로토타입은 자바스크립트의 룰에 따라 객체를 생성할 때 결정된다. 객체 리터럴 방식으로 생선된 객체의 경우 `Object.prototype 객체`가 프로토타입 객체가 된다.
+
+### 배열
+배열은 자바스크립트 객체의 특별한 형태다. C나 자바의 배열과 같은 기능을 하는 객체지만 이들과는 다르게 굳이 크기를 지정하지 않아도 되며, 어떤 위치애 너느 타입의 데이터를 저장하더라도 에러가 발생하지 않는다.
+
+### 01. 배열 리터럴
+객체 리터럴이 중괄호({}) 를 이용한 표기법이었다면, 배열 리터럴은 대괄호([])를 사용한다.
+```js
+// 배열 리터럴을 통한 5개 원소를 가진 배열 생성
+var colorArr = ['orange', 'yellow', 'blue', 'green', 'red'];
+console.log(colorArr[0]);   // orange
+console.log(colorArr[1]);   // yellow
+console.log(colorArr[4]);   // red
+```
+
+### 02. 배열의 요소 생성
+배열도 동작으로 배열 원소를 추가할 수 있다. 특히, 자바스크립트 배열의 경우는 값을 순차적으로 넣을 필요 없이 아무 인덱스 위치에나 값을 동적으로 추가할 수 있다.
+```js
+// 빈 배열
+var emptyArr = [];
+console.log(emptyArr[0]);   // undefined
+
+// 배열 요소 동적 생성
+emptyArr[0] = 100;
+emptyArr[3] = 'eight'
+emptyArr[7] = true;
+console.log(emptyArr);  // [100, undefined x 2, 'eight', undefined x 3, true]
+console.log(emptyArr.length);   // 8
+```
+
+### 03. 배열의 length 프로퍼티
