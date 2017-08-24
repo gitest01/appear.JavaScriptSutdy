@@ -49,6 +49,8 @@
 			// event.target은 클릭한 객체를 의미
 			title.innerHTML = event.target.innerText;	
 
+			console.log(event.target.parentNode);
+			console.log(event.target.parentNode.children);
 			// 목록 스타일 초기화
 			for(var i = 0; i < event.target.parentNode.children.length; i++){
 				event.target.parentNode.children[i].removeAttribute('class');

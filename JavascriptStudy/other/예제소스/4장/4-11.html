@@ -30,6 +30,8 @@
 				this.style.background = '';
 			},
 			move: function(e){
+				console.log('무브', e.changedTouches[0].pageX);
+				console.log('무브', e.changedTouches[0].pageY);
 				box.innerHTML = '만지는 중입니다';
 				this.style.background = 'yellow';
 			}
