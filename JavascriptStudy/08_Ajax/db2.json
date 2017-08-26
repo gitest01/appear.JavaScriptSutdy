@@ -1,0 +1,829 @@
+{
+  "RESULT": {
+    "COLLECTION_COUNT": 1,
+    "IU_LONGTAB_IMAGE_ARCHIVE": {
+      "created": "2017-07-18T14:06:27.993232+09:00",
+      "error": {},
+      "request": {
+        "image": {
+          "bytes": 18913,
+          "height": 200,
+          "size": 60800,
+          "thumbnail": "https://search2.kakaocdn.net/argon/0x200_85_hr/IFcmWgreqSN",
+          "url": "https://search2.kakaocdn.net/argon/0x200_85_hr/IFcmWgreqSN",
+          "width": 304
+        },
+        "pagination": {
+          "limit": 103,
+          "offset": 20,
+          "size": 20,
+          "top": ""
+        }
+      },
+      "response": {
+        "similar": [
+          {
+            "document": {
+              "collection": "블로그",
+              "cpname": "블로그 &gt; 네이버블로그",
+              "docdsid": "22yrwZ6eQKoXJlY6zo",
+              "docurl": "http://blog.naver.com/chhy1105/220814407477",
+              "regdate": "20160918005400",
+              "summary": "&apos;젊은 층 위한 쉬운 뉴스&apos; 만들고 싶었다 “신문지 한 면 분량의 기사를 한 단락으로 줄여",
+              "title": "'작은 햇살이 비치지 않는다', 뉴스퀘어 박태훈 창업자 인터뷰"
+            },
+            "image": {
+              "anigif": false,
+              "docid": "33UHf0oBD7-6fnwgtk",
+              "height": 300,
+              "thumbnails": {
+                "large": {
+                  "focus": "none",
+                  "height": 300,
+                  "mo_height": 300,
+                  "mo_width": 500,
+                  "type": "600x0_65_wr",
+                  "url": "https://search1.kakaocdn.net/argon/600x0_65_wr/5pd9dAnfrIa",
+                  "width": 500
+                },
+                "small": {
+                  "focus": "center",
+                  "height": 200,
+                  "mo_height": "120",
+                  "mo_width": "199",
+                  "type": "0x200_85_hr",
+                  "url": "https://search1.kakaocdn.net/argon/0x200_85_hr/5pd9dAnfrIa",
+                  "width": 333
+                }
+              },
+              "url": "http://dthumb.phinf.naver.net/?src=%22http%3A%2F%2Fwww.danbinews.com%2Fnews%2Fphoto%2F201609%2F7538_10908_2050.jpg%22&type=ff500_300",
+              "width": 500
+            },
+            "rank": 20
+          },
+          {
+            "document": {
+              "collection": "카페",
+              "cpname": "카페 &gt; Daum카페",
+              "docdsid": "23p1y0GR4Jm3adLe5T",
+              "docurl": "http://cafe.daum.net/SEOHAJUN/NnYw/4358",
+              "regdate": "20160226180851",
+              "summary": ".",
+              "title": "내사여📺Ep.37-3"
+            },
+            "image": {
+              "anigif": false,
+              "docid": "33ZXrmhjOmDH8xsxir",
+              "height": 576,
+              "thumbnails": {
+                "large": {
+                  "focus": "none",
+                  "height": 338,
+                  "mo_height": 338,
+                  "mo_width": 600,
+                  "type": "600x0_65_wr",
+                  "url": "https://search4.kakaocdn.net/argon/600x0_65_wr/1DCkr40qX3r",
+                  "width": 600
+                },
+                "small": {
+                  "focus": "noface",
+                  "height": 200,
+                  "mo_height": "120",
+                  "mo_width": "213",
+                  "type": "0x200_85_hr",
+                  "url": "https://search4.kakaocdn.net/argon/0x200_85_hr/1DCkr40qX3r",
+                  "width": 356
+                }
+              },
+              "url": "http://cfile295.uf.daum.net/image/2348B73956D01615095E3D",
+              "width": 1024
+            },
+            "rank": 21
+          },
+          {
+            "document": {
+              "collection": "뉴스",
+              "cpname": "뉴스 &gt; 파이낸셜데일리",
+              "docdsid": "264Ko2jImc6UYt4H5c",
+              "docurl": "http://www.fdaily.co.kr/news/article.html?no=48784",
+              "regdate": "20160224133640",
+              "summary": "지난해 가계 빚이 1200조원을 돌파했다. 1년새 122조원 늘면서 사상 최대치를 또 경신",
+              "title": "'가계 빚' 1200조 넘었다…작년 122조 폭증 '사상 최대'"
+            },
+            "image": {
+              "anigif": false,
+              "docid": "336gYuA66oz8y8fTbU",
+              "height": 246,
+              "thumbnails": {
+                "large": {
+                  "focus": "none",
+                  "height": 246,
+                  "mo_height": 246,
+                  "mo_width": 482,
+                  "type": "600x0_65_wr",
+                  "url": "https://search3.kakaocdn.net/argon/600x0_65_wr/34qaeRK5jD4",
+                  "width": 482
+                },
+                "small": {
+                  "focus": "noface",
+                  "height": 200,
+                  "mo_height": "120",
+                  "mo_width": "235",
+                  "type": "0x200_85_hr",
+                  "url": "https://search3.kakaocdn.net/argon/0x200_85_hr/34qaeRK5jD4",
+                  "width": 392
+                }
+              },
+              "url": "http://www.fdaily.co.kr/data/photos/20160208/art_1456288556.jpg",
+              "width": 482
+            },
+            "rank": 22
+          },
+          {
+            "document": {
+              "collection": "카페",
+              "cpname": "카페 &gt; Daum카페",
+              "docdsid": "23kt6BslRf0DmwBvCU",
+              "docurl": "http://cafe.daum.net/dukincmm/5VFF/439",
+              "regdate": "20150930205234",
+              "summary": "가을이 시작되는 초입에 만났습니다. 다음에 보면 인사라도 나눌 수 있는 인연이 되길 바랍니",
+              "title": "NM5 입문교육 15-35차"
+            },
+            "image": {
+              "anigif": false,
+              "docid": "3367yqbjt2pDzSN7f2",
+              "height": 614,
+              "thumbnails": {
+                "large": {
+                  "focus": "none",
+                  "height": 428,
+                  "mo_height": 428,
+                  "mo_width": 600,
+                  "type": "600x0_65_wr",
+                  "url": "https://search2.kakaocdn.net/argon/600x0_65_wr/Gm7OmgdefOR",
+                  "width": 600
+                },
+                "small": {
+                  "focus": "center",
+                  "height": 200,
+                  "mo_height": "120",
+                  "mo_width": "168",
+                  "type": "0x200_85_hr",
+                  "url": "https://search2.kakaocdn.net/argon/0x200_85_hr/Gm7OmgdefOR",
+                  "width": 280
+                }
+              },
+              "url": "http://cfile272.uf.daum.net/image/245D8D4F560BCCDC09FDF7",
+              "width": 860
+            },
+            "rank": 23
+          },
+          {
+            "document": {
+              "collection": "카페",
+              "cpname": "카페 &gt; Daum카페",
+              "docdsid": "2359H4988VmsK11Ls4",
+              "docurl": "http://cafe.daum.net/dukincmm/5VFF/514",
+              "regdate": "20161125184105",
+              "summary": "",
+              "title": "NM5 응용과정 16-13차"
+            },
+            "image": {
+              "anigif": false,
+              "docid": "33WXGiw0sFkj5Uciyu",
+              "height": 614,
+              "thumbnails": {
+                "large": {
+                  "focus": "none",
+                  "height": 428,
+                  "mo_height": 428,
+                  "mo_width": 600,
+                  "type": "600x0_65_wr",
+                  "url": "https://search3.kakaocdn.net/argon/600x0_65_wr/4jVuBRi4vLO",
+                  "width": 600
+                },
+                "small": {
+                  "focus": "center",
+                  "height": 200,
+                  "mo_height": "120",
+                  "mo_width": "168",
+                  "type": "0x200_85_hr",
+                  "url": "https://search3.kakaocdn.net/argon/0x200_85_hr/4jVuBRi4vLO",
+                  "width": 280
+                }
+              },
+              "url": "http://cfile273.uf.daum.net/image/215D7B3F5838070F07C8FB",
+              "width": 860
+            },
+            "rank": 24
+          },
+          {
+            "document": {
+              "collection": "카페",
+              "cpname": "카페 &gt; Daum카페",
+              "docdsid": "23cOAUxhCBT6VCJkc6",
+              "docurl": "http://cafe.daum.net/21-dream/94CV/1",
+              "regdate": "20100328193151",
+              "summary": "",
+              "title": "중국 진황도 한인교회의 담임목사 시절..."
+            },
+            "image": {
+              "anigif": false,
+              "docid": "33HZyRSWHjcmi3wq0N",
+              "height": 768,
+              "thumbnails": {
+                "large": {
+                  "focus": "none",
+                  "height": 450,
+                  "mo_height": 450,
+                  "mo_width": 600,
+                  "type": "600x0_65_wr",
+                  "url": "https://search4.kakaocdn.net/argon/600x0_65_wr/BcHXA75phWT",
+                  "width": 600
+                },
+                "small": {
+                  "focus": "noface",
+                  "height": 200,
+                  "mo_height": "120",
+                  "mo_width": "160",
+                  "type": "0x200_85_hr",
+                  "url": "https://search4.kakaocdn.net/argon/0x200_85_hr/BcHXA75phWT",
+                  "width": 267
+                }
+              },
+              "url": "http://cfile273.uf.daum.net/image/14325D0D4BD95990476BC4",
+              "width": 1024
+            },
+            "rank": 25
+          },
+          {
+            "document": {
+              "collection": "블로그",
+              "cpname": "블로그 &gt; 네이버블로그",
+              "docdsid": "225ensNZGMeCIH7Eys",
+              "docurl": "http://blog.naver.com/yuwlsfks77/220067670602",
+              "regdate": "20140722041700",
+              "summary": "유나의 거리18회 창만의 프로포즈?? 술에 취한 남수의 모습을 본 유나는 맘이 답답합니다.",
+              "title": "jtbc월화드라마 유나의 거리18회 창만의 프로포즈??"
+            },
+            "image": {
+              "anigif": false,
+              "docid": "33JhVtF754jdL7qDJY",
+              "height": 416,
+              "thumbnails": {
+                "large": {
+                  "focus": "none",
+                  "height": 337,
+                  "mo_height": 337,
+                  "mo_width": 600,
+                  "type": "600x0_65_wr",
+                  "url": "https://search3.kakaocdn.net/argon/600x0_65_wr/ddRpk6VNOU",
+                  "width": 600
+                },
+                "small": {
+                  "focus": "center",
+                  "height": 200,
+                  "mo_height": "120",
+                  "mo_width": "213",
+                  "type": "0x200_85_hr",
+                  "url": "https://search3.kakaocdn.net/argon/0x200_85_hr/ddRpk6VNOU",
+                  "width": 356
+                }
+              },
+              "url": "http://postfiles14.naver.net/20140722_285/yuwlsfks77_14059662176383RR5d_JPEG/JTBC_%C0%AF%B3%AA%C0%C7_%B0%C5%B8%AE.E18.140721.HDTV.H264.720p-iPOP.avi_20140722_031006.990.jpg?type=w1",
+              "width": 740
+            },
+            "rank": 26
+          },
+          {
+            "document": {
+              "collection": "블로그",
+              "cpname": "블로그 &gt; 네이버블로그",
+              "docdsid": "22aaJ09EV8lSpIBqtD",
+              "docurl": "http://blog.naver.com/titlist2/220783855065",
+              "regdate": "20160809234400",
+              "summary": "﻿포항전통맛집에서 팥빙수 엄마가 좋아하신 팥빙수 엄마 팥빙수 전통차집에서 만든 팥빙수",
+              "title": "포항전통맛집에서 여름별미 팥빙수 엄마가 좋아하신 팥빙수 엄마 팥빙수 전통차집에서 만든 팥빙수"
+            },
+            "image": {
+              "anigif": false,
+              "docid": "33pZSmFe7N8_ENy07K",
+              "height": 416,
+              "thumbnails": {
+                "large": {
+                  "focus": "none",
+                  "height": 337,
+                  "mo_height": 337,
+                  "mo_width": 600,
+                  "type": "600x0_65_wr",
+                  "url": "https://search1.kakaocdn.net/argon/600x0_65_wr/IXBB9iQYTnQ",
+                  "width": 600
+                },
+                "small": {
+                  "focus": "noface",
+                  "height": 200,
+                  "mo_height": "120",
+                  "mo_width": "213",
+                  "type": "0x200_85_hr",
+                  "url": "https://search1.kakaocdn.net/argon/0x200_85_hr/IXBB9iQYTnQ",
+                  "width": 356
+                }
+              },
+              "url": "http://postfiles16.naver.net/20160809_271/titlist2_1470748129493dOmmK_JPEG/22-9.jpg?type=w2",
+              "width": 740
+            },
+            "rank": 27
+          },
+          {
+            "document": {
+              "collection": "블로그",
+              "cpname": "블로그 &gt; 티스토리",
+              "docdsid": "22zY2mIPKZ-nXBs--S",
+              "docurl": "http://wemakers.tistory.com/81",
+              "regdate": "20170218210625",
+              "summary": "안녕하세요? 기획실장입니다. 2월 18일 오전부터 계획대로 스터디와 간단한 회의가 진행되었",
+              "title": "2차 모임 - SD Card/Bluetooth 그리고 네오픽셀"
+            },
+            "image": {
+              "anigif": false,
+              "docid": "33bRrRkcZocOuEjkeN",
+              "height": 720,
+              "thumbnails": {
+                "large": {
+                  "focus": "none",
+                  "height": 450,
+                  "mo_height": 450,
+                  "mo_width": 600,
+                  "type": "600x0_65_wr",
+                  "url": "https://search1.kakaocdn.net/argon/600x0_65_wr/23PCPqHpBxg",
+                  "width": 600
+                },
+                "small": {
+                  "focus": "noface",
+                  "height": 200,
+                  "mo_height": "120",
+                  "mo_width": "160",
+                  "type": "0x200_85_hr",
+                  "url": "https://search1.kakaocdn.net/argon/0x200_85_hr/23PCPqHpBxg",
+                  "width": 267
+                }
+              },
+              "url": "http://cfile21.uf.tistory.com/image/2527BB4F58A8378813E3BE",
+              "width": 960
+            },
+            "rank": 28
+          },
+          {
+            "document": {
+              "collection": "블로그",
+              "cpname": "블로그 &gt; 네이버블로그",
+              "docdsid": "22lE35sp4xBQLZsCLr",
+              "docurl": "http://blog.naver.com/dip_swcc/220936081153",
+              "regdate": "20170215160900",
+              "summary": "직장인·대학생노트북 추천 물어보고~따져보자! 노트북 고르는 법 대학 입학 · 첫 출근을 앞",
+              "title": "대학생필수품! 새학기준비물! 직장인 대학생노트북추천! 구매팁을 소개합니다. CPU RAM HDDSDD차이 알고 똑똑하게 노트북 고르는법 제대로 알아보자!"
+            },
+            "image": {
+              "anigif": false,
+              "docid": "33-4bLKTZNTcvdGBm-",
+              "height": 644,
+              "thumbnails": {
+                "large": {
+                  "focus": "none",
+                  "height": 400,
+                  "mo_height": 400,
+                  "mo_width": 600,
+                  "type": "600x0_65_wr",
+                  "url": "https://search1.kakaocdn.net/argon/600x0_65_wr/BnsdMfRLEO",
+                  "width": 600
+                },
+                "small": {
+                  "focus": "right",
+                  "height": 200,
+                  "mo_height": "120",
+                  "mo_width": "180",
+                  "type": "0x200_85_hr",
+                  "url": "https://search1.kakaocdn.net/argon/0x200_85_hr/BnsdMfRLEO",
+                  "width": 300
+                }
+              },
+              "url": "http://postfiles11.naver.net/MjAxNzAyMTVfMTM5/MDAxNDg3MTQwMjI1MTQz.Ut7elIHh99Evl6d8F_i07oPvbjbeBNA6va6vEyL3tiAg.v35d1v5MO8_TGuCYiygNUiWe1XKFXGPPk3smmHwiciUg.JPEG.dip_swcc/%EB%85%B8%ED%8A%B8%EB%B6%81%EC%9E%84.jpg?type=w966",
+              "width": 966
+            },
+            "rank": 29
+          },
+          {
+            "document": {
+              "collection": "뉴스",
+              "cpname": "뉴스 &gt; 헤럴드경제",
+              "docdsid": "26U-i8-s3qN1QVz90b",
+              "docurl": "http://v.media.daum.net/v/20150812061103135",
+              "regdate": "20150812061103",
+              "summary": "[헤럴드경제] ‘막돼먹은 영애씨14’ 조덕제가 김현숙, 라미란에게 희망퇴직을 권고했다. 지",
+              "title": "막돼먹은 영애씨..조덕제, 김현숙·라미란에 희망퇴직 권고"
+            },
+            "image": {
+              "anigif": false,
+              "docid": "33cuGVp1Bo4YtWxmCY",
+              "height": 591,
+              "thumbnails": {
+                "large": {
+                  "focus": "none",
+                  "height": 591,
+                  "mo_height": 591,
+                  "mo_width": 554,
+                  "type": "600x0_65_wr",
+                  "url": "https://search4.kakaocdn.net/argon/600x0_65_wr/BvS9XNXWwU1",
+                  "width": 554
+                },
+                "small": {
+                  "focus": "center",
+                  "height": 200,
+                  "mo_height": "120",
+                  "mo_width": "112",
+                  "type": "0x200_85_hr",
+                  "url": "https://search4.kakaocdn.net/argon/0x200_85_hr/BvS9XNXWwU1",
+                  "width": 187
+                }
+              },
+              "url": "http://t1.daumcdn.net/news/201508/12/ned/20150812061102411ybra.jpg",
+              "width": 554
+            },
+            "rank": 30
+          },
+          {
+            "document": {
+              "collection": "카페",
+              "cpname": "카페 &gt; Daum카페",
+              "docdsid": "23dvPJBwZtAP6nPnIi",
+              "docurl": "http://cafe.daum.net/803love/GSbZ/3",
+              "regdate": "20091008142113",
+              "summary": "제3회 팔공아카데미 1. 주 제 : 은해사와 암자들, 탑의 기원과 발전 2. 일 시 : 2",
+              "title": "제3회 팔공아카데미"
+            },
+            "image": {
+              "anigif": false,
+              "docid": "33uluBc_C6yBMgOHQJ",
+              "height": 768,
+              "thumbnails": {
+                "large": {
+                  "focus": "none",
+                  "height": 450,
+                  "mo_height": 450,
+                  "mo_width": 600,
+                  "type": "600x0_65_wr",
+                  "url": "https://search4.kakaocdn.net/argon/600x0_65_wr/1WzHSfkVywh",
+                  "width": 600
+                },
+                "small": {
+                  "focus": "center",
+                  "height": 200,
+                  "mo_height": "120",
+                  "mo_width": "160",
+                  "type": "0x200_85_hr",
+                  "url": "https://search4.kakaocdn.net/argon/0x200_85_hr/1WzHSfkVywh",
+                  "width": 267
+                }
+              },
+              "url": "http://cfile264.uf.daum.net/image/202AE5174ACD76AE0744C0",
+              "width": 1024
+            },
+            "rank": 31
+          },
+          {
+            "document": {
+              "collection": "블로그",
+              "cpname": "블로그 &gt; 티스토리",
+              "docdsid": "22riqaneRaVbQIn8JP",
+              "docurl": "http://seoulglobalcenter.com/67",
+              "regdate": "20150829163141",
+              "summary": "Event Sketch at Day 1 - Hack at Seoul, Seoul Build",
+              "title": "Event Sketch at Day 1 - Hack at Seoul, Seoul Build Days 2015, Seoul Global Center 성수IT종합센터 하드웨어 해커톤(1) (주최(Organized by) : 서울시(Seoul Metropolitan Gov.) 주관 (Managed by) : 서울산업진흥원(Seoul Business Agenc.."
+            },
+            "image": {
+              "anigif": false,
+              "docid": "335rkbEJqnkYrIfNEH",
+              "height": 400,
+              "thumbnails": {
+                "large": {
+                  "focus": "none",
+                  "height": 400,
+                  "mo_height": 400,
+                  "mo_width": 600,
+                  "type": "600x0_65_wr",
+                  "url": "https://search3.kakaocdn.net/argon/600x0_65_wr/B7lgPqHjdFi",
+                  "width": 600
+                },
+                "small": {
+                  "focus": "center",
+                  "height": 200,
+                  "mo_height": "120",
+                  "mo_width": "180",
+                  "type": "0x200_85_hr",
+                  "url": "https://search3.kakaocdn.net/argon/0x200_85_hr/B7lgPqHjdFi",
+                  "width": 300
+                }
+              },
+              "url": "http://cfile8.uf.tistory.com/image/2704523E55E15F4A0C13D4",
+              "width": 600
+            },
+            "rank": 32
+          },
+          {
+            "document": {
+              "collection": "뉴스",
+              "cpname": "뉴스 &gt; 창업일보",
+              "docdsid": "268oq1XNLxYxuQY5No",
+              "docurl": "http://news33.net/news/view.php?no=3935",
+              "regdate": "20160715171900",
+              "summary": "【창업일보】윤삼근 기자 = 창업벤처활성화실천연합(이하 창실연_SVC)이 민간자격증 관리기관",
+              "title": "창업벤처활성화실천연합, 국가공인 민간자격증 운영기관 등록 .. \"민간자격증 양성교육시행\""
+            },
+            "image": {
+              "anigif": false,
+              "docid": "33NLA2UHlvqi5Eways",
+              "height": 394,
+              "thumbnails": {
+                "large": {
+                  "focus": "none",
+                  "height": 338,
+                  "mo_height": 338,
+                  "mo_width": 600,
+                  "type": "600x0_65_wr",
+                  "url": "https://search2.kakaocdn.net/argon/600x0_65_wr/PLJWB9WINJ",
+                  "width": 600
+                },
+                "small": {
+                  "focus": "noface",
+                  "height": 200,
+                  "mo_height": "120",
+                  "mo_width": "213",
+                  "type": "0x200_85_hr",
+                  "url": "https://search2.kakaocdn.net/argon/0x200_85_hr/PLJWB9WINJ",
+                  "width": 355
+                }
+              },
+              "url": "http://news33.net/data/news/1607/2948747189_3SEJC4xU_EAB8B0EC9785EBB684EC849DEC82AC.jpg",
+              "width": 700
+            },
+            "rank": 33
+          },
+          {
+            "document": {
+              "collection": "블로그",
+              "cpname": "블로그 &gt; Daum블로그",
+              "docdsid": "22fBLWIs78VQLzu4uv",
+              "docurl": "http://blog.daum.net/ssrystone/254",
+              "regdate": "20100809170743",
+              "summary": "",
+              "title": "정선"
+            },
+            "image": {
+              "anigif": false,
+              "docid": "33txBjgLHxYYAE_-u0",
+              "height": 576,
+              "thumbnails": {
+                "large": {
+                  "focus": "none",
+                  "height": 338,
+                  "mo_height": 338,
+                  "mo_width": 600,
+                  "type": "600x0_65_wr",
+                  "url": "https://search4.kakaocdn.net/argon/600x0_65_wr/BMJoAHlNTQr",
+                  "width": 600
+                },
+                "small": {
+                  "focus": "noface",
+                  "height": 200,
+                  "mo_height": "120",
+                  "mo_width": "213",
+                  "type": "0x200_85_hr",
+                  "url": "https://search4.kakaocdn.net/argon/0x200_85_hr/BMJoAHlNTQr",
+                  "width": 356
+                }
+              },
+              "url": "http://cfile273.uf.daum.net/image/147FE2364C596E1E717BC4",
+              "width": 1024
+            },
+            "rank": 34
+          },
+          {
+            "document": {
+              "collection": "카페",
+              "cpname": "카페 &gt; Daum카페",
+              "docdsid": "23PHAHhOliPVEoiaRk",
+              "docurl": "http://cafe.daum.net/dahscourt/K32V/1",
+              "regdate": "20101104215843",
+              "summary": "",
+              "title": "동암고 제 1회 학생 자치법정 개정 2-10년 7월 14일"
+            },
+            "image": {
+              "anigif": false,
+              "docid": "33o4e81JTSJUAiPCt3",
+              "height": 425,
+              "thumbnails": {
+                "large": {
+                  "focus": "none",
+                  "height": 398,
+                  "mo_height": 398,
+                  "mo_width": 600,
+                  "type": "600x0_65_wr",
+                  "url": "https://search1.kakaocdn.net/argon/600x0_65_wr/2FnF6xujdk0",
+                  "width": 600
+                },
+                "small": {
+                  "focus": "center",
+                  "height": 200,
+                  "mo_height": "120",
+                  "mo_width": "180",
+                  "type": "0x200_85_hr",
+                  "url": "https://search1.kakaocdn.net/argon/0x200_85_hr/2FnF6xujdk0",
+                  "width": 301
+                }
+              },
+              "url": "http://cfile254.uf.daum.net/image/125C910D4CD2ADE23EEF6E",
+              "width": 640
+            },
+            "rank": 35
+          },
+          {
+            "document": {
+              "collection": "뉴스",
+              "cpname": "뉴스 &gt; 세계일보",
+              "docdsid": "262_rf-WY6Yu5xUN65",
+              "docurl": "http://v.media.daum.net/v/20061009081514431",
+              "regdate": "20061009081514",
+              "summary": "&gt;section&lt; 한의사이자 한글연구가인 김명호(59· 사진)씨. 서울 잠실 아파트상가 3",
+              "title": "\"한글에는 자연의 이치 담겨 있어\""
+            },
+            "image": {
+              "anigif": false,
+              "docid": "33N2gy2dNNoadI2hf7",
+              "height": 310,
+              "thumbnails": {
+                "large": {
+                  "focus": "none",
+                  "height": 310,
+                  "mo_height": 310,
+                  "mo_width": 300,
+                  "type": "600x0_65_wr",
+                  "url": "https://search2.kakaocdn.net/argon/600x0_65_wr/FhVHLiWMm2J",
+                  "width": 300
+                },
+                "small": {
+                  "focus": "center",
+                  "height": 200,
+                  "mo_height": "120",
+                  "mo_width": "116",
+                  "type": "0x200_85_hr",
+                  "url": "https://search2.kakaocdn.net/argon/0x200_85_hr/FhVHLiWMm2J",
+                  "width": 194
+                }
+              },
+              "url": "http://i2.media.daumcdn.net/svc/image/U03/news/200610/09/segye/20061009081512.351.0.jpg",
+              "width": 300
+            },
+            "rank": 36
+          },
+          {
+            "document": {
+              "collection": "뉴스",
+              "cpname": "뉴스 &gt; 머니투데이",
+              "docdsid": "26G-66d388PxGBSxf3",
+              "docurl": "http://v.media.daum.net/v/20160202110029037",
+              "regdate": "20160202110029",
+              "summary": "[머니투데이 임동욱 기자] [졸업·입학시즌 맞아 노트북 등 할인..&apos;5000의 행복&apos; 행사",
+              "title": "삼성 디지털프라자, 2월 대규모 할인행사 실시"
+            },
+            "image": {
+              "anigif": false,
+              "docid": "33KKG3SN_VjDhIOPpb",
+              "height": 385,
+              "thumbnails": {
+                "large": {
+                  "focus": "none",
+                  "height": 385,
+                  "mo_height": 385,
+                  "mo_width": 560,
+                  "type": "600x0_65_wr",
+                  "url": "https://search1.kakaocdn.net/argon/600x0_65_wr/Ba2HT1sat0i",
+                  "width": 560
+                },
+                "small": {
+                  "focus": "left",
+                  "height": 200,
+                  "mo_height": "120",
+                  "mo_width": "174",
+                  "type": "0x200_85_hr",
+                  "url": "https://search1.kakaocdn.net/argon/0x200_85_hr/Ba2HT1sat0i",
+                  "width": 291
+                }
+              },
+              "url": "http://t1.daumcdn.net/news/201602/02/moneytoday/20160202110028554zgzm.jpg",
+              "width": 560
+            },
+            "rank": 37
+          },
+          {
+            "document": {
+              "collection": "블로그",
+              "cpname": "블로그 &gt; 네이버블로그",
+              "docdsid": "22R2y3HM0or2hTpqSI",
+              "docurl": "http://blog.naver.com/iytrfgjt5/220338489195",
+              "regdate": "20150422172200",
+              "summary": "면접시 주의사항 꿀팁 :: 취업준비생이라면 알아두세요! 현재 많은 기업들의 상반기 공개채용",
+              "title": "면접시 주의사항 꿀팁 :: 취업준비생이라면 알아두세요!"
+            },
+            "image": {
+              "anigif": false,
+              "docid": "33LDAO6T7TbxoiPedy",
+              "height": 281,
+              "thumbnails": {
+                "large": {
+                  "focus": "none",
+                  "height": 281,
+                  "mo_height": 281,
+                  "mo_width": 500,
+                  "type": "600x0_65_wr",
+                  "url": "https://search2.kakaocdn.net/argon/600x0_65_wr/5bg5unIBHoH",
+                  "width": 500
+                },
+                "small": {
+                  "focus": "right",
+                  "height": 200,
+                  "mo_height": "120",
+                  "mo_width": "213",
+                  "type": "0x200_85_hr",
+                  "url": "https://search2.kakaocdn.net/argon/0x200_85_hr/5bg5unIBHoH",
+                  "width": 356
+                }
+              },
+              "url": "http://postfiles5.naver.net/20150422_180/iytrfgjt5_1429690883855a2meB_JPEG/%BB%E7%C1%F8_004.jpg?type=w1",
+              "width": 500
+            },
+            "rank": 38
+          },
+          {
+            "document": {
+              "collection": "블로그",
+              "cpname": "블로그 &gt; Daum블로그",
+              "docdsid": "22fRCXk-Vn9LdGZ0sW",
+              "docurl": "http://blog.daum.net/hck1202/1020745",
+              "regdate": "20071211135723",
+              "summary": "",
+              "title": "흑석동 컴교실"
+            },
+            "image": {
+              "anigif": false,
+              "docid": "33bLat5hA-I_qzfaDL",
+              "height": 705,
+              "thumbnails": {
+                "large": {
+                  "focus": "none",
+                  "height": 450,
+                  "mo_height": 450,
+                  "mo_width": 600,
+                  "type": "600x0_65_wr",
+                  "url": "https://search1.kakaocdn.net/argon/600x0_65_wr/A5BWBXmnjq8",
+                  "width": 600
+                },
+                "small": {
+                  "focus": "left",
+                  "height": 200,
+                  "mo_height": "120",
+                  "mo_width": "160",
+                  "type": "0x200_85_hr",
+                  "url": "https://search1.kakaocdn.net/argon/0x200_85_hr/A5BWBXmnjq8",
+                  "width": 267
+                }
+              },
+              "url": "http://cfs9.blog.daum.net/image/33/blog/2007/12/11/13/54/475e17b38dceb&filename=PICT0302.JPG",
+              "width": 940
+            },
+            "rank": 39
+          }
+        ],
+        "tags": [
+          "사람",
+          "여러사람",
+          "전자제품",
+          "여성",
+          "남성",
+          "안경"
+        ]
+      },
+      "status": 200,
+      "uuid": "wawPFgsOUDqevYP4_X7HeQ"
+    },
+    "BACKEND_TIME": {
+      "IU_LONGTAB_IMAGE_ARCHIVE": 46
+    },
+    "BACKEND_STATUS": {
+      "IU_LONGTAB_IMAGE_ARCHIVE": "OK"
+    },
+    "TIMEOUT_COLLECTION": "",
+    "SERVER_TIME": "20170817142825",
+    "SERVER_TIME_MS": "1502947705286"
+  }
+}
+
