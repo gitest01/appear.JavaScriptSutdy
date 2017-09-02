@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>이미지</title>
+
+	<style>
+		@charset "utf-8";
+		body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,button{margin:0;padding:0}
+		fieldset,img{border:0 none}
+		dl,ul,ol,menu,li{list-style:none}
+		blockquote, q{quotes: none}
+		blockquote:before, blockquote:after,q:before, q:after{content:'';content:none}
+		input,select,textarea,button{vertical-align:middle}
+		input::-ms-clear{display:none}
+		button{border:0 none;background-color:transparent;cursor:pointer}
+		body{background:#fff;direction:ltr;-webkit-text-size-adjust:none}
+		body,th,td,input,select,textarea,button{font-size:13px;line-height:1.5;font-family:AppleSDGothicNeo-Regular,'Malgun Gothic','맑은 고딕',dotum,'돋움',sans-serif;color:#222;letter-spacing:-1px}
+		.os_mac body,.os_mac th,.os_mac td,.os_mac input,.os_mac select,.os_mac textarea,.os_mac button{letter-spacing:0}
+		a{color:#222;text-decoration:none}
+		a:hover{color:#118eff;text-decoration:underline}
+		a:active{background-color:transparent}
+		address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal}
+		.ir_pm{display:block;overflow:hidden;font-size:1px;line-height:0;text-indent:-9999px}
+		.ir_wa{display:block;overflow:hidden;position:relative;width:100%;height:100%;z-index:-1}
+		.screen_out{overflow:hidden;position:absolute;width:0;height:0;line-height:0;text-indent:-9999px}
+		.show{display:block}
+		.hide{display:none}
+		/*input[type="checkbox"]{-webkit-appearance:none}*/
+		img{width:100%;vertical-align:top}
+		.content{position:relative;width:100%}
+		.wrap_thumb{position:relative;width:900px;height:800px;margin:0 auto}
+		.wrap_thumb .list_thumb{overflow:hidden;margin:-0.5%;}
+		.wrap_thumb .list_thumb li{float:left;width:19%;margin:0.5%}
+		.wrap_thumb .list_thumb .link_item{display:block}
+		.wrap_thumb .list_thumb img{height:120px}
+		.wrap_picture{position:absolute;top:50%;left:50%;margin-left:-40%;margin-top:-265px;z-index:20;padding:20px;width:80%;border:1px solid #ddd;background-color:#eee;box-sizing:border-box}
+		.wrap_picture .item_wrap{overflow:hidden;width:100%}
+		.wrap_picture .item_wrap img{height:480px}
+		.wrap_paging{margin-top:10px;text-align:center}
+		.wrap_picture .move_paging{display:inline-block;padding:5px 0;width:20px;font-size:12px;background-color:#3cb0fd;color:#333}
+		.wrap_picture .btn_close{position:absolute;top:20px;right:20px;padding:10px;background-color:#118eff;color:#fff}
+		.bg_dimm{position:absolute;top:0;left:0;z-index:10;width:100%;height:100%;background-color:#000;opacity:0.5}
+
+	</style>
+</head>
+<body>
+<div class="content">
+	<div class="wrap_thumb">
+		<h1 class="tit_name">갤러리리스트</h1>
+		<ul class="list_thumb">
+			<li>
+				<a href="javascript:;" class="link_item"><img src="https://i0.wp.com/gaegul.kr/wordpress/wp-content/uploads/1/cfile29.uf.2529523E532F23481C8D5B.jpg" alt="은하수"></a>
+			</li>
+			<li>
+				<a href="javascript:;" class="link_item"><img src="https://i2.wp.com/gaegul.kr/wordpress/wp-content/uploads/1/cfile26.uf.263C6B4752B9B0420468AC.jpg" alt="은하수"></a>
+			</li>
+			<li>
+				<a href="javascript:;" class="link_item"><img src="http://www.matcl.com/files/attach/images/2791205/243/792/002/c68b0de60874e33cee07927878e13190.jpg" alt="은하수"></a>
+			</li>
+			<li>
+				<a href="javascript:;" class="link_item"><img src="https://i0.wp.com/gaegul.kr/wordpress/wp-content/uploads/1/cfile29.uf.2529523E532F23481C8D5B.jpg" alt="은하수"></a>
+			</li>
+			<li>
+				<a href="javascript:;" class="link_item"><img src="https://i2.wp.com/gaegul.kr/wordpress/wp-content/uploads/1/cfile26.uf.263C6B4752B9B0420468AC.jpg" alt="은하수"></a>
+			</li>
+		</ul>
+		<div class="wrap_picture hide">
+			<div class="item_wrap">
+				<div class="list_picture">
+				</div>
+			</div>
+			<a href="javascript:;" class="btn_close">닫기</a>
+			<div class="wrap_paging">
+				<a href="javascript:;" class="move_paging">1</a>
+				<a href="javascript:;" class="move_paging">2</a>
+				<a href="javascript:;" class="move_paging">3</a>
+			</div>
+		</div>
+	</div>
+	<span class="bg_dimm hide"></span>
+</div>
+</body>
+<script>
+	(function(){
+    "use strict";
+
+		var doc = document;
+		var wrap = doc.querySelector('.wrap_thumb');
+		var list_item = wrap.querySelector('.list_thumb');
+    var link_item = list_item.querySelectorAll('.link_item');
+		var picWrap = doc.querySelector('.wrap_picture');
+		var listPic = picWrap.querySelector('.list_picture');
+		var closeBtn = picWrap.querySelector('.btn_close');
+		var dimm = doc.querySelector('.bg_dimm');
+
+
+		function thumbEvt(){
+		  var arr = [];
+      list_item.addEventListener('click',function(e){
+		    var imgTarget = e.target.getAttribute('src');
+
+		    picWrap.classList.remove('hide');
+        dimm.classList.remove('hide');
+
+
+				listPic.innerHTML = '<li><img src="' + imgTarget + '" alt=""></li>';
+				console.log(e.target);
+			});
+		}
+
+		function closeEvt(){
+      closeBtn.addEventListener('click',function(e){
+        picWrap.classList.add('hide');
+        dimm.classList.add('hide');
+			});
+      dimm.addEventListener('click',function(e){
+        picWrap.classList.add('hide');
+        dimm.classList.add('hide');
+      });
+		}
+
+		function evt(){
+      thumbEvt();
+      closeEvt();
+		}
+
+
+    evt();
+
+	})();
+</script>
+</html>
