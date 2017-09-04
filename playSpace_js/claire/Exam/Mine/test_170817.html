@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <style type="text/css">
+    .inp_num{width:40px;padding:5px;text-align:center}
+  </style>
+</head>
+<body>
+
+<input type="text" id="firstNum" class="inp_num"> x <input type="text" id="secondNum" class="inp_num"> = <input type="text" id="result" class="inp_num">
+
+<script type="text/javascript">
+    (function(){
+        var $firstNum = $('#firstNum');
+        var $secondNum = $('#secondNum');
+        var $result = $('#result');
+        $secondNum.on('keyup', function(e){
+            if(e.keyCode == 13) {
+                var v1 = $firstNum.val();
+                var v2 = $secondNum.val();
+                var v3 = v1 * v2;
+                $result.val(v3);
+            }
+        });
+    })();
+</script>
+
+</body>
+</html>

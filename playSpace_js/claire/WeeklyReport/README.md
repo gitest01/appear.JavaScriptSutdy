@@ -432,4 +432,30 @@ for (var i=0; i<arr.length; i++) {
 ```
 
 ### 07. 배열 요소 삭제
-배열도 객체이므로, 배열 요소나
+배열도 객체이므로, 배열 요소나 프로퍼티를 삭제하는데 delete 연산자를 사용할 수 있다.
+```js
+var arr = ['zero', 'one', 'two', 'three'];
+delete arr[2];
+console.log(arr);           //  (출력값) ['zero', 'one', undefined x 1, 'three']
+console.log(arr.length);    // (출력값) 4
+```
+
+delete 연산자는 해당 요소의 값을 undefined로 설정할 뿐 원소 자체를 삭제하지는 않는다. 때문에 보통 배열에서 요소들을 완전히 삭제할 경우 자바스크립트에서는 `splice() 배열 메서드`를 사용한다.
+ 
+```
+splice() 배열 메서드
+
+splice(start, deleteCount, item...)
+- start : 배열에서 시작 위치
+- deleteCount : start에서 지정한 시작 위치부터 삭제할 요소의 수
+- item : 삭제할 위치에 추가할 요소
+
+```
+```js
+vae arr = ['zero', 'one', 'two', 'three'];
+
+arr.splice(2, 1);           // 2번째 요소를 시작점으로 1개의 원소를 삭제한다.
+console.log(arr);           // (출력값) ['zero', 'one', 'three']
+console.log(arr.length)     // (출력값) 3
+```
+delete 연산자와는 다르게 배열 요소를 완전히 없앤다. 따라서 배열의 요소 개수도 3개가 됐다.

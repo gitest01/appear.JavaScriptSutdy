@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>비동기를 동기로</title>
+</head>
+
+<style>
+  body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,button{margin:0;padding:0}
+  fieldset,img{border:0 none}
+  dl,ul,ol,menu,li{list-style:none}
+  blockquote, q{quotes: none}
+  blockquote:before, blockquote:after,q:before, q:after{content:'';content:none}
+  input,select,textarea,button{vertical-align:middle}
+  input::-ms-clear{display:none}
+  button{border:0 none;background-color:transparent;cursor:pointer}
+  body{background:#fff}
+  body,th,td,input,select,textarea,button{font-size:12px;line-height:1.5;font-family:'돋움',dotum,sans-serif;color:#333} /* color값은 디자인가이드에 맞게사용 */
+  a{color:#333;text-decoration:none}
+  a:active, a:hover{text-decoration:underline}
+  a:active{background-color:transparent}
+  address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal}
+  .screen_out{overflow:hidden;position:absolute;width:0;height:0;line-height:0;text-indent:-9999px}
+  .content_wrap{height: 500px; background-color: #999; overflow-y: auto}
+  .content_wrap .item {height: 100px; margin-bottom: 5px; background-color: #ddd}
+  .main_wrap .spiner{position: fixed; top: 45%; left: 37%; font-size: 30px; color : white}
+</style>
+
+<body>
+
+<div class="main_wrap">
+  <div class="content_wrap">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+  <div class="spiner" style="display: none">로딩중</div>
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-2.2.1.js"></script>
+<script>
+
+    (function ($) {
+
+        var option = {
+            context : $('.content_wrap'),
+            spiner : $('.spiner')
+        };
+        var randomColor = function () {
+            return Math.floor(Math.random() * 999999)
+
+        };
+
+        // 스크롤 모듈
+        var Scroll = (function () {
+            var Scroll = function (option) {
+                this.options = option;  // 무조건 실행
+                this.init();
+            };
+            Scroll.prototype.init = function () {
+                this.bindEvt();
+            };
+            Scroll.prototype.bindEvt = function () {
+                var _self = this; //  this = scoll 모듈
+                this.options.context.on('scroll', function (e) { // this = div
+                    // var maxHeight = $(this).height();
+                    // var scrollTop = $(this).scrollTop();
+                    // var totalHeight = this.scrollHeight;
+
+                    if($(this).height() + $(this).scrollTop() === this.scrollHeight){
+                        _self.getData();
+                    }
+                })
+            };
+            Scroll.prototype.getData = function () {
+                $.ajax({
+                    method : 'get',
+                    url : 'http://localhost:3000/person',
+                    dataType : 'json',
+                    context : this,    // scroll 모듈
+                    beforeSend : function () {
+                        this.options.spiner.show();
+                    }
+                }).then(function (res) {
+                    setTimeout(function () {
+                        this.render(res); // function 의 function 이라 window 기준
+                        this.options.spiner.hide();
+                    }.bind(this), 1000); //
+
+
+
+                }, function (err) {
+                    console.error(err);
+                });
+            };
+            Scroll.prototype.render = function (data) {
+                // data = array
+                var result ='',
+                    dom = '',
+                    color = randomColor();
+
+                data.forEach(function (obj, idx) {
+                    dom = "<div class='item' style='background-color: #"+color+"'>"+obj.name+"</div>";;
+                    result += dom;
+                    dom = '';
+                })
+                this.options.context.append(result);
+            };
+            return Scroll;
+        })();
+
+        new Scroll(option);
+
+    })(jQuery);
+
+</script>
+
+</body>
+</html>
