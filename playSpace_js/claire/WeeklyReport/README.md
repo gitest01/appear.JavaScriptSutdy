@@ -459,3 +459,37 @@ console.log(arr);           // (출력값) ['zero', 'one', 'three']
 console.log(arr.length)     // (출력값) 3
 ```
 delete 연산자와는 다르게 배열 요소를 완전히 없앤다. 따라서 배열의 요소 개수도 3개가 됐다.
+
+
+### 08. Array()생성자 함수
+배열은 일반적으로 배열 리터럴로 생성하지만 배열 리터럴도 결국 자바스크립트 기본 제공 `Array()생성자 함수`로 
+배열을 생성하는 과정을 단순화시킨 것이다.  생성자 함수로 배열과 같은 객체를 생성할 때는 반드시 new 연산자를 같이 써야한다.
+Array() 생성자 함수는 호출할 때 인자 개수에 따라 동작이 다르므로 주의해야 한다.
+- 호출할 때 인자가 1개이고, 숫자일 경우 : 호출된 인자를 length로 갖는 빈 배열 생성
+- 그외의 경우 : 호출된 인자를 요소로 갖는 배열 생성
+```js
+var foo = new Array(3);
+console.log(foo);           // (출력값) [undefined, undefined, undefined]
+console.log(foo.length);    // (출력값) 3
+
+var bar = new Array(1, 2, 3);
+console.log(bar);           // (출력값) [1, 2, 3]
+console.log(bar.length);    // (출력값) 3
+```
+
+### 09. 유사 배열 객체
+`length 프로퍼티`는 배열의 동작에 있어서 중요한 프로퍼티이다. length 프로퍼티를 가진 객체를 유사 배열 객체 (array-like objects)라고 부른다.
+ 유사 배열 객체의 가장 큰 특징은 객체임에도 불구하고, 자바스크립트의 표준 배열 메서드 사용이 가능하다.
+ 
+```js
+var arr = ['bar'];
+var obj = {
+    name : 'foo',
+    length : 1
+};
+
+arr.push('baz');
+console.log(arr);       // (출력값) ['bar', 'baz']
+
+obj.push('baz');        // (출력값) error
+```
